@@ -1,13 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/sketch_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mainactivity.CS125FinalProject" >
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</RelativeLayout>
+    tools:context="com.example.CS125FinalProject.Main"/>

@@ -1,4 +1,4 @@
-package com.example.mainactivity;
+package com.example.CS125FinalProject;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import processing.android.PFragment;
 import processing.android.CompatUtils;
 import processing.core.PApplet;
 /** Manages running the sketch on Android. */
-public class CS125FinalProject extends AppCompatActivity {
+public class Main extends AppCompatActivity {
     public static PApplet sketch;
 
     @Override
@@ -20,8 +20,9 @@ public class CS125FinalProject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FrameLayout frame = new FrameLayout(this);
         frame.setId(CompatUtils.getUniqueViewId());
-        setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                                         ViewGroup.LayoutParams.MATCH_PARENT));
+        setContentView(frame);
+        //setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        //                                                 ViewGroup.LayoutParams.MATCH_PARENT));
         sketch = new Sketch();
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);
@@ -40,3 +41,4 @@ public class CS125FinalProject extends AppCompatActivity {
         }
     }
 }
+

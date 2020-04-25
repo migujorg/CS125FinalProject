@@ -1,23 +1,16 @@
-package com.example.mainactivity;
+package com.example.CS125FinalProject;
 
-import androidx.constraintlayout.solver.widgets.Rectangle;
+//import androidx.constraintlayout.solver.widgets.Rectangle;
 
 import java.util.ArrayList;
-import processing.core.PApplet;
 
-import static com.example.mainactivity.Sketch.leftPressed;
-import static com.example.mainactivity.Sketch.rightPressed;
+import static com.example.CS125FinalProject.Sketch.leftPressed;
+import static com.example.CS125FinalProject.Sketch.rightPressed;
 
 /**This class is used to manage characters in this game. Keeps track of and modifies position, health, and other values .*/
-public class Character extends PApplet{
-    /**Current X coordinate of the character. */
-    private double x;
-    /**Current Y coordinate of the character. */
-    private double y;
-    /**Width of the character's hitbox. */
-    private double width;
-    /**Height of the character's hitbox. */
-    private double height;
+public class Character {
+    /**Rectangle used for position, width, and height of simple hitbox. */
+    private Rectangle simpleHitbox = new Rectangle();
     /**The character's current velocity in the X direction. */
     private double xVelocity;
     /**The character's current velocity in the Y direction. */
@@ -34,15 +27,14 @@ public class Character extends PApplet{
     private ArrayList<Rectangle> hitBox = new ArrayList<>();
     /**Boolean that indicates if character has a simple (one rectangle) or advanced (array of rectangles) hitbox. */
     private boolean advancedHitbox;
+
+
     /**Whether of not character is on a surface. Used in friction calculation. */
     private boolean isGrounded;
 
     /** Default constructor for if nothing is specified. Unlikely to be used much outside of debugging, usually every field will have a value. */
     Character() {
-        x = 500;
-        y = 0;
-        width = 100;
-        height = 100;
+        simpleHitbox.setBounds(500, 0, 100, 100);
         xVelocity = 0;
         yVelocity = 0;
         frictionCoefficient = 0.5;
@@ -62,8 +54,7 @@ public class Character extends PApplet{
      * @param setHitBox sets hitBox
      */
     Character(double setX, double setY, double setFrictionCoefficient, double setMaxHealth, double setArmor, ArrayList<Rectangle> setHitBox) {
-        x = setX;
-        y = setY;
+        simpleHitbox.setBounds(setX,  setY, 0,0);
         frictionCoefficient = setFrictionCoefficient;
         maxHealth = setMaxHealth;
         currentHealth = maxHealth;
@@ -82,10 +73,7 @@ public class Character extends PApplet{
      * @param setArmor sets armor
      */
     public Character(double setX, double setY, double setWidth, double setHeight, double setFrictionCoefficient, double setMaxHealth, double setArmor) {
-        x = setX;
-        y = setY;
-        width = setWidth;
-        height = setHeight;
+        simpleHitbox.setBounds(setX, setY, setWidth, setHeight);
         frictionCoefficient = setFrictionCoefficient;
         maxHealth = setMaxHealth;
         currentHealth = maxHealth;
@@ -101,9 +89,9 @@ public class Character extends PApplet{
 
     /**Updates x, y, and their velocities*/
     private void physicsUpdate() {
-        y += yVelocity;
+        simpleHitbox.y += yVelocity;
         yVelocity += Sketch.GLOBAL_GRAVITY;
-        x += xVelocity;
+        simpleHitbox.x += xVelocity;
 
         if (xVelocity > 0 && isGrounded && !rightPressed) {
             xVelocity -= frictionCoefficient;
@@ -114,13 +102,29 @@ public class Character extends PApplet{
 
     /**Displays the hitbox. Used for debugging. Later will display a sprite instead. */
     private void displayHitbox() {
-        CS125FinalProject.sketch.stroke(0,0,0);
-        CS125FinalProject.sketch.fill(0,0,0);
-        CS125FinalProject.sketch.rect((float) x,(float) y,(float) width,(float) height);
+        Main.sketch.stroke(0,0,0);
+        Main.sketch.fill(0,0,0);
+        Main.sketch.rect((float) simpleHitbox.x,(float) simpleHitbox.y , (float) simpleHitbox.width, (float) simpleHitbox.height);
     }
 
 
+    boolean isAdvancedHitbox() {
+        return advancedHitbox;
+    }
 
+    Rectangle getSimpleHitbox() {
+        return simpleHitbox;
+    }
 
+    double getYVelocity() {
+        return yVelocity;
+    }
 
+    void setYVelocity(double setYVelocity) {
+        yVelocity = setYVelocity;
+    }
+
+    public double getXVelocity() {
+        return xVelocity;
+    }
 }

@@ -1,7 +1,12 @@
-package com.example.mainactivity;
+package com.example.CS125FinalProject;
 
-import androidx.constraintlayout.solver.widgets.Rectangle;
+//import androidx.constraintlayout.solver.widgets.Rectangle;
 
+import processing.core.PApplet;
+
+/**
+ * This class manages travelling between rooms. Portals will be invisible in the final implementation.
+ */
 public class Portal {
     /** Desination of the portal. Int is the index of a level in the "levels" array (this array doesn't exist yet) */
     private int destination;
@@ -33,6 +38,23 @@ public class Portal {
         hitbox = setHitbox;
         destination = setDestination;
         requiresInteract = setRequiresInteract;
+    }
+
+    /** Renders a translucent rectangle on the screen at the position of the portal. For debugging */
+    void showPortal() {
+        Main.sketch.fill(30,30,200,100);
+        Main.sketch.stroke(0,0,0);
+        Main.sketch.rect((float) hitbox.x, (float) hitbox.y, (float) hitbox.width, (float) hitbox.height);
+    }
+    /** Runs the portal logic. Requires a Character parameter to know which character to watch for collision. */
+    void runPortal(Character player) {
+        if (!player.isAdvancedHitbox()) {
+            if (!requiresInteract) {
+                if (hitbox.intersects(player.getSimpleHitbox())) {
+                    //TODO: set current level to destination level
+                }
+            }
+        }
     }
 
     /**@return x coordinate of portal.*/
