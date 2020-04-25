@@ -1,6 +1,10 @@
 package com.example.mainactivity;
 import processing.core.PApplet;
 
+/**This can be seen as the "Main Method" of processing.
+ *  settings() is ran once before everything.
+ *  setup() runs immediately after. Once.
+ *  draw() runs a set number of times per second. */
 public class Sketch extends PApplet{
     static double GLOBAL_GRAVITY = 1;
     static boolean rightPressed = false;

@@ -8,6 +8,7 @@ import processing.core.PApplet;
 import static com.example.mainactivity.Sketch.leftPressed;
 import static com.example.mainactivity.Sketch.rightPressed;
 
+/**This class is used to manage characters in this game. Keeps track of and modifies position, health, and other values .*/
 public class Character extends PApplet{
     /**Current X coordinate of the character. */
     private double x;
@@ -36,9 +37,7 @@ public class Character extends PApplet{
     /**Whether of not character is on a surface. Used in friction calculation. */
     private boolean isGrounded;
 
-    /**
-     * Default constructor for if nothing is specified. Unlikely to be used much outside of debugging, usually every field will have a value.
-     */
+    /** Default constructor for if nothing is specified. Unlikely to be used much outside of debugging, usually every field will have a value. */
     Character() {
         x = 500;
         y = 0;

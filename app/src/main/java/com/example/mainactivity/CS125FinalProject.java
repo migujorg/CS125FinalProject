@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import processing.android.PFragment;
 import processing.android.CompatUtils;
 import processing.core.PApplet;
-
+/** Manages running the sketch on Android. */
 public class CS125FinalProject extends AppCompatActivity {
     public static PApplet sketch;
 
