@@ -13,7 +13,7 @@ import processing.android.CompatUtils;
 import processing.core.PApplet;
 
 public class CS125FinalProject extends AppCompatActivity {
-    private PApplet sketch;
+    public static PApplet sketch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
