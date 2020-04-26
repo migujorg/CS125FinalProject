@@ -7,12 +7,12 @@ import com.example.CS125FinalProject.Rectangle;
 public abstract class Environment {
     /** Constant to represent Platform as type. */
     static int PLATFORM = 0;
-    /** Constant to represent Damage as type. */
-    public static int DAMAGE = 1;
+    /** Constant to represent Portal as type. */
+    public static int PORTAL = 3;
     /** Constant to represent Movement as type. */
     public static int MOVEMENT = 2;
     /** Constant to represent Stairs as type. */
-    public static int STAIRS = 3; //This works but not having normal side collision (teleports character to top when touches side)
+    public static int STAIRS = 1; //This works but not having normal side collision (teleports character to top when touches side)
     /** The hitbox of the Environment object */
     private Rectangle hitbox;
     /** The type of environment object */ //I don't think I will actually end up needing this

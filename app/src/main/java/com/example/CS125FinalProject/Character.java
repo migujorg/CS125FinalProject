@@ -117,9 +117,9 @@ public class Character {
     /** Consolidates player control logic into one method. */
     private void runPlayerControl() {
         if (((Sketch) Main.sketch).isRightPressed()) {
-            xVelocity = 5;
+            xVelocity = moveSpeed;
         } else if (((Sketch) Main.sketch).isLeftPressed()) {
-            xVelocity = -5;
+            xVelocity = -1 * moveSpeed;
         }
     }
 
@@ -134,6 +134,8 @@ public class Character {
         } else if (xVelocity <0 && isGrounded && !((Sketch) Main.sketch).isLeftPressed()) {
             xVelocity += Sketch.FRICTION_COEFFICIENT;
         }
+
+        isGrounded = false;
     }
 
     /**Displays the hitbox. Used for debugging. Later will display a sprite instead. */
@@ -154,6 +156,21 @@ public class Character {
     /** @return returns height using simpleHitbox. */
     double getHeight() {
         return simpleHitbox.height;
+    }
+
+    /** @return returns width using simpleHitbox. */
+    double getWidth() {
+        return simpleHitbox.width;
+    }
+
+    /** @param setX Sets x coordinate of Character. */
+    void setX(double setX) {
+        simpleHitbox.x = setX;
+    }
+
+    /** @param setXVelocity sets xVelocity of Character. */
+    void setXVelocity(double setXVelocity) {
+        xVelocity = setXVelocity;
     }
 
     /** @param setY Sets y coordinate of Character. */
@@ -179,5 +196,10 @@ public class Character {
     /**@param setIsGrounded sets isGrounded variable of Character. */
     void setIsGrounded(boolean setIsGrounded) {
         isGrounded = setIsGrounded;
+    }
+
+    /**@return isPlayer.*/
+    boolean isPlayer() {
+        return isPlayer;
     }
 }

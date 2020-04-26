@@ -1,4 +1,6 @@
 package com.example.CS125FinalProject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,6 +11,7 @@ import processing.core.PApplet;
  *  setup() runs immediately after. Once.
  *  draw() runs a set number of times per second. */
 public class Sketch extends PApplet {
+    public static final String JSON_PATH = "com/example/CS125FinalProject/gameJson";
     /** Acceleration constant. yVelocity is increased by this many pixels-per-second each frame. */
     static double GLOBAL_GRAVITY = 1;
     /** Friction constant. Magnitude of xVelocity is decreased by this many pixels-per-second each frame it is on a surface. */
@@ -25,13 +28,22 @@ public class Sketch extends PApplet {
 
     //TODO: REMOVE BELOW [Used for testing]
     private Character player = new Character(true);
-    private Platform platform0 = new Platform(300,1000, 400, 200);
-    private Room room0 = new Room(new ArrayList<Environment>(Arrays.asList(platform0)), (new ArrayList<Character>(Arrays.asList(player))));
+    private Platform platform0 = new Platform(200,1000, 1000, 200);
+    private Platform platform1 = new Platform(800,800, 100, 200);
+    private Platform platform2 = new Platform(100,800, 100, 200);
+    private Room room0 = new Room(new ArrayList<Environment>(Arrays.asList(platform0, platform1, platform2)),
+            (new ArrayList<Character>(Arrays.asList(player))));
     private ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(room0));
     private RoomManager roomManager = new RoomManager(rooms);
     //TODO: REMOVE ABOVE [Used for testing]
 
-    /**Settings for the Sketch. Runs once before everything*/
+    private JsonHandler jsonHandler = new JsonHandler(JSON_PATH);
+    private RoomManager roomManager0 = jsonHandler.getRoomManager();
+
+    public Sketch() throws IOException {
+    }
+
+    /**Settings for the screen. Runs once before everything*/
     public void settings() {
         size(displayWidth, displayHeight);
     }

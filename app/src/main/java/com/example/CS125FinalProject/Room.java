@@ -5,8 +5,6 @@ package com.example.CS125FinalProject;
 import java.util.ArrayList;
 
 class Room {
-    /** list of Portals in this room. */
-    private ArrayList<Portal> portals;
     /** list of platforms in this room. */
     private ArrayList<Environment> environments;
     /** list of Characters in this room. */
@@ -15,12 +13,7 @@ class Room {
 
     /** Default constructor. Every list is null. */
     Room() {}
-    /** Room constructor. Must specify each element. */
-    Room(ArrayList<Portal> setPortals, ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters) {
-        portals = setPortals;
-        environments = setEnvironments;
-        characters = setCharacters;
-    }
+
     /** Room constructor. No portals. */
     Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters) {
         environments = setEnvironments;
@@ -42,18 +35,6 @@ class Room {
         //TODO: runCharacters();
         //TODO: displayPlatforms();
         //TODO: Basically, run the characters and make sure that they collide with platofrms in the level. Make sure portals work too.
-    }
-    /** Renders a translucent rectangle on the screen at the position of each portal. Mostly for debugging. */
-    void showPortals() {
-        for (Portal temp: portals) {
-            temp.showPortal();
-        }
-    }
-    /** Runs the portal logic for each portal (Detects collision, teleports character). */
-    void runPortals() {
-        for (Portal temp: portals) {
-            temp.runPortal(((Sketch) Main.sketch).getPlayer());
-        }
     }
 
 }

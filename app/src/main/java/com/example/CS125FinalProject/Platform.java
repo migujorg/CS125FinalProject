@@ -32,8 +32,12 @@ class Platform extends Environment {
             c.setYVelocity(0);
             c.setY(super.getHitbox().y - c.getHeight());
             c.setIsGrounded(true);
-        } else {
-            c.setIsGrounded(false);
+        } else if (isCharLeft(c)) {
+            c.setXVelocity(0);
+            c.setX(super.getHitbox().x - c.getWidth());
+        } else if (isCharRight(c)) {
+            c.setXVelocity(0);
+            c.setX(super.getHitbox().x + c.getWidth());
         }
     }
 
@@ -57,6 +61,27 @@ class Platform extends Environment {
                               c.getSimpleHitbox().width,
                     c.getSimpleHitbox().height + c.getYVelocity())).intersectsY(super.getHitbox())
                     && c.getYVelocity() > 0;
+        } else {
+            return false; //TODO: Advanced hitbox collision
+        }
+    }
+
+    private boolean isCharLeft(Character c) {
+        if (!c.isAdvancedHitbox()) {
+            return c.getSimpleHitbox().intersectsY(super.getHitbox())
+                    && (new Rectangle(c.getSimpleHitbox().x, c.getSimpleHitbox().y,
+                    c.getSimpleHitbox().width + c.getXVelocity(),
+                             c.getSimpleHitbox().height)).intersectsX(super.getHitbox());
+        } else {
+            return false; //TODO: Advanced hitbox collision
+        }
+    }
+
+    private boolean isCharRight(Character c) {
+        if (!c.isAdvancedHitbox()) {
+            return c.getSimpleHitbox().intersectsY(super.getHitbox())
+                    && (new Rectangle (c.getSimpleHitbox().x + c.getXVelocity(), c.getSimpleHitbox().y,
+                    c.getSimpleHitbox().width - c.getXVelocity(), c.getSimpleHitbox().height).intersectsX(super.getHitbox()));
         } else {
             return false; //TODO: Advanced hitbox collision
         }
