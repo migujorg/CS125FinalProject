@@ -1,7 +1,12 @@
 package com.example.CS125FinalProject;
-
+/** Child of Environment class. Manages collisions between characters and platforms. */
 class Platform extends Environment {
-
+    /** Full constructor
+     * @param x x coordinate of platform
+     * @param y y coordinate of platform
+     * @param width width of platform
+     * @param height height of platform
+     */
     Platform(double x, double y, double width, double height) {
         super(new Rectangle(x, y, width, height), Environment.PLATFORM);
     }
@@ -18,6 +23,9 @@ class Platform extends Environment {
         if (isCharOnTop(c)) {
             c.setYVelocity(0);
             c.setY(super.getHitbox().y - c.getHeight());
+            c.setIsGrounded(true);
+        } else {
+            c.setIsGrounded(false);
         }
 
         if (Sketch.debugMode) {
