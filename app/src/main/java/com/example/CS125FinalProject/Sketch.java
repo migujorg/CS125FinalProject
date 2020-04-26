@@ -34,12 +34,12 @@ public class Sketch extends PApplet {
     /**Settings for the Sketch. Runs once before everything*/
     public void settings() {
         size(displayWidth, displayHeight);
-        frameRate(FRAME_RATE);
     }
 
     /**Runs once after settings(). */
     public void setup() {
         //orientation(LANDSCAPE);
+        frameRate(FRAME_RATE);
         smooth(0);
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
 
