@@ -1,5 +1,6 @@
 package com.example.CS125FinalProject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +12,7 @@ import processing.core.PApplet;
  *  setup() runs immediately after. Once.
  *  draw() runs a set number of times per second. */
 public class Sketch extends PApplet {
-    public static final String JSON_PATH = "D:\\MiguelThings\\AndroidStudioProjects\\MainActivity\\app\\src\\main\\java\\com\\example\\CS125FinalProject\\gameJson.json";
+    public static final String JSON_PATH = "D:\\MiguelThings\\AndroidStudioProjects\\MainActivity\\app\\src\\main\\res\\gameSetup.json";
     /** Acceleration constant. yVelocity is increased by this many pixels-per-second each frame. */
     static double GLOBAL_GRAVITY = 1;
     /** Friction constant. Magnitude of xVelocity is decreased by this many pixels-per-second each frame it is on a surface. */
@@ -46,19 +47,20 @@ public class Sketch extends PApplet {
     /**Settings for the screen. Runs once before everything*/
     public void settings() {
         size(displayWidth, displayHeight);
+        smooth(0);
     }
 
     /**Runs once after settings(). */
     public void setup() {
         //orientation(LANDSCAPE);
         frameRate(FRAME_RATE);
-        smooth(0);
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
 
     }
 
     /**Runs FRAME_RATE times per second */
     public void draw() {
+        //System.out.println(new File(".").getAbsoluteFile());
         refreshBackground();
         roomManager.run();
         if (debugMode) {
