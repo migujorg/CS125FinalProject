@@ -38,9 +38,9 @@ public class Sketch extends PApplet {
     private RoomManager roomManager = new RoomManager(rooms);
     //TODO: REMOVE ABOVE [Used for testing]
 
-    private JsonHandler jsonHandler = new JsonHandler(JSON_PATH);
-    private RoomManager roomManager0 = jsonHandler.getRoomManager();
-
+    //private JsonHandler jsonHandler = new JsonHandler(JSON_PATH);
+    //private RoomManager roomManager0 = jsonHandler.getRoomManager();
+    //TODO: UNCOMMENT THE TWO LINES ABOVE AND FIX FileNotFoundException
     public Sketch() throws IOException {
     }
 
