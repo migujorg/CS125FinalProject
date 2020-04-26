@@ -11,7 +11,7 @@ import processing.core.PApplet;
  *  setup() runs immediately after. Once.
  *  draw() runs a set number of times per second. */
 public class Sketch extends PApplet {
-    public static final String JSON_PATH = "com/example/CS125FinalProject/gameJson";
+    public static final String JSON_PATH = "D:\\MiguelThings\\AndroidStudioProjects\\MainActivity\\app\\src\\main\\java\\com\\example\\CS125FinalProject\\gameJson.json";
     /** Acceleration constant. yVelocity is increased by this many pixels-per-second each frame. */
     static double GLOBAL_GRAVITY = 1;
     /** Friction constant. Magnitude of xVelocity is decreased by this many pixels-per-second each frame it is on a surface. */

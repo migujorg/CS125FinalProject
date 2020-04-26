@@ -18,7 +18,7 @@ public class JsonHandler {
     private RoomManager roomManager;
 
     public JsonHandler(final String jsonPath) throws IOException {
-        Object object = JsonParser.parseReader(new FileReader("com/example/CS125FinalProject/gameJson.json"));
+        Object object = JsonParser.parseReader(new FileReader(jsonPath));
         JsonObject jsonObject = (JsonObject) object;
         ArrayList<Room> roomArray = new ArrayList<>();
         JsonArray rooms = jsonObject.get("rooms").getAsJsonArray();
@@ -56,7 +56,8 @@ public class JsonHandler {
                         jAsObject.get("width").getAsDouble(),
                         jAsObject.get("height").getAsDouble(),
                         jAsObject.get("maxHealth").getAsDouble(),
-                        jAsObject.get("armor").getAsDouble()));
+                        jAsObject.get("armor").getAsDouble(),
+                        jAsObject.get("isPlayer").getAsBoolean()));
             }
             roomArray.add(new Room(environmentArray, characterArray));
         }

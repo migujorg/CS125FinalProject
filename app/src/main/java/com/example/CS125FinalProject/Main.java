@@ -8,6 +8,8 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.IOException;
+
 import processing.android.PFragment;
 import processing.android.CompatUtils;
 import processing.core.PApplet;
@@ -23,7 +25,11 @@ public class Main extends AppCompatActivity {
         setContentView(frame);
         //setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
         //                                                 ViewGroup.LayoutParams.MATCH_PARENT));
-        sketch = new Sketch();
+        try {
+            sketch = new Sketch();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);
     }
