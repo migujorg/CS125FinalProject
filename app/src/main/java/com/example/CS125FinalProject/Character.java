@@ -116,6 +116,13 @@ public class Character {
         return simpleHitbox;
     }
 
+    double getHeight() {
+        return simpleHitbox.height;
+    }
+    void setY(double setY) {
+        simpleHitbox.y = setY;
+    }
+
     double getYVelocity() {
         return yVelocity;
     }

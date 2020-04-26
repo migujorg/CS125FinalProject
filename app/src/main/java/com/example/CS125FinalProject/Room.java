@@ -30,6 +30,9 @@ class Room {
 
     /** displays the room on the phone screen. Also runs the appropriate logic. */
     void runRoom() {
+        for (Character tempC: characters) {
+            tempC.run();
+        }
         for (Environment tempE: environments) { //For each environment
             for (Character tempC: characters) { //Each environment runs for each character
                 tempE.run(tempC);
