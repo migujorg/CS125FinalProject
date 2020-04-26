@@ -5,28 +5,34 @@ import java.util.ArrayList;
 public class RoomManager {
     /** ArrayList of every Room in the game. */
     private ArrayList<Room> rooms;
-    /** index in the rooms array that marks the current room. */
+    /** index in the rooms array that marks the current room. Room 0 is always starting room*/
     private int currentRoom;
 
+    /** Constructor for RoomManager.
+     * @param setRooms sets the rooms ArrayList<Room>*/
     RoomManager(ArrayList<Room> setRooms) {
         rooms = setRooms;
-        currentRoom = 0; //not necessary b/c default int initialization is 0;
+        currentRoom = 0; //not really necessary b/c default int initialization is 0;
     }
 
+    /** Goes through each room and calls their "run()" methods. Runs logic methods*/
     void run() {
         for (Room temp: rooms) {
             temp.runRoom();
         }
     }
 
+    /**@return returns rooms ArrayList */
     public ArrayList<Room> getRooms() {
         return rooms;
     }
 
+    /**@return returns currentRoom. */
     public int getCurrentRoom() {
         return currentRoom;
     }
 
+    /**@param setCurrentRoom sets currentRoom. */
     public void setCurrentRoom(int setCurrentRoom) {
         currentRoom = setCurrentRoom;
     }

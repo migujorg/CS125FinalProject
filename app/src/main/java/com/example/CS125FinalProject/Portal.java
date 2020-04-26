@@ -4,11 +4,9 @@ package com.example.CS125FinalProject;
 
 import processing.core.PApplet;
 
-/**
- * This class manages travelling between rooms. Portals will be invisible in the final implementation.
- */
+/**This class manages travelling between rooms. Portals will be invisible in the final implementation. */
 public class Portal {
-    /** Desination of the portal. Int is the index of a level in the "levels" array (this array doesn't exist yet) */
+    /** Destination of the portal. Int is the index of a level in the "levels" array (this array doesn't exist yet) */
     private int destination;
      /** Do you have to press a key to use this portal? Or is it automatic upon contact */
     private boolean requiresInteract;

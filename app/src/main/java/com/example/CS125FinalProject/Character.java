@@ -143,34 +143,40 @@ public class Character {
         Main.sketch.rect((float) simpleHitbox.x,(float) simpleHitbox.y , (float) simpleHitbox.width, (float) simpleHitbox.height);
     }
 
-
+    /** @return returns advancedHitbox. */
     boolean isAdvancedHitbox() {
         return advancedHitbox;
     }
-
+    /** @return returns simpleHitbox Rectangle object. */
     Rectangle getSimpleHitbox() {
         return simpleHitbox;
     }
-
+    /** @return returns height using simpleHitbox. */
     double getHeight() {
         return simpleHitbox.height;
     }
+
+    /** @param setY Sets y coordinate of Character. */
     void setY(double setY) {
         simpleHitbox.y = setY;
     }
 
+    /** @return yVelocity of Character. */
     double getYVelocity() {
         return yVelocity;
     }
 
+    /**@param setYVelocity sets Y velocity of Character. */
     void setYVelocity(double setYVelocity) {
         yVelocity = setYVelocity;
     }
 
+    /** @return gets X velocity of Character. */
     public double getXVelocity() {
         return xVelocity;
     }
 
+    /**@param setIsGrounded sets isGrounded variable of Character. */
     void setIsGrounded(boolean setIsGrounded) {
         isGrounded = setIsGrounded;
     }
