@@ -17,7 +17,7 @@ public class Rectangle {
      * @param setY sets Y coordinate
      * @param setWidth sets width
      * @param setHeight sets height */
-    Rectangle(double setX, double setY, double setWidth, double setHeight) {
+    public Rectangle(double setX, double setY, double setWidth, double setHeight) {
         x = setX;
         y = setY;
         width = setWidth;
@@ -61,8 +61,7 @@ public class Rectangle {
                 && rectangle.y < y + height;      //top edge above bottom edge
     }
 
-    /* //TODO: Delete these methods if I never use them
-    boolean contains(double checkX, double checkY) {
+    public boolean contains(double checkX, double checkY) {
         return checkX >= x && checkX < x + width && checkY >= y && checkY < y + height;
     }
 
@@ -73,7 +72,6 @@ public class Rectangle {
     boolean containsY(double checkY) {
         return checkY >= y && checkY < y + height;
     }
-    */
 
     /** @return X coordinate of center of Rectangle.*/
     public double getCenterX() {

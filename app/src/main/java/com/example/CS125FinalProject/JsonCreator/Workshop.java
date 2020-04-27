@@ -1,5 +1,6 @@
 package com.example.CS125FinalProject.JsonCreator;
 
+import android.graphics.Point;
 import android.graphics.Rect;
 
 import com.example.CS125FinalProject.Character;
@@ -19,7 +20,10 @@ public class Workshop extends PApplet {
     private ArrayList<Stairs> stairs = new ArrayList<>();
     private ArrayList<Portal> portals = new ArrayList<>();
     private Rectangle currentRect = new Rectangle();
+    private ArrayList<Rectangle> onScreenRectangles = new ArrayList<>();
     private int currentType = Environment.PLATFORM;
+    private boolean isTranslating;
+    private Point mouseDistance = new Point();
 
     public Workshop() {}
 
@@ -88,22 +92,49 @@ public class Workshop extends PApplet {
         currentRect.height = mouseY - currentRect.y;
     }
 
-    public void touchStarted() {
-        setRectPoint();
+    private Rectangle isOnRect() {
+        for (int i = onScreenRectangles.size() - 1; i >= 0 ; i--) { //Reverse order to select top most rectangle
+            if (onScreenRectangles.get(i).contains(mouseX, mouseY)) {
+                return onScreenRectangles.get(i);
+            }
+        }
+        return new Rectangle(-1,-1,-1,-1);
     }
 
-    public void touchMoved() {
-        setRectWH();
+    public void touchStarted() {
+        Rectangle temp = isOnRect();
+        if (temp.x != -1) {
+            isTranslating = true;
+            currentRect = temp;
+            mouseDistance.x = (int) (mouseX - temp.x);
+            mouseDistance.x = (int) (mouseY - temp.y);
+        } else {
+            setRectPoint();
+        }
     }
+    public void touchMoved() {
+        if (isTranslating) {
+            currentRect.x = mouseX + mouseDistance.x;
+            currentRect.y = mouseY + mouseDistance.y;
+        } else {
+            setRectWH();
+        }
+    }
+
 
     public void touchEnded() {
-        if (currentType == Environment.PLATFORM) {
-            //Rectangle hitbox = new Rectangle();
-            platforms.add(new Platform(currentRect.getCopy()));
-        } else if (currentType == Environment.PORTAL) {
-            portals.add(new Portal(currentRect.getCopy(), 1, false));
-        } else { //STAIRS
-            stairs.add(new Stairs(currentRect.getCopy()));
+        if (!isTranslating) {
+            Rectangle temp = currentRect.getCopy();
+            if (currentType == Environment.PLATFORM) {
+                platforms.add(new Platform(temp));
+            } else if (currentType == Environment.PORTAL) {
+                portals.add(new Portal(temp, 1, false));
+            } else { //STAIRS
+                stairs.add(new Stairs(temp));
+            }
+            onScreenRectangles.add(temp);
+        } else {
+            isTranslating = false;
         }
         currentRect.setBounds(0,0,0,0);
     }
