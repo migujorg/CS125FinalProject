@@ -1,5 +1,7 @@
 package com.example.CS125FinalProject;
 
+import android.content.Context;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +14,6 @@ import processing.core.PApplet;
  *  setup() runs immediately after. Once.
  *  draw() runs a set number of times per second. */
 public class Sketch extends PApplet {
-    public static final String JSON_PATH = "D:\\MiguelThings\\AndroidStudioProjects\\MainActivity\\app\\src\\main\\res\\gameSetup.json";
     /** Acceleration constant. yVelocity is increased by this many pixels-per-second each frame. */
     static double GLOBAL_GRAVITY = 1;
     /** Friction constant. Magnitude of xVelocity is decreased by this many pixels-per-second each frame it is on a surface. */
@@ -36,12 +37,12 @@ public class Sketch extends PApplet {
             (new ArrayList<Character>(Arrays.asList(player))));
     private ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(room0));
     private RoomManager roomManager = new RoomManager(rooms);
+    private RoomManager roomManager0;
     //TODO: REMOVE ABOVE [Used for testing]
 
-    //private JsonHandler jsonHandler = new JsonHandler(JSON_PATH);
-    //private RoomManager roomManager0 = jsonHandler.getRoomManager();
     //TODO: UNCOMMENT THE TWO LINES ABOVE AND FIX FileNotFoundException
-    public Sketch() throws IOException {
+    public Sketch(Context context) throws IOException {
+        roomManager0 = JsonHandler.getRoomManager(context);
     }
 
     /**Settings for the screen. Runs once before everything*/

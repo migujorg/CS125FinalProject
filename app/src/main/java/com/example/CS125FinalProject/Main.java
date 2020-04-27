@@ -1,5 +1,6 @@
 package com.example.CS125FinalProject;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import processing.core.PApplet;
 /** Manages running the sketch on Android. */
 public class Main extends AppCompatActivity {
     public static PApplet sketch;
+    //public Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class Main extends AppCompatActivity {
         //setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
         //                                                 ViewGroup.LayoutParams.MATCH_PARENT));
         try {
-            sketch = new Sketch();
+            sketch = new Sketch(this);
         } catch (IOException e) {
             e.printStackTrace();
         }

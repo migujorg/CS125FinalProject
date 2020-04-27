@@ -1,0 +1,76 @@
+{
+  "rooms": [
+    {
+      "environments": [
+        {
+          "x": 100,
+          "y": 1000,
+          "width": 250,
+          "height": 100,
+          "type": 0
+        },
+        {
+          "x": 400,
+          "y": 1000,
+          "width": 250,
+          "height": 100,
+          "type": 0
+        },
+        {
+          "x": 700,
+          "y": 1000,
+          "width": 250,
+          "height": 100,
+          "type": 0
+        }
+      ],
+      "characters": [
+        {
+          "x": 10,
+          "y": 1000,
+          "width": 250,
+          "height": 100,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ]
+    },
+    {
+      "environments": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "type": 0
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "type": 0
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "type": 0
+        }
+      ],
+      "characters": [
+        {
+          "x": 10,
+          "y": 1000,
+          "width": 250,
+          "height": 100,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ]
+    }
+  ]
+}

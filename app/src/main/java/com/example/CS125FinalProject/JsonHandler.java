@@ -1,12 +1,15 @@
 package com.example.CS125FinalProject;
 
+import android.content.Context;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 
 
@@ -15,10 +18,11 @@ import java.util.ArrayList;
  */
 public class JsonHandler {
     /**JsonHandler creates a RoomManager object from the json input file. */
-    private RoomManager roomManager;
+    private static RoomManager roomManager;
 
-    public JsonHandler(final String jsonPath) throws IOException {
-        Object object = JsonParser.parseReader(new FileReader(jsonPath));
+    public static RoomManager getRoomManager(Context context) throws IOException {
+        Reader reader = new InputStreamReader(context.getResources().openRawResource(R.raw.game_setup));
+        Object object = JsonParser.parseReader(reader);
         JsonObject jsonObject = (JsonObject) object;
         ArrayList<Room> roomArray = new ArrayList<>();
         JsonArray rooms = jsonObject.get("rooms").getAsJsonArray();
@@ -62,9 +66,10 @@ public class JsonHandler {
             roomArray.add(new Room(environmentArray, characterArray));
         }
         roomManager = new RoomManager(roomArray);
-    }
-
-    public RoomManager getRoomManager() {
         return roomManager;
     }
+
+    //public RoomManager getRoomManager() {
+    //    return roomManager;
+    //}
 }
