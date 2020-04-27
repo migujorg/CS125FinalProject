@@ -2,15 +2,15 @@ package com.example.CS125FinalProject;
 /** This class is used to manage hitboxes and collisions of various game elements. */
 public class Rectangle {
     /** top left corner x coordinate. */
-    double x;
+    public double x;
     /** top left corner y coordinate. */
-    double y;
+    public double y;
     /** width of Rectangle (in pixels). */
-    double width;
+    public double width;
     /** height of Rectangle (in pixels). */
-    double height;
+    public double height;
     /** Default constructor creates a Rectangle at (0,0) with width 0, height 0. */
-    Rectangle() {}
+    public Rectangle() {}
 
     /**Full Constructor
      * @param setX sets X coordinate
@@ -29,7 +29,7 @@ public class Rectangle {
      * @param setY sets Y coordinate
      * @param setWidth sets width
      * @param setHeight sets height */
-    void setBounds(double setX, double setY, double setWidth, double setHeight) {
+    public void setBounds(double setX, double setY, double setWidth, double setHeight) {
         x = setX;
         y = setY;
         width = setWidth;
@@ -83,5 +83,9 @@ public class Rectangle {
     /** @return Y coordinate of center of Rectangle.*/
     public double getCenterY() {
         return (this.y + this.height) / 2;
+    }
+
+    public Rectangle getCopy() {
+        return new Rectangle(x, y, width, height);
     }
 }

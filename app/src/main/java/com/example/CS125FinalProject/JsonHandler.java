@@ -20,7 +20,7 @@ public class JsonHandler {
     /**JsonHandler creates a RoomManager object from the json input file. */
     private static RoomManager roomManager;
 
-    public static RoomManager getRoomManager(Context context) throws IOException {
+    public static RoomManager getRoomManager(Context context){
         Reader jsonReader = new InputStreamReader(context.getResources().openRawResource(R.raw.game_setup));
         JsonObject root = (JsonObject) JsonParser.parseReader(jsonReader);
         ArrayList<Room> roomArray = new ArrayList<>();

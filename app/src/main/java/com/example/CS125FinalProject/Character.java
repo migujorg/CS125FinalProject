@@ -150,7 +150,7 @@ public class Character {
         return advancedHitbox;
     }
     /** @return returns simpleHitbox Rectangle object. */
-    Rectangle getSimpleHitbox() {
+    public Rectangle getSimpleHitbox() {
         return simpleHitbox;
     }
     /** @return returns height using simpleHitbox. */
@@ -202,4 +202,5 @@ public class Character {
     boolean isPlayer() {
         return isPlayer;
     }
+
 }

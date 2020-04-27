@@ -14,7 +14,7 @@ public class Stairs extends Environment {
 
     /** Full constructor using Rectangle
      * @param hitbox the hitbox of the Stairs*/
-    Stairs(Rectangle hitbox) {
+    public Stairs(Rectangle hitbox) {
         super(hitbox, Environment.STAIRS);
     }
 

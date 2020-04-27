@@ -9,6 +9,8 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.CS125FinalProject.JsonCreator.Workshop;
+
 import java.io.IOException;
 
 import processing.android.PFragment;
@@ -25,13 +27,9 @@ public class Main extends AppCompatActivity {
         FrameLayout frame = new FrameLayout(this);
         frame.setId(CompatUtils.getUniqueViewId());
         setContentView(frame);
-        //setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-        //                                                 ViewGroup.LayoutParams.MATCH_PARENT));
-        try {
-            sketch = new Sketch(this);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        //sketch = new Sketch(this);
+        sketch = new Workshop();
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);
     }

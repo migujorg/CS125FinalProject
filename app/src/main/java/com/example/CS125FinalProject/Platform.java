@@ -1,6 +1,6 @@
 package com.example.CS125FinalProject;
 /** Child of Environment class. Manages collisions between characters and platforms. */
-class Platform extends Environment {
+public class Platform extends Environment {
     /** Full constructor using x, y, width, and height
      * @param x x coordinate of platform
      * @param y y coordinate of platform
@@ -12,7 +12,7 @@ class Platform extends Environment {
 
     /** Full constructor using Rectangle
      * @param hitbox the hitbox of the Platform*/
-    Platform(Rectangle hitbox) {
+    public Platform(Rectangle hitbox) {
         super(hitbox, Environment.PLATFORM);
     }
 
@@ -85,5 +85,9 @@ class Platform extends Environment {
         } else {
             return false; //TODO: Advanced hitbox collision
         }
+    }
+
+    public Rectangle getHitbox() {
+        return super.getHitbox();
     }
 }

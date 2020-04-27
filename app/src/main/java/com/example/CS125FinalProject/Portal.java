@@ -79,7 +79,7 @@ public class Portal extends Environment {
         return requiresInteract;
     }
     /**@return hitbox Rectangle directly. */
-    Rectangle getHitBox() {
+    public Rectangle getHitBox() {
         return super.getHitbox();
     }
 }

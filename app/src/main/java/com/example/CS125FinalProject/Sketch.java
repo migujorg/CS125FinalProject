@@ -41,7 +41,7 @@ public class Sketch extends PApplet {
     //TODO: REMOVE ABOVE [Used for testing]
 
     //TODO: UNCOMMENT THE TWO LINES ABOVE AND FIX FileNotFoundException
-    public Sketch(Context context) throws IOException {
+    public Sketch(Context context){
         roomManager0 = JsonHandler.getRoomManager(context);
     }
 

@@ -6,13 +6,14 @@ import com.example.CS125FinalProject.Rectangle;
 //TODO: Make Portal class a child of Environment and change Room class accordingly
 public abstract class Environment {
     /** Constant to represent Platform as type. */
-    static int PLATFORM = 0;
-    /** Constant to represent Portal as type. */
-    public static int PORTAL = 3;
-    /** Constant to represent Movement as type. */
-    public static int MOVEMENT = 2;
+    public static final int PLATFORM = 0;
     /** Constant to represent Stairs as type. */
-    public static int STAIRS = 1; //This works but not having normal side collision (teleports character to top when touches side)
+    public static final int STAIRS = 1;
+    /** Constant to represent Movement as type. */
+    public static final int MOVEMENT = 2;
+    /** Constant to represent Portal as type. */
+    public static final int PORTAL = 3;
+
     /** The hitbox of the Environment object */
     private Rectangle hitbox;
     /** The type of environment object */ //I don't think I will actually end up needing this
@@ -31,7 +32,7 @@ public abstract class Environment {
     abstract void run(Character c);
 
     /** @return hitbox*/
-    Rectangle getHitbox() {
+    public Rectangle getHitbox() {
         return hitbox;
     }
 }
