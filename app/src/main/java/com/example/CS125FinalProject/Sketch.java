@@ -63,7 +63,7 @@ public class Sketch extends PApplet {
     public void draw() {
         //System.out.println(new File(".").getAbsoluteFile());
         refreshBackground();
-        roomManager.run();
+        roomManager0.run();
         if (debugMode) {
             showTouch();
         }

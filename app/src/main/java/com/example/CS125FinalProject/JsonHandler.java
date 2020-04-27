@@ -21,11 +21,10 @@ public class JsonHandler {
     private static RoomManager roomManager;
 
     public static RoomManager getRoomManager(Context context) throws IOException {
-        Reader reader = new InputStreamReader(context.getResources().openRawResource(R.raw.game_setup));
-        Object object = JsonParser.parseReader(reader);
-        JsonObject jsonObject = (JsonObject) object;
+        Reader jsonReader = new InputStreamReader(context.getResources().openRawResource(R.raw.game_setup));
+        JsonObject root = (JsonObject) JsonParser.parseReader(jsonReader);
         ArrayList<Room> roomArray = new ArrayList<>();
-        JsonArray rooms = jsonObject.get("rooms").getAsJsonArray();
+        JsonArray rooms = root.getAsJsonArray("rooms");
         for(int i = 0; i < rooms.size(); i++) {
             ArrayList<Environment> environmentArray = new ArrayList<>();
             JsonArray environments = ((JsonObject) rooms.get(i)).get("environments").getAsJsonArray();
@@ -54,7 +53,7 @@ public class JsonHandler {
             ArrayList<Character> characterArray = new ArrayList<>();
             JsonArray characters = ((JsonObject) rooms.get(i)).get("characters").getAsJsonArray();
             for (int j = 0; j < characters.size(); j++) {
-                JsonObject jAsObject = ((JsonObject) characters.get(i));
+                JsonObject jAsObject = ((JsonObject) characters.get(j));
                 characterArray.add(new Character(jAsObject.get("x").getAsDouble(),
                         jAsObject.get("y").getAsDouble(),
                         jAsObject.get("width").getAsDouble(),
