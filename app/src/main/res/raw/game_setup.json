@@ -3,36 +3,93 @@
     {
       "environments": [
         {
-          "x": 100,
-          "y": 1000,
-          "width": 250,
-          "height": 100,
+          "x": 0,
+          "y": 0,
+          "width": 64,
+          "height": 1080,
           "type": 0
         },
         {
-          "x": 400,
-          "y": 1000,
-          "width": 250,
-          "height": 100,
+          "x": 0,
+          "y": 800,
+          "width": 2200,
+          "height": 56,
           "type": 0
         },
         {
-          "x": 700,
-          "y": 1000,
-          "width": 250,
-          "height": 100,
+          "x": 1912,
+          "y": 58,
+          "width": 192,
+          "height": 488,
+          "type": 0
+        },
+        {
+          "x": 1128,
+          "y": 752,
+          "width": 96,
+          "height": 64,
+          "type": 0
+        },
+        {
+          "x": 1240,
+          "y": 680,
+          "width": 104,
+          "height": 136,
+          "type": 0
+        },
+        {
+          "x": 1352,
+          "y": 608,
+          "width": 104,
+          "height": 208,
+          "type": 0
+        },
+        {
+          "x": 1464,
+          "y": 544,
+          "width": 104,
+          "height": 272,
+          "type": 0
+        },
+        {
+          "x": 1576,
+          "y": 472,
+          "width": 104,
+          "height": 344,
+          "type": 0
+        },
+        {
+          "x": 1688,
+          "y": 400,
+          "width": 104,
+          "height": 416,
+          "type": 0
+        },
+        {
+          "x": 1800,
+          "y": 328,
+          "width": 104,
+          "height": 488,
           "type": 0
         }
       ],
       "characters": [
         {
-          "x": 10,
-          "y": 1000,
-          "width": 250,
-          "height": 100,
+          "x": 128,
+          "y": 632,
+          "width": 80,
+          "height": 184,
           "maxHealth": 100,
           "armor": 0,
           "isPlayer": true
+        }
+      ],
+      "sprites": [
+        {
+          "x": 200,
+          "y": 200,
+          "fileName": "truck.png",
+          "scaleFactor": 8
         }
       ]
     },
@@ -41,34 +98,27 @@
         {
           "x": 0,
           "y": 0,
-          "width": 0,
-          "height": 0,
-          "type": 0
-        },
-        {
-          "x": 0,
-          "y": 0,
-          "width": 0,
-          "height": 0,
-          "type": 0
-        },
-        {
-          "x": 0,
-          "y": 0,
-          "width": 0,
-          "height": 0,
+          "width": 64,
+          "height": 1080,
           "type": 0
         }
       ],
       "characters": [
         {
-          "x": 10,
-          "y": 1000,
-          "width": 250,
-          "height": 100,
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
           "maxHealth": 100,
           "armor": 0,
-          "isPlayer": true
+          "isPlayer": false
+        }
+      ],
+      "sprites": [
+        {
+          "x": 200,
+          "y": 200,
+          "fileName": "truck.png"
         }
       ]
     }

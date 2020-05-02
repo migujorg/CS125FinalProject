@@ -29,8 +29,8 @@ public class JsonHandler {
             ArrayList<Environment> environmentArray = new ArrayList<>();
             JsonArray environments = ((JsonObject) rooms.get(i)).get("environments").getAsJsonArray();
             for (int j = 0; j < environments.size(); j++) {
-                int type = ((JsonObject) environments.get(i)).get("type").getAsInt();
-                JsonObject jAsObject = ((JsonObject) environments.get(i));
+                int type = ((JsonObject) environments.get(j)).get("type").getAsInt();
+                JsonObject jAsObject = ((JsonObject) environments.get(j));
                 if (type == Environment.PLATFORM) {
                     environmentArray.add(new Platform(jAsObject.get("x").getAsDouble(),
                             jAsObject.get("y").getAsDouble(),
@@ -62,7 +62,30 @@ public class JsonHandler {
                         jAsObject.get("armor").getAsDouble(),
                         jAsObject.get("isPlayer").getAsBoolean()));
             }
-            roomArray.add(new Room(environmentArray, characterArray));
+            ArrayList<Sprite> spritesArray = new ArrayList<>();
+            JsonArray sprites = ((JsonObject) rooms.get(i)).get("sprites").getAsJsonArray();
+            for (int j = 0; j < sprites.size(); j++) {
+                JsonObject jAsObject = ((JsonObject) sprites.get(j));
+                try {
+                    spritesArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
+                            jAsObject.get("y").getAsDouble(),
+                            jAsObject.get("width").getAsDouble(),
+                            jAsObject.get("height").getAsDouble(),
+                            jAsObject.get("fileName").getAsString()));
+                } catch (Exception e) {
+                    try {
+                        spritesArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
+                                jAsObject.get("y").getAsDouble(),
+                                jAsObject.get("scaleFactor").getAsDouble(),
+                                jAsObject.get("fileName").getAsString()));
+                    } catch (Exception f) {
+                        spritesArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
+                                jAsObject.get("y").getAsDouble(),
+                                jAsObject.get("fileName").getAsString()));
+                    }
+                }
+            }
+            roomArray.add(new Room(environmentArray, characterArray, spritesArray));
         }
         roomManager = new RoomManager(roomArray);
         return roomManager;

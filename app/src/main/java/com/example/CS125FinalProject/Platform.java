@@ -58,7 +58,7 @@ public class Platform extends Environment {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersectsX(super.getHitbox())
                     && (new Rectangle(c.getSimpleHitbox().x, c.getSimpleHitbox().y, //Will it intersect or pass through in the next frame based on yVelocity?
-                              c.getSimpleHitbox().width,
+                    c.getSimpleHitbox().width,
                     c.getSimpleHitbox().height + c.getYVelocity())).intersectsY(super.getHitbox())
                     && c.getYVelocity() > 0;
         } else {
@@ -69,9 +69,10 @@ public class Platform extends Environment {
     private boolean isCharLeft(Character c) {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersectsY(super.getHitbox())
-                    && (new Rectangle(c.getSimpleHitbox().x, c.getSimpleHitbox().y,
+                    && (new Rectangle(c.getSimpleHitbox().x,
+                    c.getSimpleHitbox().y,
                     c.getSimpleHitbox().width + c.getXVelocity(),
-                             c.getSimpleHitbox().height)).intersectsX(super.getHitbox());
+                    c.getSimpleHitbox().height)).intersectsX(super.getHitbox());
         } else {
             return false; //TODO: Advanced hitbox collision
         }
@@ -80,8 +81,10 @@ public class Platform extends Environment {
     private boolean isCharRight(Character c) {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersectsY(super.getHitbox())
-                    && (new Rectangle (c.getSimpleHitbox().x + c.getXVelocity(), c.getSimpleHitbox().y,
-                    c.getSimpleHitbox().width - c.getXVelocity(), c.getSimpleHitbox().height).intersectsX(super.getHitbox()));
+                    && (new Rectangle (c.getSimpleHitbox().x + c.getXVelocity(),
+                    c.getSimpleHitbox().y,
+                    c.getSimpleHitbox().width - c.getXVelocity(),
+                    c.getSimpleHitbox().height).intersectsX(super.getHitbox()));
         } else {
             return false; //TODO: Advanced hitbox collision
         }

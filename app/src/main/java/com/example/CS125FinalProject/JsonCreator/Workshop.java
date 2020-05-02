@@ -114,8 +114,8 @@ public class Workshop extends PApplet {
     }
     public void touchMoved() {
         if (isTranslating) {
-            currentRect.x = mouseX + mouseDistance.x;
-            currentRect.y = mouseY + mouseDistance.y;
+            currentRect.x = mouseX - mouseDistance.x;
+            currentRect.y = mouseY - mouseDistance.y;
         } else {
             setRectWH();
         }

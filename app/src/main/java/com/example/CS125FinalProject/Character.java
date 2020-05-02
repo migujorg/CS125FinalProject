@@ -9,7 +9,7 @@ public class Character {
     /**Rectangle used for position, width, and height of simple hitbox. */
     private Rectangle simpleHitbox = new Rectangle();
     /** The character's movement speed. */
-    private double moveSpeed = 5;
+    private double moveSpeed = 10;
     /**The character's current velocity in the X direction. */
     private double xVelocity;
     /**The character's current velocity in the Y direction. */
@@ -113,13 +113,18 @@ public class Character {
         if (isPlayer) {
             runPlayerControl();
         }
+        isGrounded = false;
     }
+
     /** Consolidates player control logic into one method. */
     private void runPlayerControl() {
         if (((Sketch) Main.sketch).isRightPressed()) {
             xVelocity = moveSpeed;
         } else if (((Sketch) Main.sketch).isLeftPressed()) {
             xVelocity = -1 * moveSpeed;
+        }
+        if (((Sketch) Main.sketch).isUpPressed() && isGrounded) {
+            yVelocity = -20;
         }
     }
 
@@ -134,8 +139,6 @@ public class Character {
         } else if (xVelocity <0 && isGrounded && !((Sketch) Main.sketch).isLeftPressed()) {
             xVelocity += Sketch.FRICTION_COEFFICIENT;
         }
-
-        isGrounded = false;
     }
 
     /**Displays the hitbox. Used for debugging. Later will display a sprite instead. */

@@ -2,12 +2,11 @@ package com.example.CS125FinalProject;
 
 import android.content.Context;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 /**This can be seen as the "Main Method" of processing.
  *  settings() is ran once before everything.
@@ -15,7 +14,7 @@ import processing.core.PApplet;
  *  draw() runs a set number of times per second. */
 public class Sketch extends PApplet {
     /** Acceleration constant. yVelocity is increased by this many pixels-per-second each frame. */
-    static double GLOBAL_GRAVITY = 1;
+    static double GLOBAL_GRAVITY = 2;
     /** Friction constant. Magnitude of xVelocity is decreased by this many pixels-per-second each frame it is on a surface. */
     static double FRICTION_COEFFICIENT = 0.5;
     /** Frame rate of the sketch. Will attempt to reach this frame rate, but may be lower if it cannot be achieved. */
@@ -27,6 +26,8 @@ public class Sketch extends PApplet {
     private boolean rightPressed = false;
     /** Is the left side of the screen pressed? Used for player control. */
     private boolean leftPressed = false;
+    /** is the top of the screen pressed? Used for player control. */
+    private boolean upPressed = false;
 
     //TODO: REMOVE BELOW [Used for testing]
     private Character player = new Character(true);
@@ -38,11 +39,12 @@ public class Sketch extends PApplet {
     private ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(room0));
     private RoomManager roomManager = new RoomManager(rooms);
     private RoomManager roomManager0;
+    Context activityContext;
     //TODO: REMOVE ABOVE [Used for testing]
 
     //TODO: UNCOMMENT THE TWO LINES ABOVE AND FIX FileNotFoundException
     public Sketch(Context context){
-        roomManager0 = JsonHandler.getRoomManager(context);
+        activityContext = context;
     }
 
     /**Settings for the screen. Runs once before everything*/
@@ -54,6 +56,9 @@ public class Sketch extends PApplet {
     /**Runs once after settings(). */
     public void setup() {
         //orientation(LANDSCAPE);
+        //activityContext.getResources().openRawResource(R.raw.game_setup);
+        //truckTest = loadImage("truck.png");
+        roomManager0 = JsonHandler.getRoomManager(activityContext);
         frameRate(FRAME_RATE);
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
 
@@ -66,6 +71,7 @@ public class Sketch extends PApplet {
         roomManager0.run();
         if (debugMode) {
             showTouch();
+            //image(truckTest, 500,500, 500, 500);
         }
     }
 
@@ -75,11 +81,17 @@ public class Sketch extends PApplet {
             fill(0,0,0, 100);
             stroke(0,0,0);
             rect(0, 0, (float) (displayWidth / 2.0), (float) displayHeight);
+            if (upPressed) {
+                rect(0, 0, (float) (displayWidth / 2.0) , (float) ((displayHeight - 300) / 2.0));
+            }
         }
         if (rightPressed) {
             fill(0,0,0, 100);
             stroke(0,0,0);
             rect((float) (displayWidth / 2.0), 0, (float) (displayWidth / 2.0), displayHeight);
+            if (upPressed) {
+                rect( (float) (displayWidth / 2.0) , 0,  (float) (displayWidth / 2.0), (float) ((displayHeight - 300)/ 2.0));
+            }
         }
     }
 
@@ -99,6 +111,9 @@ public class Sketch extends PApplet {
         } else {
             rightPressed = true;
         }
+        if (mouseY < (displayHeight - 300) / 2) {
+            upPressed = true;
+        }
         fill(0,0,0);
         stroke(0,0,0);
         rect(mouseX - 100, mouseY - 100, 200, 200);
@@ -113,6 +128,11 @@ public class Sketch extends PApplet {
             rightPressed = true;
             leftPressed = false;
         }
+        if (mouseY < (displayHeight - 300) / 2) {
+            upPressed = true;
+        } else {
+            upPressed = false;
+        }
     }
 
     /**Runs when a touch is released. Sets leftPressed and rightPressed accordingly. */
@@ -122,6 +142,7 @@ public class Sketch extends PApplet {
         } else {
             rightPressed = false;
         }
+        upPressed = false;
     }
 
     /**@return returns rightPressed. Used for player control. */
@@ -133,6 +154,8 @@ public class Sketch extends PApplet {
     boolean isLeftPressed() {
         return leftPressed;
     }
+
+    boolean isUpPressed() { return upPressed; }
 
     /**@return returns roomManger. This getter is not currently used*/
     public RoomManager getRoomManager() {

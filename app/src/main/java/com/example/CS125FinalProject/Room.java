@@ -2,6 +2,7 @@ package com.example.CS125FinalProject;
 
 //import androidx.constraintlayout.solver.widgets.Rectangle;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 class Room {
@@ -9,17 +10,30 @@ class Room {
     private ArrayList<Environment> environments;
     /** list of Characters in this room. */
     private ArrayList<Character> characters;
+    /** list of Sprites in this room. */
+    private ArrayList<Sprite> sprites;
     //TODO: private ArrayList<Sprite> sprites = new ArrayList<Sprite()> used later to draw sprites
 
-    /** Default constructor. Every list is null. */
-    Room() {}
+    /** Default constructor. Every list is empty. Pretty much never used */
+    Room() {
+        environments = new ArrayList<>();
+        characters = new ArrayList<>();
+        sprites = new ArrayList<>();
+    }
 
-    /** Room constructor. No portals. */
+    /** Room constructor with no Sprites. Useful during basic room layout design phase */
     Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters) {
         environments = setEnvironments;
         characters = setCharacters;
+        sprites = new ArrayList<Sprite>();
     }
-    //TODO: Add constructors for every case. (Room with no portals, no platforms, no characters, or any combination.)
+
+    /** Full rooms constructor. Has every element. */
+    Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters, ArrayList<Sprite> setSprites) {
+        environments = setEnvironments;
+        characters = setCharacters;
+        sprites = setSprites;
+    }
 
     /** displays the room on the phone screen. Also runs the appropriate logic. */
     void runRoom() {
@@ -31,10 +45,10 @@ class Room {
                 tempE.run(tempC);
             }
         }
-        //TODO: portalUpdate();
-        //TODO: runCharacters();
+        for (Sprite tempS: sprites) {
+            tempS.run();
+        }
         //TODO: displayPlatforms();
-        //TODO: Basically, run the characters and make sure that they collide with platofrms in the level. Make sure portals work too.
     }
 
 }
