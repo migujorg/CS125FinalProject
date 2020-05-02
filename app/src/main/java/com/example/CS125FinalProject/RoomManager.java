@@ -15,7 +15,7 @@ public class RoomManager {
         currentRoom = 0; //not really necessary b/c default int initialization is 0;
     }
 
-    /** Goes through each room and calls their "run()" methods. Runs logic methods*/
+    /** Calls the run() method on the current room. */
     void run() {
         rooms.get(currentRoom).runRoom();
     }
