@@ -31,12 +31,18 @@ public class Sketch extends PApplet {
 
     //TODO: REMOVE BELOW [Used for testing]
     private Character player = new Character(true);
-    private Platform platform0 = new Platform(200,1000, 1000, 200);
-    private Platform platform1 = new Platform(800,800, 100, 200);
-    private Platform platform2 = new Platform(100,800, 100, 200);
+    private Character testCharacter = new Character();
+    private Platform platform0 = new Platform(0,1000, 1400, 200);
+    private Platform platform1 = new Platform(800,920, 100, 300);
+    private Platform platform2 = new Platform(100,920, 100, 200);
+    private Platform platform3 = new Platform(0,1200, 1400, 200);
+    private Platform platform4 = new Platform(800,1120, 100, 300);
+    private Platform platform5 = new Platform(100,1120, 100, 200);
     private Room room0 = new Room(new ArrayList<Environment>(Arrays.asList(platform0, platform1, platform2)),
             (new ArrayList<Character>(Arrays.asList(player))));
-    private ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(room0));
+    private Room room1 = new Room(new ArrayList<Environment>(Arrays.asList(platform3,platform4,platform5)),
+            (new ArrayList<Character>(Arrays.asList(testCharacter))));
+    private ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(room0, room1));
     private RoomManager roomManager = new RoomManager(rooms);
     private RoomManager roomManager0;
     Context activityContext;

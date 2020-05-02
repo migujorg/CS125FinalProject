@@ -36,7 +36,7 @@ public class Sprite {
         dimensions.width = image.width * scaleFactor;
         dimensions.height = image.height * scaleFactor;
     }
-
+    /**This method renders the sprite on the canvas. */
     public void run() {
         Main.sketch.image(image, (float) dimensions.x, (float) dimensions.y, (float) dimensions.width, (float) dimensions.height);
     }

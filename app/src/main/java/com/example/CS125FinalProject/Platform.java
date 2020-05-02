@@ -32,12 +32,12 @@ public class Platform extends Environment {
             c.setYVelocity(0);
             c.setY(super.getHitbox().y - c.getHeight());
             c.setIsGrounded(true);
+        } else if (isCharRight(c)) {
+            c.setXVelocity(0);
+            c.setX(super.getHitbox().x + super.getHitbox().width);
         } else if (isCharLeft(c)) {
             c.setXVelocity(0);
             c.setX(super.getHitbox().x - c.getWidth());
-        } else if (isCharRight(c)) {
-            c.setXVelocity(0);
-            c.setX(super.getHitbox().x + c.getWidth());
         }
     }
 
@@ -50,7 +50,7 @@ public class Platform extends Environment {
     }
 
     /**This method is used to determine if a character is "on top" of this platform.
-     *  Meaning on the top surface. Uses player's current Y Velocity to determine if they will be
+     *  Meaning on the top surface. Uses the character's current Y Velocity to determine if they will be
      *  "on top" of this platform in the next frame. This prevents clipping through platforms.
      * @param c character that the Platform is checking for collision and logic.
      * @return whether or not the character, c, is on top of this Platform*/
@@ -66,6 +66,11 @@ public class Platform extends Environment {
         }
     }
 
+    /**This method is used to determine if a character is on the left side of this platform
+     * Meaning touching the left edge. Uses the characters current X velocity to determine if they will be
+     * touching the left edge in the next frame. This prevents clipping through platforms.
+     * @param c character that the Platform is checking for collision and logic.
+     * @return whether or not the character, c, is on the left edge of this platform. */
     private boolean isCharLeft(Character c) {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersectsY(super.getHitbox())
@@ -78,6 +83,11 @@ public class Platform extends Environment {
         }
     }
 
+    /** This method is used to determine if a character is on the right side of this platform
+     * Meaning touching the right edge. Uses the characters current X velocity to determine if they will be
+     * touching the right edge in the next frame. This prevents clipping through platforms.
+     * @param c character that the Platform is checking for collision and logic.
+     * @return whether or not the character, c, is on the left edge of this platform. */
     private boolean isCharRight(Character c) {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersectsY(super.getHitbox())
@@ -90,6 +100,7 @@ public class Platform extends Environment {
         }
     }
 
+    /**@return the hitbox Rectangle of this platform*/
     public Rectangle getHitbox() {
         return super.getHitbox();
     }

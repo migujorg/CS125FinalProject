@@ -17,9 +17,7 @@ public class RoomManager {
 
     /** Goes through each room and calls their "run()" methods. Runs logic methods*/
     void run() {
-        for (Room temp: rooms) {
-            temp.runRoom();
-        }
+        rooms.get(currentRoom).runRoom();
     }
 
     /**@return returns rooms ArrayList */
