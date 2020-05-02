@@ -12,6 +12,8 @@ class Room {
     private ArrayList<Character> characters;
     /** list of Sprites in this room. */
     private ArrayList<Sprite> sprites;
+    /** list of TextBoxes in this room. */
+    private ArrayList<TextBox> textBoxes;
     //TODO: private ArrayList<Sprite> sprites = new ArrayList<Sprite()> used later to draw sprites
 
     /** Default constructor. Every list is empty. Pretty much never used */
@@ -29,10 +31,12 @@ class Room {
     }
 
     /** Full rooms constructor. Has every element. */
-    Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters, ArrayList<Sprite> setSprites) {
+    Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters,
+         ArrayList<Sprite> setSprites, ArrayList<TextBox> setTextBoxes) {
         environments = setEnvironments;
         characters = setCharacters;
         sprites = setSprites;
+        textBoxes = setTextBoxes;
     }
 
     /** displays the room on the phone screen. Also runs the appropriate logic. */
@@ -48,7 +52,9 @@ class Room {
         for (Sprite tempS: sprites) {
             tempS.run();
         }
-        //TODO: displayPlatforms();
+        for (TextBox tempT: textBoxes) {
+            tempT.run();
+        }
     }
 
 }

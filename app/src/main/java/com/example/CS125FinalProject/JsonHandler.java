@@ -62,30 +62,41 @@ public class JsonHandler {
                         jAsObject.get("armor").getAsDouble(),
                         jAsObject.get("isPlayer").getAsBoolean()));
             }
-            ArrayList<Sprite> spritesArray = new ArrayList<>();
+            ArrayList<Sprite> spriteArray = new ArrayList<>();
             JsonArray sprites = ((JsonObject) rooms.get(i)).get("sprites").getAsJsonArray();
             for (int j = 0; j < sprites.size(); j++) {
                 JsonObject jAsObject = ((JsonObject) sprites.get(j));
                 try {
-                    spritesArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
+                    spriteArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
                             jAsObject.get("y").getAsDouble(),
                             jAsObject.get("width").getAsDouble(),
                             jAsObject.get("height").getAsDouble(),
                             jAsObject.get("fileName").getAsString()));
                 } catch (Exception e) {
                     try {
-                        spritesArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
+                        spriteArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
                                 jAsObject.get("y").getAsDouble(),
                                 jAsObject.get("scaleFactor").getAsDouble(),
                                 jAsObject.get("fileName").getAsString()));
                     } catch (Exception f) {
-                        spritesArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
+                        spriteArray.add(new Sprite(jAsObject.get("x").getAsDouble(),
                                 jAsObject.get("y").getAsDouble(),
                                 jAsObject.get("fileName").getAsString()));
                     }
                 }
             }
-            roomArray.add(new Room(environmentArray, characterArray, spritesArray));
+            ArrayList<TextBox> textBoxArray = new ArrayList<>();
+            JsonArray textBoxes = ((JsonObject) rooms.get(i)).get("textBoxes").getAsJsonArray();
+            for (int j = 0; j < textBoxes.size(); j++) {
+                JsonObject jAsObject = ((JsonObject) textBoxes.get(j));
+                textBoxArray.add(new TextBox(jAsObject.get("x").getAsDouble(),
+                        jAsObject.get("y").getAsDouble(),
+                        jAsObject.get("message").getAsString(),
+                        jAsObject.get("font").getAsString(),
+                        jAsObject.get("scale").getAsDouble(),
+                        jAsObject.get("isSmooth").getAsBoolean()));
+            }
+            roomArray.add(new Room(environmentArray, characterArray, spriteArray, textBoxArray));
         }
         roomManager = new RoomManager(roomArray);
         return roomManager;

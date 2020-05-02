@@ -45,12 +45,18 @@ public class Portal extends Environment {
 
     /** Runs the portal logic. Requires a Character parameter to know which character to watch for collision. */
     void run(Character c) {
+        System.out.println("Current Room should be: " + ((Sketch) Main.sketch).getRoomManager().getCurrentRoom());
         if (!c.isAdvancedHitbox() && c.isPlayer()) {
             if (!requiresInteract) {
                 if (super.getHitbox().intersects(c.getSimpleHitbox())) {
+                    System.out.println("Touching portal!");
+                    System.out.println("Destination: " + destination);
                     ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(destination);
                 }
             }
+        }
+        if (((Sketch) Main.sketch).isDebugMode()) {
+            showPortal();
         }
     }
 

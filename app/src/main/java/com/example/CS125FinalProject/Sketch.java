@@ -48,7 +48,6 @@ public class Sketch extends PApplet {
     Context activityContext;
     //TODO: REMOVE ABOVE [Used for testing]
 
-    //TODO: UNCOMMENT THE TWO LINES ABOVE AND FIX FileNotFoundException
     public Sketch(Context context){
         activityContext = context;
     }
@@ -165,12 +164,16 @@ public class Sketch extends PApplet {
 
     /**@return returns roomManger. This getter is not currently used*/
     public RoomManager getRoomManager() {
-        return roomManager;
+        return roomManager0;
     }
 
     /**@return returns the player Character*/
     Character getPlayer() {
         return player;
+    }
+
+    public boolean isDebugMode() {
+        return debugMode;
     }
 }
 

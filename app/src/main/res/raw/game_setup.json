@@ -4,6 +4,13 @@
       "environments": [
         {
           "x": 0,
+          "y": 0,
+          "width": 64,
+          "height": 1080,
+          "type": 0
+        },
+        {
+          "x": 0,
           "y": 800,
           "width": 2200,
           "height": 56,
@@ -14,14 +21,9 @@
           "y": 58,
           "width": 192,
           "height": 488,
-          "type": 0
-        },
-        {
-          "x": 928,
-          "y": 752,
-          "width": 96,
-          "height": 64,
-          "type": 0
+          "type": 3,
+          "destination": 1,
+          "requiresInteract": false
         },
         {
           "x": 1128,
@@ -91,6 +93,16 @@
           "fileName": "truck.png",
           "scaleFactor": 8
         }
+      ],
+      "textBoxes": [
+        {
+          "x": 200,
+          "y": 200,
+          "message": "Hello, world!",
+          "font": "Arial",
+          "scale": 100,
+          "isSmooth": false
+        }
       ]
     },
     {
@@ -119,6 +131,16 @@
           "x": 200,
           "y": 200,
           "fileName": "truck.png"
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 400,
+          "y": 400,
+          "message": "Hello, second World!",
+          "font": "Arial",
+          "scale": 100,
+          "isSmooth": true
         }
       ]
     }

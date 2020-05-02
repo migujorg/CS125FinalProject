@@ -40,7 +40,8 @@ public class Rectangle {
      * @param rectangle the other Rectangle to check collision with
      * @return whether or not the two Rectangles intersect. */
     boolean intersects(Rectangle rectangle) {
-        return x >= rectangle.x && x < rectangle.x + rectangle.width && y >= rectangle.y && y < rectangle.y + rectangle.height;
+        return this.intersectsX(rectangle) && this.intersectsY(rectangle);
+        //return x >= rectangle.x && x < rectangle.x + rectangle.width && y >= rectangle.y && y < rectangle.y + rectangle.height;
     }
 
     /**Detects "intersection" between X coordinates of two Rectangle Objects.

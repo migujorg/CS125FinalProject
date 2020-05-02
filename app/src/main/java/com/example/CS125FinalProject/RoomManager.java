@@ -17,6 +17,7 @@ public class RoomManager {
 
     /** Calls the run() method on the current room. */
     void run() {
+        System.out.println(currentRoom);
         rooms.get(currentRoom).runRoom();
     }
 
