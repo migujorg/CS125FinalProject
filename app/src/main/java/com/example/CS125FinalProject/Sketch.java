@@ -104,10 +104,10 @@ public class Sketch extends PApplet {
         }
     }
 
-    /**Draws a white background. Required before each frame to prevent Tron-line drawing. */
+    /**Draws a black background. Required before each frame to prevent Tron-line drawing. */
     private void refreshBackground() {
-        fill(255, 255, 255);    //sets fill color to white
-        stroke(255, 255, 255);  //sets edge color to white
+        fill(0, 0, 0);    //sets fill color to black
+        stroke(0, 0, 0);  //sets edge color to black
         rect(0, 0, displayWidth, displayHeight);   //draws white rectangle the size of the canvas.
     }
 

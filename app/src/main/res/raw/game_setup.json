@@ -55,12 +55,6 @@
       ],
       "sprites": [
         {
-          "x": 0,
-          "y": 0,
-          "fileName": "blackBackground.png",
-          "scaleFactor": 8
-        },
-        {
           "x": 615,
           "y": 1024,
           "fileName": "bluePortal.png",
@@ -108,82 +102,40 @@
         {
           "x": 0,
           "y": 0,
-          "width": 64,
-          "height": 1080,
+          "width": 20,
+          "height": 1440,
           "type": 0
         },
         {
           "x": 0,
-          "y": 800,
-          "width": 2200,
-          "height": 56,
+          "y": 1420,
+          "width": 2880,
+          "height": 20,
           "type": 0
         },
         {
-          "x": 1912,
-          "y": 58,
-          "width": 192,
-          "height": 488,
+          "x": 2860,
+          "y": 0,
+          "width": 20,
+          "height": 1440,
+          "type": 0
+        },
+        {
+          "x": 1335,
+          "y": 1024,
+          "width": 210,
+          "height": 396,
           "type": 3,
-          "destination": 1,
+          "destination": 4,
           "requiresInteract": false
-        },
-        {
-          "x": 1128,
-          "y": 752,
-          "width": 96,
-          "height": 64,
-          "type": 0
-        },
-        {
-          "x": 1240,
-          "y": 680,
-          "width": 104,
-          "height": 136,
-          "type": 0
-        },
-        {
-          "x": 1352,
-          "y": 608,
-          "width": 104,
-          "height": 208,
-          "type": 0
-        },
-        {
-          "x": 1464,
-          "y": 544,
-          "width": 104,
-          "height": 272,
-          "type": 0
-        },
-        {
-          "x": 1576,
-          "y": 472,
-          "width": 104,
-          "height": 344,
-          "type": 0
-        },
-        {
-          "x": 1688,
-          "y": 400,
-          "width": 104,
-          "height": 416,
-          "type": 0
-        },
-        {
-          "x": 1800,
-          "y": 328,
-          "width": 104,
-          "height": 488,
-          "type": 0
         }
       ],
       "characters": [
         {
-          "x": 128,
-          "y": 632,
-          "width": 80,
-          "height": 184,
+          "x": 670,
+          "y": 1220,
+          "width": 100,
+          "height": 200,
           "maxHealth": 100,
           "armor": 0,
           "isPlayer": true
@@ -191,21 +143,30 @@
       ],
       "sprites": [
         {
-          "x": 0,
-          "y": 0,
-          "fileName": "blackBackground.png",
-          "scaleFactor": 8
+          "x": 1335,
+          "y": 1024,
+          "fileName": "purplePortal.png",
+          "scaleFactor": 6
         }
       ],
       "textBoxes": [
         {
           "x": 0,
-          "y": 100,
-          "width": 1400,
-          "height": 500,
-          "message": "Hello, world! This is a test message! Does the test go off the screen? I sure hope not!!! Or else this text stuff isn't going so well D: Now i'm",
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "Hello, Miguel! Unfortunately, you returned to the wrong school at the wrong time. A serial killer is on the loose,\nkilling countless students across campus. Your mission: find out who the serial killer is before s/he kills you.\nHOWEVER, be mindful of who you suspect. You might end up killing an innocent person, or even worse, a dear friend.",
           "alignment": 0,
           "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 100,
+          "message": "Continue",
+          "alignment": 3,
+          "color": "purple"
         }
       ]
     },
@@ -264,12 +225,6 @@
       ],
       "sprites": [
         {
-          "x": 0,
-          "y": 0,
-          "fileName": "blackBackground.png",
-          "scaleFactor": 8
-        },
-        {
           "x": 615,
           "y": 1024,
           "fileName": "bluePortal.png",
@@ -291,7 +246,6 @@
           "message": "You don't get to choose your name. Your name is Miguel Fernandez",
           "alignment": 0,
           "color": "not"
-
         },
         {
           "x": -720,
@@ -312,7 +266,8 @@
           "color": "orange"
         }
       ]
-    },{
+    },
+    {
       "environments": [
         {
           "x": 0,
@@ -347,14 +302,7 @@
           "isPlayer": true
         }
       ],
-      "sprites": [
-        {
-          "x": 0,
-          "y": 0,
-          "fileName": "blackBackground.png",
-          "scaleFactor": 8
-        }
-      ],
+      "sprites": [],
       "textBoxes": [
         {
           "x": 0,
