@@ -43,7 +43,7 @@ public class Platform extends Environment {
 
     /**Displays the platform's hitbox. Used for debugging*/
     private void showPlatform() {
-        Main.sketch.stroke(0,0,0);
+        Main.sketch.stroke(255,255,255);
         Main.sketch.fill(255,30,30,100);
         Rectangle temp = super.getHitbox();
         Main.sketch.rect((float) temp.x, (float) temp.y, (float) temp.width, (float) temp.height);

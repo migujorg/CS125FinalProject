@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import processing.core.PApplet;
+import processing.core.PGraphics;
 import processing.core.PImage;
+import processing.opengl.PGraphicsOpenGL;
 
 /**This can be seen as the "Main Method" of processing.
  *  settings() is ran once before everything.
@@ -46,6 +48,7 @@ public class Sketch extends PApplet {
     private RoomManager roomManager = new RoomManager(rooms);
     private RoomManager roomManager0;
     Context activityContext;
+
     //TODO: REMOVE ABOVE [Used for testing]
 
     public Sketch(Context context){
@@ -54,30 +57,31 @@ public class Sketch extends PApplet {
 
     /**Settings for the screen. Runs once before everything*/
     public void settings() {
-        size(displayWidth, displayHeight);
+        fullScreen(P2D);
         smooth(0);
     }
 
     /**Runs once after settings(). */
     public void setup() {
         //orientation(LANDSCAPE);
-        //activityContext.getResources().openRawResource(R.raw.game_setup);
-        //truckTest = loadImage("truck.png");
         roomManager0 = JsonHandler.getRoomManager(activityContext);
         frameRate(FRAME_RATE);
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
+
 
     }
 
     /**Runs FRAME_RATE times per second */
     public void draw() {
-        //System.out.println(new File(".").getAbsoluteFile());
         refreshBackground();
+        //System.out.println("displayWidth: " + displayWidth + "\ndisplayHeight: " +  displayHeight);
         roomManager0.run();
         if (debugMode) {
             showTouch();
-            //image(truckTest, 500,500, 500, 500);
         }
+        fill(255,30,30);
+        textAlign(CORNER);
+        text("" + frameRate, 50, 80);
     }
 
     /**Shows which part of the screen is being detected as pressed. Used for debugging*/

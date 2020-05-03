@@ -143,7 +143,7 @@ public class Character {
 
     /**Displays the hitbox. Used for debugging. Later will display a sprite instead. */
     private void displayHitbox() {
-        Main.sketch.stroke(0,0,0);
+        Main.sketch.stroke(255,255,255);
         Main.sketch.fill(0,0,0);
         Main.sketch.rect((float) simpleHitbox.x,(float) simpleHitbox.y , (float) simpleHitbox.width, (float) simpleHitbox.height);
     }

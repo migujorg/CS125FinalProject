@@ -87,15 +87,39 @@ public class JsonHandler {
             }
             ArrayList<TextBox> textBoxArray = new ArrayList<>();
             JsonArray textBoxes = ((JsonObject) rooms.get(i)).get("textBoxes").getAsJsonArray();
-            for (int j = 0; j < textBoxes.size(); j++) {
-                JsonObject jAsObject = ((JsonObject) textBoxes.get(j));
-                textBoxArray.add(new TextBox(jAsObject.get("x").getAsDouble(),
-                        jAsObject.get("y").getAsDouble(),
-                        jAsObject.get("message").getAsString(),
-                        jAsObject.get("font").getAsString(),
-                        jAsObject.get("scale").getAsDouble(),
-                        jAsObject.get("isSmooth").getAsBoolean()));
+            try {
+                for (int j = 0; j < textBoxes.size(); j++) {
+                    JsonObject jAsObject = ((JsonObject) textBoxes.get(j));
+                    textBoxArray.add(new TextBox(jAsObject.get("x").getAsDouble(),
+                            jAsObject.get("y").getAsDouble(),
+                            jAsObject.get("width").getAsDouble(),
+                            jAsObject.get("height").getAsDouble(),
+                            jAsObject.get("message").getAsString(),
+                            jAsObject.get("alignment").getAsInt(),
+                            jAsObject.get("color").getAsString()));
+                    //System.out.println("USED CONSTRUCTOR ONE");
+                }
+            } catch (Exception e) {
+                try {
+                    for (int j = 0; j < textBoxes.size(); j++) {
+                        JsonObject jAsObject = ((JsonObject) textBoxes.get(j));
+                        textBoxArray.add(new TextBox(jAsObject.get("x").getAsDouble(),
+                                jAsObject.get("y").getAsDouble(),
+                                jAsObject.get("width").getAsDouble(),
+                                jAsObject.get("height").getAsDouble(),
+                                jAsObject.get("message").getAsString()));
+                    }
+                    //System.out.println("USED CONSTRUCTOR TWO");
+                } catch (Exception f) {
+                    for (int j = 0; j < textBoxes.size(); j++) {
+                        JsonObject jAsObject = ((JsonObject) textBoxes.get(j));
+                        textBoxArray.add(new TextBox(jAsObject.get("message").getAsString()));
+                    }
+                    //System.out.println("USED CONSTRUCTOR THREE");
+                }
             }
+
+
             roomArray.add(new Room(environmentArray, characterArray, spriteArray, textBoxArray));
         }
         roomManager = new RoomManager(roomArray);
