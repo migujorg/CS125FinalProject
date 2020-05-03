@@ -1,5 +1,6 @@
 package com.example.CS125FinalProject;
 
+import android.app.Activity;
 import android.content.Context;
 
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
 import processing.opengl.PGraphicsOpenGL;
+import android.media.MediaPlayer;
+import android.content.res.AssetFileDescriptor;
 
 /**This can be seen as the "Main Method" of processing.
  *  settings() is ran once before everything.
@@ -23,7 +26,6 @@ public class Sketch extends PApplet {
     private static int FRAME_RATE = 60;
     /** Boolean used by developer to help debug things. When set to true turns on various display that are normally hidden. */
     static boolean debugMode = true; //affects display of hitboxes
-
     /** Is the right side of the screen pressed? Used for player control. */
     private boolean rightPressed = false;
     /** Is the left side of the screen pressed? Used for player control. */
@@ -31,26 +33,13 @@ public class Sketch extends PApplet {
     /** is the top of the screen pressed? Used for player control. */
     private boolean upPressed = false;
 
-    //TODO: REMOVE BELOW [Used for testing]
-    private Character player = new Character(true);
-    private Character testCharacter = new Character();
-    private Platform platform0 = new Platform(0,1000, 1400, 200);
-    private Platform platform1 = new Platform(800,920, 100, 300);
-    private Platform platform2 = new Platform(100,920, 100, 200);
-    private Platform platform3 = new Platform(0,1200, 1400, 200);
-    private Platform platform4 = new Platform(800,1120, 100, 300);
-    private Platform platform5 = new Platform(100,1120, 100, 200);
-    private Room room0 = new Room(new ArrayList<Environment>(Arrays.asList(platform0, platform1, platform2)),
-            (new ArrayList<Character>(Arrays.asList(player))));
-    private Room room1 = new Room(new ArrayList<Environment>(Arrays.asList(platform3,platform4,platform5)),
-            (new ArrayList<Character>(Arrays.asList(testCharacter))));
-    private ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(room0, room1));
-    private RoomManager roomManager = new RoomManager(rooms);
-    private RoomManager roomManager0;
     Context activityContext;
+    private RoomManager roomManager0;
+    private ArrayList<MediaPlayer> terminalSounds = new ArrayList<>();
 
-    //TODO: REMOVE ABOVE [Used for testing]
-
+    Activity activity;
+    Context context;
+    AssetFileDescriptor assetFileDescriptor;
     public Sketch(Context context){
         activityContext = context;
     }
@@ -58,7 +47,7 @@ public class Sketch extends PApplet {
     /**Settings for the screen. Runs once before everything*/
     public void settings() {
         fullScreen(P2D);
-        smooth(0);
+        //smooth(0);
     }
 
     /**Runs once after settings(). */
@@ -67,6 +56,9 @@ public class Sketch extends PApplet {
         roomManager0 = JsonHandler.getRoomManager(activityContext);
         frameRate(FRAME_RATE);
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
+        activity = this.getActivity();
+        context = activity.getApplicationContext();
+        setUpSounds();
 
 
     }
@@ -171,13 +163,59 @@ public class Sketch extends PApplet {
         return roomManager0;
     }
 
-    /**@return returns the player Character*/
-    Character getPlayer() {
-        return player;
-    }
-
     public boolean isDebugMode() {
         return debugMode;
+    }
+
+    public ArrayList<MediaPlayer> getTerminalSounds() {
+        return terminalSounds;
+    }
+
+    private void setUpSounds() {
+        MediaPlayer sound1 = new MediaPlayer();
+        MediaPlayer sound2 = new MediaPlayer();
+        MediaPlayer sound3 = new MediaPlayer();
+        MediaPlayer sound4 = new MediaPlayer();
+        MediaPlayer sound5 = new MediaPlayer();
+        MediaPlayer sound6 = new MediaPlayer();
+        MediaPlayer sound7 = new MediaPlayer();
+        MediaPlayer sound8 = new MediaPlayer();
+        try {
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_01.wav");
+            sound1.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound1.prepare();
+            terminalSounds.add(sound1);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_02.wav");
+            sound2.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound2.prepare();
+            terminalSounds.add(sound2);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_03.wav");
+            sound3.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound3.prepare();
+            terminalSounds.add(sound3);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_04.wav");
+            sound4.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound4.prepare();
+            terminalSounds.add(sound4);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_05.wav");
+            sound5.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound5.prepare();
+            terminalSounds.add(sound5);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_06.wav");
+            sound6.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound6.prepare();
+            terminalSounds.add(sound6);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_07.wav");
+            sound7.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound7.prepare();
+            terminalSounds.add(sound7);
+            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_08.wav");
+            sound8.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound8.prepare();
+            terminalSounds.add(sound8);
+        } catch (Exception e) {
+            printStackTrace(e);
+        }
     }
 }
 

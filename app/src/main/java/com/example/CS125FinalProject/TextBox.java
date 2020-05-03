@@ -1,5 +1,9 @@
 package com.example.CS125FinalProject;
 
+import android.media.MediaPlayer;
+
+import java.util.ArrayList;
+
 import processing.core.PFont;
 
 /** This class manages rendering text on the canvas.*/
@@ -106,6 +110,10 @@ public class TextBox {
             char thisChar = message.charAt(currentChar);
             if (Main.sketch.frameCount % delay == 0) {
                 currentChar++;
+                if (color.equals("not")) {
+                    ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
+                    terminalSounds.get((int) (Math.random() * 8)).start();
+                }
             }
         } else {
             complete = true;
