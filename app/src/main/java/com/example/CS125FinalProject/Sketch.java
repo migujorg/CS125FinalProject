@@ -3,6 +3,7 @@ package com.example.CS125FinalProject;
 import android.app.Activity;
 import android.content.Context;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -172,48 +173,35 @@ public class Sketch extends PApplet {
     }
 
     private void setUpSounds() {
-        MediaPlayer sound1 = new MediaPlayer();
-        MediaPlayer sound2 = new MediaPlayer();
-        MediaPlayer sound3 = new MediaPlayer();
-        MediaPlayer sound4 = new MediaPlayer();
-        MediaPlayer sound5 = new MediaPlayer();
-        MediaPlayer sound6 = new MediaPlayer();
-        MediaPlayer sound7 = new MediaPlayer();
-        MediaPlayer sound8 = new MediaPlayer();
         try {
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_01.wav");
-            sound1.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound1.prepare();
-            terminalSounds.add(sound1);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_02.wav");
-            sound2.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound2.prepare();
-            terminalSounds.add(sound2);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_03.wav");
-            sound3.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound3.prepare();
-            terminalSounds.add(sound3);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_04.wav");
-            sound4.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound4.prepare();
-            terminalSounds.add(sound4);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_05.wav");
-            sound5.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound5.prepare();
-            terminalSounds.add(sound5);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_06.wav");
-            sound6.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound6.prepare();
-            terminalSounds.add(sound6);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_07.wav");
-            sound7.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound7.prepare();
-            terminalSounds.add(sound7);
+            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_08.wav");
-            sound8.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound8.prepare();
-            terminalSounds.add(sound8);
+            setUpSound();
         } catch (Exception e) {
+            printStackTrace(e);
+        }
+    }
+
+    private void setUpSound() {
+        try {
+            MediaPlayer sound = new MediaPlayer();
+            sound.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+            sound.prepare();
+            terminalSounds.add(sound);
+        } catch (IOException e) {
             printStackTrace(e);
         }
     }

@@ -110,7 +110,7 @@ public class TextBox {
             char thisChar = message.charAt(currentChar);
             if (Main.sketch.frameCount % delay == 0) {
                 currentChar++;
-                if (color.equals("not")) {
+                if (color.equals("not") && thisChar != ' ') {
                     ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
                     terminalSounds.get((int) (Math.random() * 8)).start();
                 }
