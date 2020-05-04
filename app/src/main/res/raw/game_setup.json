@@ -229,6 +229,337 @@
           "color": "not"
         }
       ]
+    },
+    {
+      "environments": [
+        {
+          "x": 568,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 5,
+          "requiresInteract": false
+        },
+        {
+          "x": 2008,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 3,
+          "requiresInteract": false
+        }
+      ],
+      "characters": [
+        {
+          "x": 1390,
+          "y": 1220,
+          "width": 100,
+          "height": 200,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ],
+      "sprites": [
+        {
+          "x": 615,
+          "y": 1024,
+          "fileName": "bluePortal.png",
+          "scaleFactor": 6
+        },
+        {
+          "x": 2055,
+          "y": 1024,
+          "fileName": "orangePortal.png",
+          "scaleFactor": 6
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 250,
+          "message": "It is your first day of school. You wake up at Bromley, and you get ready to head to class. Hmm hot chocolate sounds pretty good right now",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 550,
+          "width": 750,
+          "height": 200,
+          "message": "Make some hot chocolate.",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 550,
+          "width": 750,
+          "height": 200,
+          "message": "Grab some hot chocolate from the dispenser",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
+    },
+    {
+      "environments": [
+        {
+          "x": 568,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 6,
+          "requiresInteract": false
+        },
+        {
+          "x": 2008,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 7,
+          "requiresInteract": false
+        }
+      ],
+      "characters": [
+        {
+          "x": 1390,
+          "y": 1220,
+          "width": 100,
+          "height": 200,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ],
+      "sprites": [
+        {
+          "x": 615,
+          "y": 1024,
+          "fileName": "bluePortal.png",
+          "scaleFactor": 6
+        },
+        {
+          "x": 2055,
+          "y": 1024,
+          "fileName": "orangePortal.png",
+          "scaleFactor": 6
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 250,
+          "message": "Mmm nothing beats homemade hot chocolate!\nOops! It's 8:50am and you're running late for your first class: ECE 120. What do you do?",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "BOOK IT",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "Skip ECE! Head to CS early instead",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
+    },
+    {
+      "environments": [],
+      "characters": [
+        {
+          "x": 1390,
+          "y": 1220,
+          "width": 100,
+          "height": 200,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ],
+      "sprites": [],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 1000,
+          "message": "You made it! You're late, but you made it! You sit down in your seat and -- \n\nScreams pierce through your ear drums as an object - a knife? - slits your throat. You're still trying to register what happened, \nuntil the unmistakeable stinging pain burns at your neck, right where it was sliced. You reach for your throat, warm blood oozing from the fresh wound onto your fingers.\n\nThe pain drowns out the screams, no matter how near or loud they were. Your vision blurs, right before you fade away into nothingness.\b\b\b\b\b\b\b\b\b\b\nYOU DIED",
+          "alignment": 0,
+          "color": "not"
+        }
+      ]
+    },
+    {
+      "environments": [
+        {
+          "x": 568,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 8,
+          "requiresInteract": false
+        },
+        {
+          "x": 2008,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 0,
+          "requiresInteract": false
+        }
+      ],
+      "characters": [
+        {
+          "x": 1390,
+          "y": 1220,
+          "width": 100,
+          "height": 200,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ],
+      "sprites": [
+        {
+          "x": 615,
+          "y": 1024,
+          "fileName": "bluePortal.png",
+          "scaleFactor": 6
+        },
+        {
+          "x": 2055,
+          "y": 1024,
+          "fileName": "orangePortal.png",
+          "scaleFactor": 0
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 250,
+          "message": "You head straight to lincoln hall and spot linh sitting in the back of the auditorium. You take your seat next to her.\n\"Do you want some hot chocolate?\" you ask her.\nEyes widening, she nods eagerly.\nYou reach for your thermos, only to find out it's not in your backpack's side pocket.\"what?\" you say. You swing your backpack forward and check the other side pocket.\"But i swear I brought it...\"\nLinh frowned, more so at the fact that she wouldn't have hot chocolate this morning. You got her hopes up. \"Maybe it dropped?\" She said.\nYou pout. \"Maybe...\" But if it dropped, you'd probably hear the thump of your thermos dropping. \"What if... someone stole it?\"\n\"Then you kill them\" she calmly replies.\nYou forgot how violent linh's suggestions could be.\nYou two sit through lecture, and before you know it, class is over. Where do you go after class?",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "Head to the Union!",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "Option Not Yet Defined",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
+    },
+
+    {
+      "environments": [
+        {
+          "x": 568,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 6,
+          "requiresInteract": false
+        },
+        {
+          "x": 2008,
+          "y": 956,
+          "width": 304,
+          "height": 464,
+          "type": 3,
+          "destination": 0,
+          "requiresInteract": false
+        }
+      ],
+      "characters": [
+        {
+          "x": 1390,
+          "y": 1220,
+          "width": 100,
+          "height": 200,
+          "maxHealth": 100,
+          "armor": 0,
+          "isPlayer": true
+        }
+      ],
+      "sprites": [
+        {
+          "x": 615,
+          "y": 1024,
+          "fileName": "bluePortal.png",
+          "scaleFactor": 0
+        },
+        {
+          "x": 2055,
+          "y": 1024,
+          "fileName": "orangePortal.png",
+          "scaleFactor": 0
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 250,
+          "message": "As you and Linh leave Lincoln Hall, you spot Sue Wee walking in your direction. \"Sue!\" you call.\nShe smiles and waves at the both of you.\n\"She probably has CS 173 right now,\" you say after she walks past.\n\"Yeah\" Linh agrees.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "Option not yet defined!",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "Option Not Yet Defined!",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
     }
   ]
 }

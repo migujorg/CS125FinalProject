@@ -262,9 +262,10 @@ public class TextBox {
     }
 
     private void playSounds(char thisChar) {
-        if (color.equals("not") && thisChar != ' ' && Main.sketch.frameCount % 4 == 0) {
+        if (color.equals("not") && thisChar != '\b' && Main.sketch.frameCount % 4 == 0) {
             ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
-            terminalSounds.get(Main.sketch.frameCount % 8).start();
+            terminalSounds.get(Main.sketch.frameCount % ((Sketch) Main.sketch).getTerminalSounds().size()).start();
+
         }
     }
 

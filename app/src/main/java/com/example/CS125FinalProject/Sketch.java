@@ -37,6 +37,8 @@ public class Sketch extends PApplet {
     Context activityContext;
     private RoomManager roomManager0;
     private ArrayList<MediaPlayer> terminalSounds = new ArrayList<>();
+    private ArrayList<MediaPlayer> music = new ArrayList<>();
+    int currentSong = -1;
 
     Activity activity;
     Context context;
@@ -53,15 +55,13 @@ public class Sketch extends PApplet {
 
     /**Runs once after settings(). */
     public void setup() {
-        //orientation(LANDSCAPE);
+        orientation(LANDSCAPE);
         roomManager0 = JsonHandler.getRoomManager(activityContext);
         frameRate(FRAME_RATE);
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
         activity = this.getActivity();
         context = activity.getApplicationContext();
         setUpSounds();
-
-
     }
 
     /**Runs FRAME_RATE times per second */
@@ -69,6 +69,7 @@ public class Sketch extends PApplet {
         refreshBackground();
         //System.out.println("displayWidth: " + displayWidth + "\ndisplayHeight: " +  displayHeight);
         roomManager0.run();
+        musicManager();
         if (debugMode) {
             showTouch();
         }
@@ -175,22 +176,36 @@ public class Sketch extends PApplet {
     private void setUpSounds() {
         try {
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_06.wav");
-            setUpSound(8);
+            setUpSound(terminalSounds, 16, (float) 0.1);
+            assetFileDescriptor = context.getAssets().openFd("On-Thngs-to-Come_Looping.mp3");
+            setUpSound(music,1, 1);
+            assetFileDescriptor = context.getAssets().openFd("02-Puzzle.mp3");
+            setUpSound(music,1, (float) 0.6);
         } catch (Exception e) {
             printStackTrace(e);
         }
     }
 
-    private void setUpSound(int howMany) {
+    private void setUpSound(ArrayList<MediaPlayer> destination, int howMany, float volume) {
         for (int i = 0; i < howMany; i++) {
             try {
                 MediaPlayer sound = new MediaPlayer();
                 sound.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
                 sound.prepare();
-                terminalSounds.add(sound);
+                sound.setVolume(volume, volume);
+                destination.add(sound);
             } catch (IOException e) {
                 printStackTrace(e);
             }
+        }
+    }
+    private void musicManager() {
+        if (currentSong == -1 || !music.get(currentSong).isPlaying()) {
+            currentSong++;
+            if (currentSong == music.size()) {
+                currentSong = 0;
+            }
+            music.get(currentSong).start();
         }
     }
 }
