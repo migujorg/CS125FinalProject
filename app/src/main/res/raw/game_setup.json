@@ -3,27 +3,6 @@
     {
       "environments": [
         {
-          "x": 0,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
-        {
-          "x": 0,
-          "y": 1420,
-          "width": 2880,
-          "height": 20,
-          "type": 0
-        },
-        {
-          "x": 2860,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
-        {
           "x": 568,
           "y": 956,
           "width": 304,
@@ -100,27 +79,6 @@
     {
       "environments": [
         {
-          "x": 0,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
-        {
-          "x": 0,
-          "y": 1420,
-          "width": 2880,
-          "height": 20,
-          "type": 0
-        },
-        {
-          "x": 2860,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
-        {
           "x": 1335,
           "y": 1024,
           "width": 210,
@@ -172,27 +130,6 @@
     },
     {
       "environments": [
-        {
-          "x": 0,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
-        {
-          "x": 0,
-          "y": 1420,
-          "width": 2880,
-          "height": 20,
-          "type": 0
-        },
-        {
-          "x": 2860,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
         {
           "x": 568,
           "y": 956,
@@ -268,29 +205,7 @@
       ]
     },
     {
-      "environments": [
-        {
-          "x": 0,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        },
-        {
-          "x": 0,
-          "y": 1420,
-          "width": 2880,
-          "height": 20,
-          "type": 0
-        },
-        {
-          "x": 2860,
-          "y": 0,
-          "width": 20,
-          "height": 1440,
-          "type": 0
-        }
-      ],
+      "environments": [],
       "characters": [
         {
           "x": 1390,

@@ -110,10 +110,7 @@ public class TextBox {
             char thisChar = message.charAt(currentChar);
             if (Main.sketch.frameCount % delay == 0) {
                 currentChar++;
-                if (color.equals("not") && thisChar != ' ') {
-                    ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
-                    terminalSounds.get((int) (Math.random() * 8)).start();
-                }
+                playSounds(thisChar);
             }
         } else {
             complete = true;
@@ -262,6 +259,13 @@ public class TextBox {
                 (float) (box.width * 1.025),
                 (float) (box.height * 1.05),
                 20);
+    }
+
+    private void playSounds(char thisChar) {
+        if (color.equals("not") && thisChar != ' ' && Main.sketch.frameCount % 4 == 0) {
+            ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
+            terminalSounds.get(Main.sketch.frameCount % 8).start();
+        }
     }
 
 }

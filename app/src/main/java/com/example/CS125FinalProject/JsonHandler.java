@@ -27,6 +27,7 @@ public class JsonHandler {
         JsonArray rooms = root.getAsJsonArray("rooms");
         for(int i = 0; i < rooms.size(); i++) {
             ArrayList<Environment> environmentArray = new ArrayList<>();
+            addDefaultWalls(environmentArray);
             JsonArray environments = ((JsonObject) rooms.get(i)).get("environments").getAsJsonArray();
             for (int j = 0; j < environments.size(); j++) {
                 int type = ((JsonObject) environments.get(j)).get("type").getAsInt();
@@ -125,6 +126,12 @@ public class JsonHandler {
         roomManager = new RoomManager(roomArray);
         return roomManager;
     }
+
+    private static void addDefaultWalls(ArrayList<Environment> environments) {
+        environments.add(new Platform(0,0,20,1440)); //left wall
+        environments.add(new Platform(0,1420,2880,20)); //floor
+        environments.add(new Platform(2860,0,20,1440));
+;    }
 
     //public RoomManager getRoomManager() {
     //    return roomManager;

@@ -174,35 +174,23 @@ public class Sketch extends PApplet {
 
     private void setUpSounds() {
         try {
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_01.wav");
-            setUpSound();
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_02.wav");
-            setUpSound();
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_03.wav");
-            setUpSound();
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_04.wav");
-            setUpSound();
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_05.wav");
-            setUpSound();
             assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_06.wav");
-            setUpSound();
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_07.wav");
-            setUpSound();
-            assetFileDescriptor = context.getAssets().openFd("ui_hacking_charsingle_08.wav");
-            setUpSound();
+            setUpSound(8);
         } catch (Exception e) {
             printStackTrace(e);
         }
     }
 
-    private void setUpSound() {
-        try {
-            MediaPlayer sound = new MediaPlayer();
-            sound.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
-            sound.prepare();
-            terminalSounds.add(sound);
-        } catch (IOException e) {
-            printStackTrace(e);
+    private void setUpSound(int howMany) {
+        for (int i = 0; i < howMany; i++) {
+            try {
+                MediaPlayer sound = new MediaPlayer();
+                sound.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+                sound.prepare();
+                terminalSounds.add(sound);
+            } catch (IOException e) {
+                printStackTrace(e);
+            }
         }
     }
 }
