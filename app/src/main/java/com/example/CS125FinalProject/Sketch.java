@@ -205,7 +205,9 @@ public class Sketch extends PApplet {
             if (currentSong == music.size()) {
                 currentSong = 0;
             }
-            music.get(currentSong).start();
+            if (!music.get(currentSong).isPlaying()) {
+                music.get(currentSong).start();
+            }
         }
     }
 }

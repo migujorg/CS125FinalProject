@@ -14,10 +14,11 @@ public class TextBox {
     //private PFont font = Main.sketch.createFont("Arial", 100, true);
     private int currentChar;
     private int messageLength; //This is for optimization so it doesn't have to call message.length() a billion times.
+    private String partialMessage = "";
+    private String messageSoFar = "";
     private boolean complete;
     private String color = "";
     PFont font;
-    //TODO: Right now game pretty much only supports 1 font because it loads that font in the beginning
     public TextBox() {};
 
     public TextBox(double setX, double setY, String setMessage) {
@@ -82,8 +83,6 @@ public class TextBox {
         }
         color = setColor;
         font = Main.sketch.createFont("thinPixel.ttf", (float) 125, false);
-
-
     }
 
     public TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage, String setFont, int scale, boolean isSmooth) {
@@ -104,6 +103,39 @@ public class TextBox {
     void drawText() {
         slowText(2);
     }
+    private void specialText(double delay) {
+        if (currentChar < messageLength - 1) {
+            char thisChar = message.charAt(currentChar);
+            if (Main.sketch.frameCount % delay == 0) {
+                partialMessage += message.charAt(currentChar);
+                //messageSoFar += message.charAt(currentChar);
+                currentChar++;
+                playSounds(thisChar);
+            }
+        } else {
+            complete = true;
+        }
+        int lastNewLine = 0;
+        if (partialMessage.lastIndexOf('\n') != -1) {
+            lastNewLine = partialMessage.lastIndexOf('\n');
+        }
+        String line = partialMessage.substring(lastNewLine);
+        System.out.println("line: " + line);
+        float partialHeight = (Main.sketch.textAscent() + Main.sketch.textDescent() + 15) * ((partialMessage.replaceAll("[^\n]", "")).length() + 1);
+        Main.sketch.rect(300, (float) (box.y + box.height), 100, -1 * partialHeight);
+        if (Main.sketch.textWidth(line) >= box.width) {
+            partialMessage = partialMessage.substring(0, partialMessage.lastIndexOf(' '));
+            currentChar = partialMessage.length() + 1;
+            partialMessage += '\n';
+        }
+        if (partialHeight >= box.height) {
+            partialMessage = partialMessage.substring(partialMessage.indexOf('\n'));
+        }
+        Main.sketch.fill(0,255,0);
+        Main.sketch.textAlign(alignment, Main.sketch.CENTER);
+        Main.sketch.text(partialMessage, (float) box.x, (float) box.y, (float) (box.width + 1000), (float) box.height);
+
+    }
 
     private void slowText(double delay) {
         if (currentChar < messageLength) { //Process stops once message in finished (to prevent lag)
@@ -121,9 +153,20 @@ public class TextBox {
         Main.sketch.textAlign(alignment, Main.sketch.CENTER);
         if (color.equals("not")) {
             Main.sketch.fill(0,255,0);
+            Main.sketch.textAlign(alignment, Main.sketch.CENTER);
         }
         Main.sketch.text(message.substring(0, currentChar), (float) box.x, (float) box.y, (float) box.width, (float) box.height);
+    }
 
+    private void printText() {
+        Main.sketch.stroke(0,0,0);
+        Main.sketch.fill(0,0,0);
+        Main.sketch.textFont(font);
+        Main.sketch.textAlign(alignment, Main.sketch.CENTER);
+        if (color.equals("not")) {
+            Main.sketch.fill(0,255,0);
+        }
+        Main.sketch.text(message.substring(0, currentChar), (float) box.x, (float) box.y, (float) box.width, (float) box.height);
     }
 
     void drawBackground() {
@@ -262,7 +305,7 @@ public class TextBox {
     }
 
     private void playSounds(char thisChar) {
-        if (color.equals("not") && thisChar != '\b' && Main.sketch.frameCount % 4 == 0) {
+        if (color.equals("not") && thisChar != '\b' && Main.sketch.frameCount % 4 == 0) { //Use "\b" in text to add pauses in typing without changing look.
             ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
             terminalSounds.get(Main.sketch.frameCount % ((Sketch) Main.sketch).getTerminalSounds().size()).start();
 
