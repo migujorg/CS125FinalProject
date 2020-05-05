@@ -154,6 +154,12 @@ public class TextBox {
         if (color.equals("not")) {
             Main.sketch.fill(0,255,0);
             Main.sketch.textAlign(alignment, Main.sketch.CENTER);
+        } else if (color.equals("orange")) {
+            Main.sketch.fill(255,165,0);
+        } else if (color.equals("blue")) {
+            Main.sketch.fill(0,223,255);
+        } else if (color.equals("purple")) {
+            Main.sketch.fill(255,78,255);
         }
         Main.sketch.text(message.substring(0, currentChar), (float) box.x, (float) box.y, (float) box.width, (float) box.height);
     }
@@ -188,95 +194,74 @@ public class TextBox {
     }
 
     private void drawOrangeBox() {
-        Main.sketch.stroke(241, 83, 30);
-        Main.sketch.fill(241, 83, 30);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(122, 57, 7);
+        Main.sketch.fill(122, 57, 7);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.1),
-                (float) (box.height * 1.2),
+                (float) (box.height * 1.15),
                 20);
-        Main.sketch.stroke(240, 64, 5);
-        Main.sketch.fill(240, 64, 5);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(98, 46, 5);
+        Main.sketch.fill(98, 46, 5);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.05),
                 (float) (box.height * 1.1),
                 20);
-        Main.sketch.stroke(243, 120, 54);
-        Main.sketch.fill(243, 120, 54);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(71, 33, 3);
+        Main.sketch.fill(71, 33, 3);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.025),
                 (float) (box.height * 1.05),
-                20);
-        Main.sketch.stroke(244, 130, 74);
-        Main.sketch.fill(244, 130, 74);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
-                (float) ((box.y) + (box.height / 2)),
-                (float) (box.width),
-                (float) (box.height),
                 20);
     }
 
     private void drawBlueBox() {
-        Main.sketch.stroke(63, 81, 181);
-        Main.sketch.fill(63, 81, 181);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(0, 84, 107);
+        Main.sketch.fill(0, 84, 107);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.1),
-                (float) (box.height * 1.2),
+                (float) (box.height * 1.15),
                 20);
-        Main.sketch.stroke(56, 72, 162);
-        Main.sketch.fill(56, 72, 162);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(0, 67, 86);
+        Main.sketch.fill(0, 67, 86);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.05),
                 (float) (box.height * 1.1),
                 20);
-        Main.sketch.stroke(0, 168, 190);
-        Main.sketch.fill(0, 168, 190);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(0, 48, 61);
+        Main.sketch.fill(0, 48, 61);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.025),
                 (float) (box.height * 1.05),
-                20);
-        Main.sketch.stroke(0, 187, 212);
-        Main.sketch.fill(0, 187, 212);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
-                (float) ((box.y) + (box.height / 2)),
-                (float) (box.width),
-                (float) (box.height),
                 20);
     }
 
     private void drawPurpleBox() {
-        Main.sketch.stroke(166, 61, 184);
-        Main.sketch.fill(166, 61, 184);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(134, 31, 126);
+        Main.sketch.fill(134, 31, 126);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.1),
-                (float) (box.height * 1.2),
+                (float) (box.height * 1.15),
                 20);
-        Main.sketch.stroke(156, 39, 176);
-        Main.sketch.fill(156, 39, 176);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(108, 24, 101);
+        Main.sketch.fill(108, 24, 101);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.05),
                 (float) (box.height * 1.1),
                 20);
-        Main.sketch.stroke(198, 44, 225);
-        Main.sketch.fill(198, 44, 225);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
+        Main.sketch.stroke(77, 17, 72);
+        Main.sketch.fill(77, 17, 72);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.025),
                 (float) (box.height * 1.05),
-                20);
-        Main.sketch.stroke(221, 49, 251);
-        Main.sketch.fill(221, 49, 251);
-        Main.sketch.rect((float) (box.x + (box.width / 2)), //Outermost
-                (float) ((box.y) + (box.height / 2)),
-                (float) (box.width),
-                (float) (box.height),
                 20);
     }
 

@@ -26,14 +26,14 @@
         {
           "x": 0,
           "y": -200,
-          "fileName": "scene1a.png",
-          "scaleFactor": 1
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
         },
         {
           "x": 0,
           "y": -180,
-          "fileName": "telephonePole.v2.png",
-          "scaleFactor": 1
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
         },
         {
           "x": 615,
@@ -93,6 +93,18 @@
       "characters": [],
       "sprites": [
         {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
           "x": 1335,
           "y": 1024,
           "fileName": "pAnimation",
@@ -144,6 +156,18 @@
       "characters": [],
       "sprites": [
         {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
           "x": 615,
           "y": 1024,
           "fileName": "bAnimation",
@@ -189,7 +213,20 @@
     {
       "environments": [],
       "characters": [],
-      "sprites": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        }
+      ],
       "textBoxes": [
         {
           "x": 0,
@@ -225,6 +262,18 @@
       ],
       "characters": [],
       "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
         {
           "x": 615,
           "y": 1024,
@@ -292,6 +341,18 @@
       "characters": [],
       "sprites": [
         {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
           "x": 615,
           "y": 1024,
           "fileName": "bAnimation",
@@ -337,7 +398,20 @@
     {
       "environments": [],
       "characters": [],
-      "sprites": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        }
+      ],
       "textBoxes": [
         {
           "x": 0,
@@ -374,6 +448,18 @@
       "characters": [],
       "sprites": [
         {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
           "x": 615,
           "y": 1024,
           "fileName": "bAnimation",
@@ -391,7 +477,7 @@
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 250,
+          "height": 1000,
           "message": "You head straight to lincoln hall and spot linh sitting in the back of the auditorium. You take your seat next to her.\n\"Do you want some hot chocolate?\" you ask her.\nEyes widening, she nods eagerly.\nYou reach for your thermos, only to find out it's not in your backpack's side pocket.\"what?\" you say. You swing your backpack forward and check the other side pocket.\"But i swear I brought it...\"\nLinh frowned, more so at the fact that she wouldn't have hot chocolate this morning. You got her hopes up. \"Maybe it dropped?\" She said.\nYou pout. \"Maybe...\" But if it dropped, you'd probably hear the thump of your thermos dropping. \"What if... someone stole it?\"\n\"Then you kill them\" she calmly replies.\nYou forgot how violent linh's suggestions could be.\nYou two sit through lecture, and before you know it, class is over. Where do you go after class?",
           "alignment": 0,
           "color": "not"
@@ -440,6 +526,18 @@
       "characters": [],
       "sprites": [
         {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
           "x": 615,
           "y": 1024,
           "fileName": "bAnimation",
@@ -457,7 +555,7 @@
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 250,
+          "height": 300,
           "message": "As you and Linh leave Lincoln Hall, you spot Sue Wee walking in your direction. \"Sue!\" you call.\nShe smiles and waves at the both of you.\n\"She probably has CS 173 right now,\" you say after she walks past.\n\"Yeah\" Linh agrees.",
           "alignment": 0,
           "color": "not"
@@ -481,6 +579,35 @@
           "color": "orange"
         }
       ]
+    },
+    {
+      "environments": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 2880,
+          "type": 3,
+          "destination": 0,
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        }
+      ],
+      "textBoxes": []
     }
   ]
 }

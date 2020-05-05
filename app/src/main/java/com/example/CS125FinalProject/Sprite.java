@@ -28,9 +28,20 @@ public class Sprite {
     public Sprite(double setX, double setY, String fileName) {
         dimensions.x = setX;
         dimensions.y = setY;
-        image = Main.sketch.loadImage(fileName);
-        dimensions.width = image.width;
-        dimensions.height = image.height;
+        if (fileName.equals("oAnimation")) {
+            isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(0);
+        } else if (fileName.equals("bAnimation")) {
+            isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(1);
+        } else if (fileName.equals("pAnimation")) {
+            isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(2);
+        } else {
+            image = Main.sketch.loadImage(fileName);
+            dimensions.width = image.width;
+            dimensions.height = image.height;
+        }
     }
 
     /**This constructor specifies location and a "scaleFactor" to scale the image by this amount. */
@@ -38,19 +49,19 @@ public class Sprite {
         dimensions.x = setX;
         dimensions.y = setY;
         if (fileName.equals("oAnimation")) {
-            setUpOrangePortal();
             isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(0);
         } else if (fileName.equals("bAnimation")) {
-            setUpBluePortal();
             isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(1);
         } else if (fileName.equals("pAnimation")) {
-            setUpPurplePortal();
             isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(2);
         } else {
             image = Main.sketch.loadImage(fileName);
+            dimensions.width = image.width * scaleFactor;
+            dimensions.height = image.height * scaleFactor;
         }
-        dimensions.width = image.width * scaleFactor;
-        dimensions.height = image.height * scaleFactor;
     }
     /**This method renders the sprite on the canvas. */
     public void run() {
