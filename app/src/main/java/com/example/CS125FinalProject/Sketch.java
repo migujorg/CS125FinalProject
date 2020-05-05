@@ -51,8 +51,8 @@ public class Sketch extends PApplet {
     AssetFileDescriptor assetFileDescriptor;
     /** Scale factor of the entire canvas. Crucial to making the app fit and run on any screen! */
     private float screenScaleFactor;
-    /** Since the scale() method built into processing doesn't scale from the center, we need to translate too. */
-    private float screenTranslateFactor;
+    /** boolean used to stop the music when the app is paused. */
+    private boolean stopMusic = false;
 
     public Sketch(Context context){
         activityContext = context;
@@ -220,6 +220,9 @@ public class Sketch extends PApplet {
 
     /** Handles switching of songs when necessary. */
     private void musicManager() {
+        if (stopMusic) {
+            return;
+        }
         if (frameCount > 50 && (currentSong == -1 || !music.get(currentSong).isPlaying())) {
             currentSong++;
             if (currentSong == music.size()) {
@@ -383,6 +386,33 @@ public class Sketch extends PApplet {
         float horizontalScale = (float) displayWidth / (float) PIXEL2XL_DISPLAY_W;
         float verticalScale = (float) displayHeight / (float) PIXEL2XL_DISPLAY_H;
         screenScaleFactor = Math.max(horizontalScale, verticalScale);
+    }
+
+    public ArrayList<MediaPlayer> getMusic() {
+        return music;
+    }
+
+    public int getCurrentSong() {
+        return currentSong;
+    }
+
+    public void stopMusic() {
+        music.get(currentSong).stop();
+        stopMusic = true;
+    }
+
+    public void startMusic() {
+        music = new ArrayList<MediaPlayer>();
+        try {
+            assetFileDescriptor = activityContext.getAssets().openFd("On-Thngs-to-Come_Looping.mp3");
+            setUpSound(music, 1, 1);
+            assetFileDescriptor = activityContext.getAssets().openFd("02-Puzzle.mp3");
+            setUpSound(music, 1, (float) 0.6);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        currentSong = -1;
+        stopMusic = false;
     }
 }
 

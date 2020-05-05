@@ -1242,6 +1242,140 @@
           "color": "orange"
         }
       ]
+    },
+    {
+      "name": "askHelenAndJohn",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 500,
+          "message": "After you send Helen and John a text, you and Linh head out of Altgeld.\n\n“I’m gonna stay at the Union,” Linh says. “I have to do things for my sorority.”\n\n“Oh, okay. I’m gonna go to Bromley and make kimbap.”\n\nLinh suddenly dramatically gasps and points. “Tyler!” she yells.\n\nTyler, who was heading towards Green Street, turned. He waits as Linh darts towards him, with you following closely behind. They exchange a few words, and you ask if he wants kimbap.\n\n“Sure.”\n\n(You were gonna make some for him regardless of his answer.)\n\nThe three of you say your goodbyes, and you head to Bromley. You check your phone for updates. Helen and John responded, saying they were available to help. You then check the group chat: Norb asked if anyone wanted late night, and Helen replied with a maybe, depending on how long it would take to prepare kimbap.\n\nThey still haven’t sent a Massmail.\n\nYou didn’t realize how stupid it’d be to invite Helen and John with a murderer out and about until they arrived. They didn’t seem to either.\n\n“Yo, there was barely anyone on the bus,” Helen said. “I didn’t realize how dangerous it’d be until the bus was already moving.”\n\n“So are we still making kimbap then?” John asked.\n\n“I guess not,” you reply. “It’s not safe to go grocery shopping.”\n\nThe three of you pass the time spilling rumors surrounding the crime, until three phones nearly simultaneously sound.\n\n“They sent an email!” you announce, immediately recognizing the email preview.\n\nThe three of you dive for your phones.\n\n“Holy shit!” Helen exclaims. She pushes up her glasses as she begins reading the email. “‘We have been notified that students, faculty and staff have received an Illini Alert that links an article breaking news of a homicide on campus. We can assure you no such crime was committed, and the system overlooking the distribution of Illini Alerts is under investigation.’”\n\n“Bro,” John says.\n\n“That’s crazy,” Helen comments. “Does this mean they got hacked?”\n\n“But who would send out an alert about a murder?” you say.\n\n“Yeah, whoever did it took it too far,” Helen says.\n\n“But this means we can make kimbap!” you realize.\n\nYour phone buzzes in your hand. Linh texted you.\n\nLinh: i just realized making kimbap was a dumb idea bc you wouldn’t be able to give it to anyone if there really was a murderer on the loose\n\nLinh: but now you can :DDD\n\nYou: !!!\n\nYou: Now I make kimbap\n\nYou: Hopefully without getting murdered D:\n\nLinh: okie okie\n\nLinh: nah you gonna die :)))\n\nLinh: i’m in my dorm rn so you can stop by whenever!\n\nYou pause. Didn’t she say she was gonna be at the Union for her sorority?\n\nYou dismiss the thought. Whatever she was supposed to do must have been canceled.\n\nYour phone buzzes in your hand again. Sue texted the group chat.\n\nSue: r u guys still making kimbap?\n\nYou: Yes!\n\nSue: did u go get ingredients yet?\n\nYou: We’re about to go to Far East Grocery\n\nSue: oh okok\n\nSue: just b careful bc campus is hella shady now\n\nYou thumbs-up-reacted her message and got ready to head out.\n\nThe three of you take your time grocery shopping, and you finalize and pay for the ingredients. You’re following Helen and John out the store when you drop your pickled radish.\n\nJust when you pick it up, an elbow strikes the back of your head, your body dropping alongside the radish you accidentally release again. There’s yelling, but voices blur together and you can’t tell who’s yelling or where it’s coming from.\n\nSomething rocky gives another blow. It was so powerful it probably broke in half as soon as it landed on your head, but you can’t even feel the throbbing pain",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 600,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "makeKimbapAlone",
+      "environments": [
+        {
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "15Minutes",
+          "requiresInteract": true
+        },
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "30Minutes",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 590,
+          "y": 1024,
+          "fileName": "bAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "oAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "“I’m gonna stay at the Union,” Linh says after you two exit Altgeld. “I have to do things for my sorority.”\n\n“Oh, okay. I’m gonna go to my brother’s apartment and make kimbap.”\n\nLinh suddenly dramatically gasps and points. “Tyler!” she yells.\n\nTyler, who was heading towards Green Street, turned. He waits as Linh darts towards him, with you following closely behind. They exchange a few words, and you ask if he wants kimbap.\n\n“Sure.”\n\n(You were gonna make some for him regardless of his answer.)\n\nThe three of you say your goodbyes, and you head back to your brother’s apartment. You check your phone for updates. Norb asked if anyone wanted late night, and people were saying yes.\n\nThey still haven’t sent a Massmail.\n\nAs you reached your brother’s apartment, you realized grocery shopping with a murderer out and about wasn’t a good idea. You instead spend the next few hours crocheting—another hobby you recently picked up, and one that didn’t involve going outside.\n\nAn Outlook notification sound goes off, and you glance at your phone. Upon spotting the word “MASSMAIL”, you practically shove the bunny you were crocheting away from you as you scramble to open the email you’ve been awaiting. You scan the text until you got to its core: “We have been notified that students, faculty and staff have received an Illini Alert that links an article breaking news of a homicide on campus. We can assure you no such crime was committed, and the system overlooking the distribution of Illini Alerts is under investigation.”\n\nYou wonder who would pull such a prank, but you decide not to worry about it. You realize you can make kimbap—with Helen and John too. You send them a text and set out to Far East Grocery.\n\nYour phone buzzes in your hand. Linh texted you.\n\nLinh: i just realized making kimbap was a dumb idea bc you wouldn’t be able to give it to anyone if there really was a murderer on the loose\n\nLinh: but now you can :DDD\n\nYou: !!!\n\nYou: Now I make kimbap\n\nYou: Hopefully without getting murdered D:\n\nLinh: okie okie\n\nLinh: nah you gonna die :)))\n\nLinh: i’m in my dorm rn so you can stop by whenever!\n\nYou pause. Didn’t she say she was gonna be at the Union for her sorority?\n\nYou dismiss the thought. Whatever she was supposed to do must have been canceled.\n\nYour phone buzzes in your hand again. Helen and John responded, and you tell them to meet at Bromley when they would be free. Within a few hours, you were able to go shopping and meet up with Helen and John to make a large quantity of kimbap. The three of you are now on your ways to FAR/PAR.\n\nIt is 10:00 PM. Helen asks you and John when everyone should meet up at Ricky’s and Tyler’s room, taking into account the people who were eating late night.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 700,
+          "width": 600,
+          "height": 150,
+          "message": "15 Minutes",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 700,
+          "width": 600,
+          "height": 150,
+          "message": "30 Minutes",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
     }
   ]
 }

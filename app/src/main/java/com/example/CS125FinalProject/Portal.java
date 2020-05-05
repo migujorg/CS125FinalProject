@@ -52,6 +52,7 @@ public class Portal extends Environment {
                         resetAllCharacters();
                         destination = "welcome";
                         goToDestination();
+                        destination = "restart";
                     } else {
                         goToDestination();
                     }
@@ -63,6 +64,7 @@ public class Portal extends Environment {
                         resetAllCharacters();
                         destination = "welcome";
                         goToDestination();
+                        destination = "restart";
                     } else {
                         goToDestination();
                         c.setIsGrounded(true);
@@ -71,7 +73,7 @@ public class Portal extends Environment {
             }
         }
         if (((Sketch) Main.sketch).isDebugMode()) {
-            //showPortal();
+            showPortal();
         }
     }
 

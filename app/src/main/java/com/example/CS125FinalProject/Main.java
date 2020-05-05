@@ -17,6 +17,8 @@ import java.io.IOException;
 import processing.android.PFragment;
 import processing.android.CompatUtils;
 import processing.core.PApplet;
+import processing.core.PImage;
+
 /** Manages running the sketch on Android. */
 public class Main extends AppCompatActivity {
     public static PApplet sketch;
@@ -71,6 +73,22 @@ public class Main extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+    }
+
+    public void onPause() {
+        super.onPause();
+        ((Sketch) sketch).stopMusic();
+    }
+
+    public void onResume() {
+        super.onResume();
+        hideSystemUI();
+        ((Sketch) sketch).startMusic();
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        ((Sketch) sketch).stopMusic();
     }
 }
 
