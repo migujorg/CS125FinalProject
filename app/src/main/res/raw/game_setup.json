@@ -232,8 +232,8 @@
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 700,
-          "message": "YOU DARE DEFY THE RULES OF THE GAME? This is what happens when you break the rules: YOU DIE.\nYou haven't even started the game yet, but a piercing sensation stabs through your back and rips through your chest.\nYou look down to see the end of a knife peeking out of your t-shirt, now stained by a growing pool of blood. You better clean up \nOh, you can't.                        \nYou're dead.",
+          "height": 400,
+          "message": "YOU DARE DEFY THE RULES OF THE GAME? This is what happens when you break the rules: YOU DIE.\nYou haven't even started the game yet, but a piercing sensation stabs through your back and rips through your chest.\nYou look down to see the end of a knife peeking out of your t-shirt, now stained by a growing pool of blood. You better clean up \nOh, you can't.\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\nYou're dead.",
           "alignment": 0,
           "color": "not"
         }

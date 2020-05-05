@@ -102,40 +102,53 @@ public class TextBox {
     }
 
     void drawText() {
-        slowText();
+        if (!color.equals("not")) {
+            slowText();
+        } else {
+            scrollyText();
+        }
     }
-    private void specialText() {
-        if (currentChar < messageLength - 1) {
+
+    /** This method --WAS A HUGE PAIN OH MY GOD-- renders the text on screen and automatically
+     *  deletes the oldest line once the text is too long to fit in it's box.
+     *  '\b' characters can be used to add dramatic pause in the message!
+     *  Super duper useful for really long paragraphs. They no longer have to take up the whole screen! */
+    private void scrollyText() {
+        Main.sketch.fill(0,255,0);
+        Main.sketch.textAlign(alignment, Main.sketch.CENTER);
+        Main.sketch.textFont(font);
+        if (currentChar < messageLength) {
             char thisChar = message.charAt(currentChar);
             if (Main.sketch.frameCount % TYPE_DELAY == 0) {
                 partialMessage += message.charAt(currentChar);
-                //messageSoFar += message.charAt(currentChar);
                 currentChar++;
-                playSounds(thisChar);
+                if (thisChar != '\b') {
+                    playSounds(thisChar);
+                }
+                scrollyTextHelper();
             }
         } else {
             complete = true;
         }
+        Main.sketch.text(partialMessage, (float) box.x, (float) box.y, (float) (box.width + 1000), (float) box.height);
+
+    }
+
+    private void scrollyTextHelper() {
         int lastNewLine = 0;
         if (partialMessage.lastIndexOf('\n') != -1) {
             lastNewLine = partialMessage.lastIndexOf('\n');
         }
         String line = partialMessage.substring(lastNewLine);
-        System.out.println("line: " + line);
         float partialHeight = (Main.sketch.textAscent() + Main.sketch.textDescent() + 15) * ((partialMessage.replaceAll("[^\n]", "")).length() + 1);
-        Main.sketch.rect(300, (float) (box.y + box.height), 100, -1 * partialHeight);
         if (Main.sketch.textWidth(line) >= box.width) {
             partialMessage = partialMessage.substring(0, partialMessage.lastIndexOf(' '));
-            currentChar = partialMessage.length() + 1;
+            currentChar = message.substring(0, currentChar).lastIndexOf(' ') + 1;
             partialMessage += '\n';
         }
         if (partialHeight >= box.height) {
-            partialMessage = partialMessage.substring(partialMessage.indexOf('\n'));
+            partialMessage = partialMessage.substring(partialMessage.indexOf('\n') + 1);
         }
-        Main.sketch.fill(0,255,0);
-        Main.sketch.textAlign(alignment, Main.sketch.CENTER);
-        Main.sketch.text(partialMessage, (float) box.x, (float) box.y, (float) (box.width + 1000), (float) box.height);
-
     }
 
     private void slowText() {
