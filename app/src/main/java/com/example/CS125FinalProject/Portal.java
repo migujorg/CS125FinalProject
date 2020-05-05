@@ -50,6 +50,11 @@ public class Portal extends Environment {
                 if (super.getHitbox().intersects(c.getSimpleHitbox())) {
                     ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(destination);
                 }
+            } else {
+                if (!c.isGrounded() && super.getHitbox().intersects(c.getSimpleHitbox())) {
+                    ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(destination);
+                    c.setIsGrounded(true);
+                }
             }
         }
         if (((Sketch) Main.sketch).isDebugMode()) {

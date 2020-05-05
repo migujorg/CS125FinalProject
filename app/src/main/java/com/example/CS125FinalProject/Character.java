@@ -2,7 +2,10 @@ package com.example.CS125FinalProject;
 
 //import androidx.constraintlayout.solver.widgets.Rectangle;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import processing.core.PImage;
 
 /**This class is used to manage characters in this game. Keeps track of and modifies position, health, and other values .*/
 public class Character {
@@ -26,6 +29,11 @@ public class Character {
     private boolean advancedHitbox;
     /**Boolean that indicates if the character should be controllable. */
     private boolean isPlayer;
+    private boolean wasGoingLeft = false;
+
+    private PImage sprite;
+    private ArrayList<PImage> animationRight = new ArrayList<>();
+    private ArrayList<PImage> animationLeft = new ArrayList<>();
 
 
     /**Whether of not character is on a surface. Used in friction calculation. */
@@ -104,12 +112,14 @@ public class Character {
         armor = setArmor;
         advancedHitbox = false;
         isPlayer = setIsPlayer;
+        loadAnimation();
     }
 
     /**Call this in "draw()" to draw this character and run it's logic*/
     void run() {
         physicsUpdate();
         displayHitbox();
+        showCharacter();
         if (isPlayer) {
             runPlayerControl();
         }
@@ -136,17 +146,34 @@ public class Character {
 
         if (xVelocity > 0 && isGrounded && !((Sketch) Main.sketch).isRightPressed()) {
             xVelocity -= Sketch.FRICTION_COEFFICIENT;
-        } else if (xVelocity <0 && isGrounded && !((Sketch) Main.sketch).isLeftPressed()) {
+            wasGoingLeft = false;
+        } else if (xVelocity < 0 && isGrounded && !((Sketch) Main.sketch).isLeftPressed()) {
             xVelocity += Sketch.FRICTION_COEFFICIENT;
+            wasGoingLeft = true;
         }
     }
 
     /**Displays the hitbox. Used for debugging. Later will display a sprite instead. */
     private void displayHitbox() {
         Main.sketch.stroke(255,255,255);
-        Main.sketch.fill(0,0,0);
+        Main.sketch.fill(0,0,0,0);
         Main.sketch.rect((float) simpleHitbox.x,(float) simpleHitbox.y , (float) simpleHitbox.width, (float) simpleHitbox.height);
     }
+
+    private void showCharacter() {
+        showAnimation(8);
+    }
+
+    private void showAnimation(double inverseSpeed) {
+        PImage frame;
+        if (xVelocity > 0 || (xVelocity == 0 && !wasGoingLeft)) {
+            frame = animationRight.get((int) ((Main.sketch.frameCount / inverseSpeed) % animationRight.size()));
+        } else {
+            frame = animationLeft.get((int) ((Main.sketch.frameCount / inverseSpeed) % animationLeft.size()));
+        }
+        Main.sketch.image(frame, (float) simpleHitbox.x - 150, (float) simpleHitbox.y - 90, (float) frame.width, (float) frame.height);
+    }
+
 
     /** @return returns advancedHitbox. */
     boolean isAdvancedHitbox() {
@@ -201,9 +228,54 @@ public class Character {
         isGrounded = setIsGrounded;
     }
 
+    boolean isGrounded() {
+        return isGrounded;
+    }
+
     /**@return isPlayer.*/
     boolean isPlayer() {
         return isPlayer;
     }
+
+    private void loadAnimation() {
+        PImage frameR1 = Main.sketch.loadImage("ghostR1.png");
+        PImage frameR2 = Main.sketch.loadImage("ghostR2.png");
+        PImage frameR3 = Main.sketch.loadImage("ghostR3.png");
+        PImage frameR4 = Main.sketch.loadImage("ghostR4.png");
+        PImage frameR5 = Main.sketch.loadImage("ghostR5.png");
+        PImage frameR6 = Main.sketch.loadImage("ghostR6.png");
+        PImage frameR7 = Main.sketch.loadImage("ghostR7.png");
+        PImage frameR8 = Main.sketch.loadImage("ghostR8.png");
+        PImage frameR9 = Main.sketch.loadImage("ghostR9.png");
+        animationRight.add(frameR1);
+        animationRight.add(frameR2);
+        animationRight.add(frameR3);
+        animationRight.add(frameR4);
+        animationRight.add(frameR5);
+        animationRight.add(frameR6);
+        animationRight.add(frameR7);
+        animationRight.add(frameR8);
+        animationRight.add(frameR9);
+
+        PImage frameL1 = Main.sketch.loadImage("ghostL1.png");
+        PImage frameL2 = Main.sketch.loadImage("ghostL2.png");
+        PImage frameL3 = Main.sketch.loadImage("ghostL3.png");
+        PImage frameL4 = Main.sketch.loadImage("ghostL4.png");
+        PImage frameL5 = Main.sketch.loadImage("ghostL5.png");
+        PImage frameL6 = Main.sketch.loadImage("ghostL6.png");
+        PImage frameL7 = Main.sketch.loadImage("ghostL7.png");
+        PImage frameL8 = Main.sketch.loadImage("ghostL8.png");
+        PImage frameL9 = Main.sketch.loadImage("ghostL9.png");
+        animationLeft.add(frameL1);
+        animationLeft.add(frameL2);
+        animationLeft.add(frameL3);
+        animationLeft.add(frameL4);
+        animationLeft.add(frameL5);
+        animationLeft.add(frameL6);
+        animationLeft.add(frameL7);
+        animationLeft.add(frameL8);
+        animationLeft.add(frameL9);
+    }
+
 
 }

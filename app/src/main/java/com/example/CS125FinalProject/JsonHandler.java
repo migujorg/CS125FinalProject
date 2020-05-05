@@ -52,7 +52,9 @@ public class JsonHandler {
                 }
             }
             ArrayList<Character> characterArray = new ArrayList<>();
+            addDefaultCharacter(characterArray);
             JsonArray characters = ((JsonObject) rooms.get(i)).get("characters").getAsJsonArray();
+
             for (int j = 0; j < characters.size(); j++) {
                 JsonObject jAsObject = ((JsonObject) characters.get(j));
                 characterArray.add(new Character(jAsObject.get("x").getAsDouble(),
@@ -131,7 +133,11 @@ public class JsonHandler {
         environments.add(new Platform(0,0,20,1440)); //left wall
         environments.add(new Platform(0,1420,2880,20)); //floor
         environments.add(new Platform(2860,0,20,1440));
-;    }
+    }
+
+    private static void addDefaultCharacter(ArrayList<Character> characters) {
+        characters.add(new Character(1390, 1140, 100, 280, 100, 1, true));
+    }
 
     //public RoomManager getRoomManager() {
     //    return roomManager;

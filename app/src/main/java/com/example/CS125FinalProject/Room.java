@@ -45,29 +45,42 @@ class Room {
 
     /** displays the room on the phone screen. Also runs the appropriate logic. */
     void runRoom() {
+        doSprites();
+        doTextBoxes();
+        doCharacters();
+        doEnvironments();
+    }
+
+    private void doSprites() {
         for (Sprite tempS: sprites) {
             tempS.run();
         }
-        for (Character tempC: characters) {
-            tempC.run();
-        }
-        for (Environment tempE: environments) { //For each environment
-            for (Character tempC: characters) { //Each environment runs for each character
-                tempE.run(tempC);
-            }
-        }
-        for (TextBox tempT: textBoxes) {
-            tempT.drawBackground();
-        }
+    }
+
+    private void doTextBoxes() {
         for (int i = 0; i < textBoxes.size(); i++) {
             if (currentTextBox >= i) {
+                textBoxes.get(i).drawBackground();
                 textBoxes.get(i).drawText();
             }
         }
         if (currentTextBox < textBoxes.size() && textBoxes.get(currentTextBox).isComplete()) {
             currentTextBox++;
         }
+    }
 
+    private void doCharacters() {
+        for (Character tempC: characters) {
+            tempC.run();
+        }
+    }
+
+    private void doEnvironments() {
+        for (Environment tempE: environments) { //For each environment
+            for (Character tempC: characters) { //Each environment runs for each character
+                tempE.run(tempC);
+            }
+        }
     }
 
 }

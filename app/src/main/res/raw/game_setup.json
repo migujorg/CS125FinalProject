@@ -9,7 +9,7 @@
           "height": 464,
           "type": 3,
           "destination": 1,
-          "requiresInteract": false
+          "requiresInteract": true
         },
         {
           "x": 2008,
@@ -18,32 +18,34 @@
           "height": 464,
           "type": 3,
           "destination": 2,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1a.png",
+          "scaleFactor": 1
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.v2.png",
+          "scaleFactor": 1
+        },
         {
           "x": 615,
           "y": 1024,
-          "fileName": "bluePortal.png",
-          "scaleFactor": 6
+          "fileName": "bAnimation",
+          "scaleFactor": 1
         },
         {
           "x": 2055,
           "y": 1024,
-          "fileName": "orangePortal.png",
-          "scaleFactor": 6
+          "fileName": "oAnimation",
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -85,26 +87,16 @@
           "height": 396,
           "type": 3,
           "destination": 4,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 670,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
         {
           "x": 1335,
           "y": 1024,
-          "fileName": "purplePortal.png",
-          "scaleFactor": 6
+          "fileName": "pAnimation",
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -137,7 +129,7 @@
           "height": 464,
           "type": 3,
           "destination": 1,
-          "requiresInteract": false
+          "requiresInteract": true
         },
         {
           "x": 2008,
@@ -146,32 +138,22 @@
           "height": 464,
           "type": 3,
           "destination": 3,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
         {
           "x": 615,
           "y": 1024,
-          "fileName": "bluePortal.png",
-          "scaleFactor": 6
+          "fileName": "bAnimation",
+          "scaleFactor": 1
         },
         {
           "x": 2055,
           "y": 1024,
-          "fileName": "orangePortal.png",
-          "scaleFactor": 6
+          "fileName": "oAnimation",
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -206,25 +188,15 @@
     },
     {
       "environments": [],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [],
       "textBoxes": [
         {
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 300,
-          "message": "You dare defy the rules of the game? This is what happens when you break the rules: you die.\\nYou haven't even started the game yet, but a piercing sensation stabs through your back and rips through your chest.\\nYou look down to see the end of a knife peeking out of your t-shirt, now stained by a growing pool of blood. You better clean up \\nOh, you can't. You're dead.",
+          "height": 700,
+          "message": "YOU DARE DEFY THE RULES OF THE GAME? This is what happens when you break the rules: YOU DIE.\nYou haven't even started the game yet, but a piercing sensation stabs through your back and rips through your chest.\nYou look down to see the end of a knife peeking out of your t-shirt, now stained by a growing pool of blood. You better clean up \nOh, you can't.                        \nYou're dead.",
           "alignment": 0,
           "color": "not"
         }
@@ -239,7 +211,7 @@
           "height": 464,
           "type": 3,
           "destination": 5,
-          "requiresInteract": false
+          "requiresInteract": true
         },
         {
           "x": 2008,
@@ -248,32 +220,22 @@
           "height": 464,
           "type": 3,
           "destination": 3,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
         {
           "x": 615,
           "y": 1024,
-          "fileName": "bluePortal.png",
-          "scaleFactor": 6
+          "fileName": "bAnimation",
+          "scaleFactor": 1
         },
         {
           "x": 2055,
           "y": 1024,
-          "fileName": "orangePortal.png",
-          "scaleFactor": 6
+          "fileName": "oAnimation",
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -315,7 +277,7 @@
           "height": 464,
           "type": 3,
           "destination": 6,
-          "requiresInteract": false
+          "requiresInteract": true
         },
         {
           "x": 2008,
@@ -324,32 +286,22 @@
           "height": 464,
           "type": 3,
           "destination": 7,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
         {
           "x": 615,
           "y": 1024,
-          "fileName": "bluePortal.png",
-          "scaleFactor": 6
+          "fileName": "bAnimation",
+          "scaleFactor": 1
         },
         {
           "x": 2055,
           "y": 1024,
-          "fileName": "orangePortal.png",
-          "scaleFactor": 6
+          "fileName": "oAnimation",
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -384,17 +336,7 @@
     },
     {
       "environments": [],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [],
       "textBoxes": [
         {
@@ -417,7 +359,7 @@
           "height": 464,
           "type": 3,
           "destination": 8,
-          "requiresInteract": false
+          "requiresInteract": true
         },
         {
           "x": 2008,
@@ -426,31 +368,21 @@
           "height": 464,
           "type": 3,
           "destination": 0,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
         {
           "x": 615,
           "y": 1024,
-          "fileName": "bluePortal.png",
-          "scaleFactor": 6
+          "fileName": "bAnimation",
+          "scaleFactor": 1
         },
         {
           "x": 2055,
           "y": 1024,
-          "fileName": "orangePortal.png",
+          "fileName": "oAnimation",
           "scaleFactor": 0
         }
       ],
@@ -484,7 +416,6 @@
         }
       ]
     },
-
     {
       "environments": [
         {
@@ -494,7 +425,7 @@
           "height": 464,
           "type": 3,
           "destination": 6,
-          "requiresInteract": false
+          "requiresInteract": true
         },
         {
           "x": 2008,
@@ -503,31 +434,21 @@
           "height": 464,
           "type": 3,
           "destination": 0,
-          "requiresInteract": false
+          "requiresInteract": true
         }
       ],
-      "characters": [
-        {
-          "x": 1390,
-          "y": 1220,
-          "width": 100,
-          "height": 200,
-          "maxHealth": 100,
-          "armor": 0,
-          "isPlayer": true
-        }
-      ],
+      "characters": [],
       "sprites": [
         {
           "x": 615,
           "y": 1024,
-          "fileName": "bluePortal.png",
+          "fileName": "bAnimation",
           "scaleFactor": 0
         },
         {
           "x": 2055,
           "y": 1024,
-          "fileName": "orangePortal.png",
+          "fileName": "oAnimation",
           "scaleFactor": 0
         }
       ],

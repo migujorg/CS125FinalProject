@@ -200,7 +200,7 @@ public class Sketch extends PApplet {
         }
     }
     private void musicManager() {
-        if (currentSong == -1 || !music.get(currentSong).isPlaying()) {
+        if (frameCount > 50 && (currentSong == -1 || !music.get(currentSong).isPlaying())) {
             currentSong++;
             if (currentSong == music.size()) {
                 currentSong = 0;
