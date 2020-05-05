@@ -29,13 +29,12 @@ public class Character {
     private boolean advancedHitbox;
     /**Boolean that indicates if the character should be controllable. */
     private boolean isPlayer;
+    /** The last direction that the character was moving in. Needed to determine which sprite to display after coming to a stop. */
     private boolean wasGoingLeft = false;
-
-    private PImage sprite;
+    /** The sequence of PImages to be used for the right facing animation. */
     private ArrayList<PImage> animationRight = new ArrayList<>();
+    /** The sequence of PImages to be used for the left facing animation. */
     private ArrayList<PImage> animationLeft = new ArrayList<>();
-
-
     /**Whether of not character is on a surface. Used in friction calculation. */
     private boolean isGrounded;
 
@@ -121,7 +120,7 @@ public class Character {
         if (((Sketch) Main.sketch).isDebugMode()) {
             displayHitbox();
         }
-        showCharacter();
+        showAnimation(8);
         if (isPlayer) {
             runPlayerControl();
         }
@@ -162,10 +161,9 @@ public class Character {
         Main.sketch.rect((float) simpleHitbox.x,(float) simpleHitbox.y , (float) simpleHitbox.width, (float) simpleHitbox.height);
     }
 
-    private void showCharacter() {
-        showAnimation(8);
-    }
-
+    /** Renders the sequence of PImages in the correct position to play the animation for the character.
+     * @param inverseSpeed used to determine how fast to play the animation. Range 1 to 60. Lower numbers
+     *                     are faster. (frameRate == Main.sketch.frameRate / inverseSpeed times per second). */
     private void showAnimation(double inverseSpeed) {
         PImage frame;
         if (xVelocity > 0 || (xVelocity == 0 && !wasGoingLeft)) {
@@ -230,19 +228,20 @@ public class Character {
         isGrounded = setIsGrounded;
     }
 
+    /**@return returns isGrounded variable. */
     boolean isGrounded() {
         return isGrounded;
     }
 
-    /**@return isPlayer.*/
+    /**@return returns isPlayer variable.*/
     boolean isPlayer() {
         return isPlayer;
     }
 
+    /** Private helper method used to store previously loaded PImage Lists into animationRight and
+     *  animationLeft instance variables. */
     private void loadAnimation() {
         animationRight = ((Sketch) Main.sketch).getAnimations().get(3);
         animationLeft = ((Sketch) Main.sketch).getAnimations().get(4);
     }
-
-
 }

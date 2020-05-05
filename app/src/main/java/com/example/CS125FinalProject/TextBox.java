@@ -8,6 +8,7 @@ import processing.core.PFont;
 
 /** This class manages rendering text on the canvas.*/
 public class TextBox {
+    private static final double TYPE_DELAY = 2;
     private Rectangle box = new Rectangle();
     private String message;
     private int alignment;
@@ -24,18 +25,18 @@ public class TextBox {
     public TextBox(double setX, double setY, String setMessage) {
         box.x = setX;
         box.y = setY;
-        box.width = Main.sketch.displayWidth * 0.8;
-        box.height = Main.sketch.displayHeight * 0.8;
+        box.width = Sketch.PIXEL2XL_DISPLAY_W * 0.8;
+        box.height = Sketch.PIXEL2XL_DISPLAY_H * 0.8;
         message = setMessage;
         messageLength = message.length();
         font = Main.sketch.createFont("thinPixel.ttf", 150, false);
     }
 
     public TextBox(String setMessage) { //By default it puts the message in the center of the screen!
-        box.width = Main.sketch.displayWidth * 0.8;
+        box.width = Sketch.PIXEL2XL_DISPLAY_W * 0.8;
         box.height = setMessage.length() * 3.1;
-        box.x = (Main.sketch.displayWidth / 2) - (box.width) / 2;
-        box.y = Main.sketch.displayHeight / 4;
+        box.x = (Sketch.PIXEL2XL_DISPLAY_W / (float) 2) - (box.width) / 2;
+        box.y = Sketch.PIXEL2XL_DISPLAY_H / (float) 4;
         message = setMessage;
         messageLength = message.length();
         font = Main.sketch.createFont("thinPixel.ttf", 200, false);
@@ -43,16 +44,16 @@ public class TextBox {
 
     /**
      * @param setX x coordinate
-     * @param setY
-     * @param setMessage
-     * @param setFont
-     * @param scale
-     * @param isSmooth
+     * @param setY y coordinate
+     * @param setMessage the message
+     * @param setFont the desired font (.ttf)
+     * @param scale the scale of the text
+     * @param isSmooth will it be smoothed in rendering?
      */
     public TextBox(double setX, double setY, String setMessage, String setFont, double scale, boolean isSmooth) {
-        box.width = Main.sketch.displayWidth * 0.8;
-        box.height = Main.sketch.displayHeight * 0.8;
-        box.x = (Main.sketch.displayWidth / 2) - (box.width / 2) + setX;
+        box.width = Sketch.PIXEL2XL_DISPLAY_W * 0.8;
+        box.height = Sketch.PIXEL2XL_DISPLAY_H * 0.8;
+        box.x = (Sketch.PIXEL2XL_DISPLAY_H / (float) 2) - (box.width / 2) + setX;
         box.y = setY;
         message = setMessage;
         messageLength = message.length();
@@ -62,7 +63,7 @@ public class TextBox {
      TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage) {
         box.width = setWidth;
         box.height = setHeight;
-        box.x = (Main.sketch.displayWidth / 2) - (box.width / 2) + setX;
+        box.x = (Sketch.PIXEL2XL_DISPLAY_W / (float) 2) - (box.width / 2) + setX;
         box.y = setY;
         message = setMessage;
         messageLength = message.length();
@@ -72,7 +73,7 @@ public class TextBox {
     TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage, int setAlignment, String setColor) {
         box.width = setWidth;
         box.height = setHeight;
-        box.x = (Main.sketch.displayWidth / 2) - (box.width / 2) + setX;
+        box.x = (Sketch.PIXEL2XL_DISPLAY_W / (float) 2) - (box.width / 2) + setX;
         box.y = setY;
         message = setMessage;
         messageLength = message.length();
@@ -101,12 +102,12 @@ public class TextBox {
     }
 
     void drawText() {
-        slowText(2);
+        slowText();
     }
-    private void specialText(double delay) {
+    private void specialText() {
         if (currentChar < messageLength - 1) {
             char thisChar = message.charAt(currentChar);
-            if (Main.sketch.frameCount % delay == 0) {
+            if (Main.sketch.frameCount % TYPE_DELAY == 0) {
                 partialMessage += message.charAt(currentChar);
                 //messageSoFar += message.charAt(currentChar);
                 currentChar++;
@@ -137,10 +138,10 @@ public class TextBox {
 
     }
 
-    private void slowText(double delay) {
+    private void slowText() {
         if (currentChar < messageLength) { //Process stops once message in finished (to prevent lag)
             char thisChar = message.charAt(currentChar);
-            if (Main.sketch.frameCount % delay == 0) {
+            if (Main.sketch.frameCount % TYPE_DELAY == 0) {
                 currentChar++;
                 playSounds(thisChar);
             }
@@ -189,7 +190,7 @@ public class TextBox {
         Main.sketch.rectMode(Main.sketch.CORNER);
     }
 
-    public boolean isComplete() {
+    boolean isComplete() {
         return complete;
     }
 

@@ -10,9 +10,11 @@ import processing.core.PImage;
 public class Sprite {
     /**A instance of the Rectangle class that stores the location and dimensions of the Sprite.*/
     private Rectangle dimensions = new Rectangle();
-    /**The PImage class is used to actualy render the image on the canvas.*/
+    /**The PImage class is used to actually render the image on the canvas.*/
     private PImage image = new PImage();
+    /** ArraryList of PImages used for when the desired Sprite is actually an animation. */
     private ArrayList<PImage> animation = new ArrayList<>();
+    /** Used to determine whether to run single image logic or animation logic. */
     boolean isAnimation = false;
 
     /**Full constructor. Useful for scaling the image to your desired size*/
@@ -72,74 +74,11 @@ public class Sprite {
         }
     }
 
-    private void setUpOrangePortal() {
-        PImage frame1 = Main.sketch.loadImage("orange1.png");
-        PImage frame2 = Main.sketch.loadImage("orange2.png");
-        PImage frame3 = Main.sketch.loadImage("orange3.png");
-        PImage frame4 = Main.sketch.loadImage("orange4.png");
-        PImage frame5 = Main.sketch.loadImage("orange5.png");
-        PImage frame6 = Main.sketch.loadImage("orange6.png");
-        PImage frame7 = Main.sketch.loadImage("orange7.png");
-        PImage frame8 = Main.sketch.loadImage("orange8.png");
-        PImage frame9 = Main.sketch.loadImage("orange9.png");
-        animation.add(frame1);
-        animation.add(frame2);
-        animation.add(frame3);
-        animation.add(frame4);
-        animation.add(frame5);
-        animation.add(frame6);
-        animation.add(frame7);
-        animation.add(frame8);
-        animation.add(frame9);
-    }
-
-    private void setUpBluePortal() {
-        PImage frame1 = Main.sketch.loadImage("blue1.png");
-        PImage frame2 = Main.sketch.loadImage("blue2.png");
-        PImage frame3 = Main.sketch.loadImage("blue3.png");
-        PImage frame4 = Main.sketch.loadImage("blue4.png");
-        PImage frame5 = Main.sketch.loadImage("blue5.png");
-        PImage frame6 = Main.sketch.loadImage("blue6.png");
-        PImage frame7 = Main.sketch.loadImage("blue7.png");
-        PImage frame8 = Main.sketch.loadImage("blue8.png");
-        PImage frame9 = Main.sketch.loadImage("blue9.png");
-        animation.add(frame1);
-        animation.add(frame2);
-        animation.add(frame3);
-        animation.add(frame4);
-        animation.add(frame5);
-        animation.add(frame6);
-        animation.add(frame7);
-        animation.add(frame8);
-        animation.add(frame9);
-    }
-
-    private void setUpPurplePortal() {
-        PImage frame1 = Main.sketch.loadImage("purple1.png");
-        PImage frame2 = Main.sketch.loadImage("purple2.png");
-        PImage frame3 = Main.sketch.loadImage("purple3.png");
-        PImage frame4 = Main.sketch.loadImage("purple4.png");
-        PImage frame5 = Main.sketch.loadImage("purple5.png");
-        PImage frame6 = Main.sketch.loadImage("purple6.png");
-        PImage frame7 = Main.sketch.loadImage("purple7.png");
-        PImage frame8 = Main.sketch.loadImage("purple8.png");
-        PImage frame9 = Main.sketch.loadImage("purple9.png");
-        animation.add(frame1);
-        animation.add(frame2);
-        animation.add(frame3);
-        animation.add(frame4);
-        animation.add(frame5);
-        animation.add(frame6);
-        animation.add(frame7);
-        animation.add(frame8);
-        animation.add(frame9);
-    }
-
+    /** Renders the sequence of PImages to play the animation.
+     * @param inverseSpeed used to determine how fast to play the animation. Range 1 to 60. Lower numbers
+     *                     are faster. (frameRate == Main.sketch.frameRate / inverseSpeed times per second). */
     private void showAnimation(double inverseSpeed) {
         PImage frame = animation.get((int) ((Main.sketch.frameCount / inverseSpeed) % animation.size()));
         Main.sketch.image(frame, (float) dimensions.x, (float) dimensions.y, (float) frame.width, (float) frame.height);
     }
-
-
-
 }

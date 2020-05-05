@@ -55,7 +55,7 @@ class Room {
         type = setType;
     }
 
-    /** displays the room on the phone screen. Also runs the appropriate logic. */
+    /** Consolidates logic for each room element into one method. */
     void runRoom() {
         doSprites();
         doTextBoxes();
@@ -63,12 +63,14 @@ class Room {
         doEnvironments();
     }
 
+    /** Runs the logic for all of the Sprites int the room. */
     private void doSprites() {
         for (Sprite tempS: sprites) {
             tempS.run();
         }
     }
 
+    /** Runs the logic for all of the TextBoxes int the room. */
     private void doTextBoxes() {
         for (int i = 0; i < textBoxes.size(); i++) {
             if (currentTextBox >= i) {
@@ -81,12 +83,14 @@ class Room {
         }
     }
 
+    /** Runs the logic for all of the Characters int the room. */
     private void doCharacters() {
         for (Character tempC: characters) {
             tempC.run();
         }
     }
 
+    /** Runs the logic for all of the Environments int the room. */
     private void doEnvironments() {
         for (Environment tempE: environments) { //For each environment
             for (Character tempC: characters) { //Each environment runs for each character
