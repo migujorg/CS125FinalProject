@@ -244,4 +244,11 @@ public class Character {
         animationRight = ((Sketch) Main.sketch).getAnimations().get(3);
         animationLeft = ((Sketch) Main.sketch).getAnimations().get(4);
     }
+
+    void reset() {
+        xVelocity = 0;
+        yVelocity = 0;
+        simpleHitbox.x = 1350;
+        simpleHitbox.y = 1140;
+    }
 }

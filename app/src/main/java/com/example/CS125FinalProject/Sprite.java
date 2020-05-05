@@ -39,6 +39,9 @@ public class Sprite {
         } else if (fileName.equals("pAnimation")) {
             isAnimation = true;
             animation = ((Sketch) Main.sketch).getAnimations().get(2);
+        } else if (fileName.equals("rAnimation")) {
+            isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(5);
         } else {
             image = Main.sketch.loadImage(fileName);
             dimensions.width = image.width;
@@ -59,6 +62,9 @@ public class Sprite {
         } else if (fileName.equals("pAnimation")) {
             isAnimation = true;
             animation = ((Sketch) Main.sketch).getAnimations().get(2);
+        } else if (fileName.equals("rAnimation")) {
+            isAnimation = true;
+            animation = ((Sketch) Main.sketch).getAnimations().get(5);
         } else {
             image = Main.sketch.loadImage(fileName);
             dimensions.width = image.width * scaleFactor;

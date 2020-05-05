@@ -1,6 +1,7 @@
 {
   "rooms": [
     {
+      "name": "welcome",
       "environments": [
         {
           "x": 650,
@@ -8,7 +9,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 1,
+          "destination": "wrongSchoolWrongTime",
           "requiresInteract": true
         },
         {
@@ -17,7 +18,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 2,
+          "destination": "noChoice",
           "requiresInteract": true
         }
       ],
@@ -79,6 +80,7 @@
       ]
     },
     {
+      "name": "wrongSchoolWrongTime",
       "environments": [
         {
           "x": 2090,
@@ -86,7 +88,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 4,
+          "destination": "wakeUp",
           "requiresInteract": true
         }
       ],
@@ -133,6 +135,7 @@
       ]
     },
     {
+      "name": "noChoice",
       "environments": [
         {
           "x": 650,
@@ -140,7 +143,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 1,
+          "destination": "wrongSchoolWrongTime",
           "requiresInteract": true
         },
         {
@@ -149,7 +152,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 3,
+          "destination": "howDareYou",
           "requiresInteract": true
         }
       ],
@@ -211,7 +214,18 @@
       ]
     },
     {
-      "environments": [],
+      "name": "howDareYou",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
       "characters": [],
       "sprites": [
         {
@@ -225,6 +239,12 @@
           "y": -180,
           "fileName": "telephonePole.png",
           "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -236,10 +256,20 @@
           "message": "YOU DARE DEFY THE RULES OF THE GAME? This is what happens when you break the rules: YOU DIE.\nYou haven't even started the game yet, but a piercing sensation stabs through your back and rips through your chest.\nYou look down to see the end of a knife peeking out of your t-shirt, now stained by a growing pool of blood. You better clean up \nOh, you can't.\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\nYou're dead.",
           "alignment": 0,
           "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
         }
       ]
     },
     {
+      "name": "wakeUp",
       "environments": [
         {
           "x": 650,
@@ -247,7 +277,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 5,
+          "destination": "homeMade",
           "requiresInteract": true
         },
         {
@@ -256,7 +286,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 3,
+          "destination": "goodHeadToCs",
           "requiresInteract": true
         }
       ],
@@ -318,6 +348,7 @@
       ]
     },
     {
+      "name": "homeMade",
       "environments": [
         {
           "x": 650,
@@ -325,7 +356,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 6,
+          "destination": "bookIt",
           "requiresInteract": true
         },
         {
@@ -334,7 +365,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 7,
+          "destination": "badHeadToCs",
           "requiresInteract": true
         }
       ],
@@ -396,7 +427,183 @@
       ]
     },
     {
-      "environments": [],
+      "name": "bookIt",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "You made it! You're late, but you made it! You sit down in your seat and -- \n\nScreams pierce through your ear drums as an object - a knife? - slits your throat. You're still trying to register what happened, \nuntil the unmistakeable stinging pain burns at your neck, right where it was sliced. You reach for your throat, warm blood oozing from the fresh wound onto your fingers.\n\nThe pain drowns out the screams, no matter how near or loud they were. Your vision blurs, right before you fade away into nothingness.\b\b\b\b\b\b\b\b\b\b\nYOU DIED",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "badHeadToCs",
+      "environments": [
+        {
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "badLeaveCS",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 590,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "You head straight to lincoln hall and spot Linh sitting in the back of the auditorium. You take your seat next to her.\n\"Do you want some hot chocolate?\" you ask her.\nEyes widening, she nods eagerly.\nYou reach for your thermos, only to find out it's not in your backpack's side pocket.\"what?\" you say. You swing your backpack forward and check the other side pocket.\"But i swear I brought it...\"\nLinh frowned, more so at the fact that she wouldn't have hot chocolate this morning. You got her hopes up. \"Maybe it dropped?\" She said.\nYou pout. \"Maybe...\" But if it dropped, you'd probably hear the thump of your thermos dropping. \"What if... someone stole it?\"\n\"Then you kill them\" she calmly replies.\nYou forgot how violent linh's suggestions could be.\nYou two sit through lecture, and before you know it, class is over. Where do you go after class?",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 700,
+          "height": 170,
+          "message": "Head to the Union!",
+          "alignment": 3,
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "name": "badLeaveCS",
+      "environments": [
+        {
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "seeSueThenDie",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 590,
+          "y": 1024,
+          "fileName": "bAnimation",
+          "scaleFactor": 0
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 300,
+          "message": "As you and Linh leave Lincoln Hall, you spot Sue Wee walking in your direction. \"Sue!\" you call.\nShe smiles and waves at the both of you.\n\"She probably has CS 173 right now,\" you say after she walks past.\n\"Yeah\" Linh agrees.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 530,
+          "width": 700,
+          "height": 170,
+          "message": "Option not yet defined!",
+          "alignment": 3,
+          "color": "blue"
+        }
+      ]
+    },
+    {
+      "name": "menuScreen",
+      "environments": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 2880,
+          "height": 1440,
+          "type": 3,
+          "destination": "welcome",
+          "requiresInteract": true
+        }
+      ],
       "characters": [],
       "sprites": [
         {
@@ -412,19 +619,120 @@
           "scaleFactor": 9
         }
       ],
+      "textBoxes": []
+    },
+    {
+      "name": "seeSueThenDie",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
       "textBoxes": [
         {
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 1000,
-          "message": "You made it! You're late, but you made it! You sit down in your seat and -- \n\nScreams pierce through your ear drums as an object - a knife? - slits your throat. You're still trying to register what happened, \nuntil the unmistakeable stinging pain burns at your neck, right where it was sliced. You reach for your throat, warm blood oozing from the fresh wound onto your fingers.\n\nThe pain drowns out the screams, no matter how near or loud they were. Your vision blurs, right before you fade away into nothingness.\b\b\b\b\b\b\b\b\b\b\nYOU DIED",
+          "height": 400,
+          "message": "Before you could even process the foot suddenly intercepting your immediate path, you miss a step and trip. Your arms flail in front of you, trying to save your fall, but a sharp object—a knife?—forcefully inserts itself into your back, pushing you to the pavement. Your forehead bangs to the ground. Shrieks echo across the quad, but you swear you hear a familiar voice muttering about low-quality hot chocolate. You don’t have time to decide whether or not you’re hearing things.",
           "alignment": 0,
           "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
         }
       ]
     },
     {
+      "name": "goodHeadToCs",
+      "environments": [
+        {
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 12,
+          "destination": "goodLeaveCs",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 590,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "You spot Linh sitting in the back of the auditorium, and you take your seat next to her.\n\"Do you want some hot chocolate?\" you ask her.\nEyes widening, she nods eagerly.\nYou reach for your thermos, only to find out it's not in your backpack's side pocket.\n\"What?\" you say. You swing your backpack forward and check the other side pocket.\"But i swear I brought it...\"\nLinh frowned, more so at the fact that she wouldn't have hot chocolate this morning. You got her hopes up. \"Maybe it dropped?\" She said.\nYou pout. \"Maybe...\" but if it dropped, you'd probably hear the thump of your thermos dropping. \"What if... someone stole it?\"\n\"Then you kill them,\" she calmly replies.\nYou forgot how violent Linh's suggestions could be.\nYou two sit through lecture, and before you know it, class is over. Where do you go after class?",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 700,
+          "height": 170,
+          "message": "Head to the Union!",
+          "alignment": 3,
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "name": "afterSue",
       "environments": [
         {
           "x": 650,
@@ -432,7 +740,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 8,
+          "destination": "youWannaNap",
           "requiresInteract": true
         },
         {
@@ -441,7 +749,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 0,
+          "destination": "wantOrangeOnGreen",
           "requiresInteract": true
         }
       ],
@@ -469,7 +777,7 @@
           "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
-          "scaleFactor": 0
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -477,32 +785,143 @@
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 1000,
-          "message": "You head straight to lincoln hall and spot linh sitting in the back of the auditorium. You take your seat next to her.\n\"Do you want some hot chocolate?\" you ask her.\nEyes widening, she nods eagerly.\nYou reach for your thermos, only to find out it's not in your backpack's side pocket.\"what?\" you say. You swing your backpack forward and check the other side pocket.\"But i swear I brought it...\"\nLinh frowned, more so at the fact that she wouldn't have hot chocolate this morning. You got her hopes up. \"Maybe it dropped?\" She said.\nYou pout. \"Maybe...\" But if it dropped, you'd probably hear the thump of your thermos dropping. \"What if... someone stole it?\"\n\"Then you kill them\" she calmly replies.\nYou forgot how violent linh's suggestions could be.\nYou two sit through lecture, and before you know it, class is over. Where do you go after class?",
+          "height": 300,
+          "message": "You two pass through the Union’s entrance, and Linh suddenly stops her tracks.\n\n“Do I wanna nap or do I want Orange on Green?” she ponders aloud.",
           "alignment": 0,
           "color": "not"
         },
         {
           "x": -720,
-          "y": 530,
-          "width": 700,
-          "height": 170,
-          "message": "Head to the Union!",
+          "y": 600,
+          "width": 600,
+          "height": 150,
+          "message": "\"You wanna nap\"",
           "alignment": 3,
           "color": "blue"
         },
         {
           "x": 720,
-          "y": 530,
-          "width": 700,
-          "height": 170,
-          "message": "Option Not Yet Defined",
+          "y": 600,
+          "width": 600,
+          "height": 150,
+          "message": "\"You want Orange on Green.\"",
           "alignment": 3,
           "color": "orange"
         }
       ]
     },
     {
+      "name": "goodLeaveCs",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "afterSue",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 300,
+          "message": "As you and Linh leave Lincoln Hall, you spot Sue Wee walking in your direction. \"Sue!\" you call.\nShe smiles and waves at the both of you.\n\"She probably has CS 173 right now,\" you say after she walks past.\n\"Yeah\" Linh agrees.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 530,
+          "width": 500,
+          "height": 100,
+          "message": "Continue",
+          "alignment": 3,
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "name": "youWannaNap",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 400,
+          "message": "You two head to the theater room in the Union’s basement, Linh entering first.\n\n“There’s no one here!” she says before your eyes could adjust to the darkness.\n\nYou both settle in the reclining chairs in the back corner as usual, and you pull your jacket over you as a blanket. You turn to Linh, ready to tell her about your progress on the CS project, but she’s already knocked out. Somehow, seeing her passed out made you realize that you were also sleepy. Maybe the darkness was luring you to sleep. You feel your eyes droop.\n\nYou don’t wake up after that.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "wantOrangeOnGreen",
       "environments": [
         {
           "x": 650,
@@ -510,7 +929,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 6,
+          "destination": "didYouHearAboutTheMurder",
           "requiresInteract": true
         },
         {
@@ -519,7 +938,7 @@
           "width": 200,
           "height": 396,
           "type": 3,
-          "destination": 0,
+          "destination": "iHaveCalcWithLinhAtOne",
           "requiresInteract": true
         }
       ],
@@ -541,13 +960,13 @@
           "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
-          "scaleFactor": 0
+          "scaleFactor": 1
         },
         {
           "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
-          "scaleFactor": 0
+          "scaleFactor": 1
         }
       ],
       "textBoxes": [
@@ -555,40 +974,41 @@
           "x": 0,
           "y": 200,
           "width": 2000,
-          "height": 300,
-          "message": "As you and Linh leave Lincoln Hall, you spot Sue Wee walking in your direction. \"Sue!\" you call.\nShe smiles and waves at the both of you.\n\"She probably has CS 173 right now,\" you say after she walks past.\n\"Yeah\" Linh agrees.",
+          "height": 450,
+          "message": "“Oh my God,” Linh says while chewing on her red bean bun. You notice her eyes are fervently darting back and forth, glued to her phone. She was reading something.\n\n“What?” you ask.\n\nLinh swallows her food. “They sent an Illini Alert. There was a murder in the ECE building.” She slides her phone to you.\n\n“Holy shit.” You stare at her phone as you think about what could’ve happened had you not skipped class that morning. You shiver at the thought, the hairs on the back of your neck standing.\n\n“Oh, it’s Ricky!” Linh says, looking behind you.\n\nYou turn around and Ricky was indeed in line for some pasta. It was your first time seeing him during class time this semester, just as it was your first time seeing others at the dining hall around this hour: KC, Linh’s neighbor, and Sue’s roommate. Orange on Green seemed to bring everyone together.\n\nRicky had turned his head in your directions when Linh said his name. “Oh!” he says, finally spotting the two of you. He waves and you wave back. \n\n“What’re your next classes?” he asks as he sits besides Linh.\n\n“I have chem at 12,” Linh replies.\n\n“Ew,” Ricky says.",
           "alignment": 0,
           "color": "not"
         },
         {
           "x": -720,
-          "y": 530,
-          "width": 700,
-          "height": 170,
-          "message": "Option not yet defined!",
+          "y": 750,
+          "width": 600,
+          "height": 150,
+          "message": "\"Did you hear about the murder?\"",
           "alignment": 3,
           "color": "blue"
         },
         {
           "x": 720,
-          "y": 530,
-          "width": 700,
-          "height": 170,
-          "message": "Option Not Yet Defined!",
+          "y": 750,
+          "width": 600,
+          "height": 150,
+          "message": "\"I have calc with Linh at One\"",
           "alignment": 3,
           "color": "orange"
         }
       ]
     },
     {
+      "name": "iHaveCalcWithLinhAtOne",
       "environments": [
         {
-          "x": 0,
-          "y": 0,
-          "width": 2880,
-          "height": 1440,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
-          "destination": 0,
+          "destination": "workOnCsAtGrainger1",
           "requiresInteract": true
         }
       ],
@@ -605,9 +1025,223 @@
           "y": -180,
           "fileName": "telephonePole.png",
           "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
         }
       ],
-      "textBoxes": []
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "“Ew,” Ricky says even louder, gagging in disgust.\n\nYou and Linh smile in amusement. She asks Ricky if he’s heard about the murder.\n\n“Wait, does this mean classes are canceled?” he asks.\n\n“Wait, you’re right,” you say. If weather could cancel classes, surely a murder would.\n\n“Lemme check,” Linh says, taking her phone back. After a few moments of tapping and scrolling, her eyebrows furrow in concern. “It doesn’t say anything—just a headline and a link to an article just saying they’ll investigate. There’s no email either.”\n\n“What? You mean to tell me that we still got classes while a murderer is running amok?” Ricky asks.\n\n“Yes,” Linh confirms. “Unless...this is fake.”\n\n“But everyone got the alert,” Ricky says.\n\n“Miguel, did you?” Linh asks.\n\nYou pull out your phone, and sure enough, there was a notification from an unsaved number with the same exact message as Linh’s. “Yeah.”\n\n“That’s so weird,” Linh says. “Maybe Massmail just takes longer to send since they’re more detailed and properly formatted?”\n\n“Girl, if there was a murder on my turf, I’d be telling everyone and their moms about it ASAP. Fuck formatting. I’d type like Andrew if it means warning everyone faster,” Ricky says.\n\nLinh frowned, knowing he made a good point.\n\n“They’ll probably send an email soon,” you say, trying to convince yourself as well.\n\n“Until then, I guess we still got class,” Linh sighs.\n\nThe three of you spend the rest of lunch in nervous conversation, glancing at each of your phones every now and then in anticipation for the Massmail.\n\nNo email came.\n\n“I’m ‘a head out,” Linh says after checking the time.\n\n“‘Ight, me too,” Ricky says as he begins cleaning up his lunch.\n\n“Be safe,” you three tell each other.\n\nYou start clearing the table too, deciding you can continue working on CS at Grainger before calc.\n",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 150,
+          "message": "Work on CS at Grainger",
+          "alignment": 3,
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "name": "didYouHearAboutTheMurder",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "workOnCsAtGrainger2",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "Ricky grimaced. “Yeah, I did.”\n\nAn brief, unsettling silence followed.\n\n“Wait, does this mean classes are canceled?” he suddenly asks.\n\n“Wait, you’re right,” you say. If weather could cancel classes, surely a murder would.\n\n“Lemme check,” Linh says, taking her phone back. After a few moments of tapping and scrolling, her eyebrows furrow in concern. “It doesn’t say anything—just a headline and a link to an article just saying they’ll investigate. There’s no email either.”\n\n“What? You mean to tell me that we still got classes while a murderer is running amok?” Ricky asks.\n\n“Yes,” Linh confirms. “Unless...this is fake.”\n\n“But everyone got the alert,” Ricky says.\n\n“Miguel, did you?” Linh asks.\n\nYou pull out your phone, and sure enough, there was a notification from an unsaved number with the same exact message as Linh’s. “Yeah.”\n\n“That’s so weird,” Linh says. “Maybe Massmail just takes longer to send since they’re more detailed and properly formatted?”\n\n“Girl, if there was a murder on my turf, I’d be telling everyone and their moms about it ASAP. Fuck formatting. I’d type like Andrew if it means warning everyone faster,” Ricky says.\n\nLinh frowned, knowing he made a point.\n\n“They’ll probably send an email soon,” you say, trying to convince yourself as well.\n\n“Until then, I guess we still got class,” Linh sighs.\n\nThe three of you spend the rest of lunch in nervous conversation, glancing at each of your phones every now and then in anticipation for the Massmail.\n\nNo email came.\n\n“I’m ‘a head out,” Linh says after checking the time.\n\n“‘Ight, me too,” Ricky says as he begins cleaning up his lunch.\n\n“Be safe,” you three tell each other.\n\nYou start clearing the table too, deciding you can continue working on CS at Grainger before calc.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 150,
+          "message": "Work on CS at Grainger",
+          "alignment": 3,
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "name": "workOnCsAtGrainger1",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 400,
+          "message": "You head back to the main quad after a productive hour at Grainger. You had made decent progress on the project.\n\nYou’re about a hop, skip, and jump away from Altgeld Hall when a hard object bashes your cheek. You fall over to the ground and hear screams from around. You can hardly process the smell of blood oozing from your mouth before a second hit strikes from the back of your head. And a third hit. And a fourth hit. The last thing you see is the stained cement beneath you.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 700,
+          "width": 600,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "workOnCsAtGrainger2",
+      "environments": [
+        {
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "askHelenAndJohn",
+          "requiresInteract": true
+        },
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "makeKimbapAlone",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 590,
+          "y": 1024,
+          "fileName": "bAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "oAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 450,
+          "message": "You head back to the main quad after a productive hour at Grainger. You had made decent progress on the project.\n\nYou meet Linh right before your calc class and tell her about how close you are to finishing the project.\n\n“Ooh, I’m excited to see how it turns out!” she says as the two of you head inside the classroom.\n\nTwo hours of discussion and confusion flew by, and Linh waits for you to pack up your things.\n\n“You know what I’m craving right now?” she asks.\n\n“What?” you ask.\n\n“Kimbap.”\n\nYou gasp. “I can make some today! I have nothing else to do. Maybe I can text John and Helen to come help.”\n\n“Really?” Linh says excitedly. “I was just gonna buy some from Spoon House, but that’s even better; free food!”",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 700,
+          "width": 800,
+          "height": 250,
+          "message": "Ask Helen and John to help you make kimbap because kimbap takes work.",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 700,
+          "width": 800,
+          "height": 250,
+          "message": "Wait... It’s not safe. Maybe you should make kimbap by yourself.",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
     }
   ]
 }

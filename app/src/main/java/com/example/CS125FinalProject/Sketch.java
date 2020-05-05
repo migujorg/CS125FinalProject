@@ -242,6 +242,7 @@ public class Sketch extends PApplet {
         setUpBluePortal();
         setUpPurplePortal();
         setUpCharacter();
+        setUpRedPortal();
     }
 
     /** Loads the files specific to the orange portal. */
@@ -311,6 +312,28 @@ public class Sketch extends PApplet {
         animations.get(2).add(frame7);
         animations.get(2).add(frame8);
         animations.get(2).add(frame9);
+    }
+
+    private void setUpRedPortal() {
+        animations.add(new ArrayList<PImage>());
+        PImage frame1 = loadImage("red1.png");
+        PImage frame2 = loadImage("red2.png");
+        PImage frame3 = loadImage("red3.png");
+        PImage frame4 = loadImage("red4.png");
+        PImage frame5 = loadImage("red5.png");
+        PImage frame6 = loadImage("red6.png");
+        PImage frame7 = loadImage("red7.png");
+        PImage frame8 = loadImage("red8.png");
+        PImage frame9 = loadImage("red9.png");
+        animations.get(5).add(frame1);
+        animations.get(5).add(frame2);
+        animations.get(5).add(frame3);
+        animations.get(5).add(frame4);
+        animations.get(5).add(frame5);
+        animations.get(5).add(frame6);
+        animations.get(5).add(frame7);
+        animations.get(5).add(frame8);
+        animations.get(5).add(frame9);
     }
 
     /** Loads the files specific to the ghost's right movement. */

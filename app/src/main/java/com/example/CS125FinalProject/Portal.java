@@ -7,7 +7,7 @@ import processing.core.PApplet;
 /**This class manages travelling between rooms. Portals will be invisible in the final implementation. */
 public class Portal extends Environment {
     /** Destination of the portal. Int is the index of a level in the "levels" array (this array doesn't exist yet) */
-    private int destination;
+    private String destination;
      /** Do you have to press a key to use this portal? Or is it automatic upon contact */
     private boolean requiresInteract;
 
@@ -19,7 +19,7 @@ public class Portal extends Environment {
      * @param setDestination sets destination
      * @param setRequiresInteract sets requiresInteract
      */
-    public Portal(double x, double y, double width, double height, int setDestination, boolean setRequiresInteract) {
+    public Portal(double x, double y, double width, double height, String setDestination, boolean setRequiresInteract) {
         super(new Rectangle (x,y,width,height), Environment.PORTAL);
         destination = setDestination;
         requiresInteract = setRequiresInteract;
@@ -30,7 +30,7 @@ public class Portal extends Environment {
      * @param setDestination sets destination
      * @param setRequiresInteract sets requiresInteract
      */
-    public Portal(Rectangle setHitbox, int setDestination, boolean setRequiresInteract) {
+    public Portal(Rectangle setHitbox, String setDestination, boolean setRequiresInteract) {
         super(setHitbox, Environment.PORTAL);
         destination = setDestination;
         requiresInteract = setRequiresInteract;
@@ -43,22 +43,40 @@ public class Portal extends Environment {
         Main.sketch.rect((float) super.getHitbox().x, (float) super.getHitbox().y, (float) super.getHitbox().width, (float) super.getHitbox().height);
     }
 
-    /** Runs the portal logic. Requires a Character parameter to know which character to watch for collision. */
+    /** Runs the portal logic. Requires a Character parameter to know which character to watch for collision.
+     *  If the portal has the destination -1 then it triggers the rest methods for the characters and TextBoxes.
+     *  Currently, resetting the TextBoxes will make it so that on levels you have visited once already the options
+     *  will show up instantly. Some levels have super longer stories, so this is useful to make replaying parts that you've
+     *  done already faster. */
     void run(Character c) {
         if (!c.isAdvancedHitbox() && c.isPlayer()) {
             if (!requiresInteract) {
                 if (super.getHitbox().intersects(c.getSimpleHitbox())) {
-                    ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(destination);
+                    if (destination.equals("restart")) {
+                        resetAllTextBoxes();
+                        resetAllCharacters();
+                        destination = "welcome";
+                        goToDestination();
+                    } else {
+                        goToDestination();
+                    }
                 }
             } else {
                 if (!c.isGrounded() && super.getHitbox().intersects(c.getSimpleHitbox())) {
-                    ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(destination);
-                    c.setIsGrounded(true);
+                    if (destination.equals("restart")) {
+                        resetAllTextBoxes();
+                        resetAllCharacters();
+                        destination = "welcome";
+                        goToDestination();
+                    } else {
+                        goToDestination();
+                        c.setIsGrounded(true);
+                    }
                 }
             }
         }
         if (((Sketch) Main.sketch).isDebugMode()) {
-            showPortal();
+            //showPortal();
         }
     }
 
@@ -79,7 +97,7 @@ public class Portal extends Environment {
         return super.getHitbox().height;
     }
     /**@return destination of portal.*/
-    int getDestination() {
+    String getDestination() {
         return destination;
     }
     /**@return requiresInteract property of portal.*/
@@ -89,5 +107,30 @@ public class Portal extends Environment {
     /**@return hitbox Rectangle directly. */
     public Rectangle getHitBox() {
         return super.getHitbox();
+    }
+
+    private void resetAllTextBoxes() {
+        for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
+            for (int j = 0; j < ((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getTextBoxes().size(); j++) {
+                ((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getTextBoxes().get(j).reset();
+            }
+        }
+    }
+
+    private void resetAllCharacters() {
+        for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
+            for (int j = 0; j < ((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getCharacters().size(); j++) {
+                ((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getCharacters().get(j).reset();
+            }
+        }
+    }
+
+    private void goToDestination() {
+        for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
+            if (((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getName().equals(destination)) {
+                ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(i);
+                return;
+            }
+        }
     }
 }

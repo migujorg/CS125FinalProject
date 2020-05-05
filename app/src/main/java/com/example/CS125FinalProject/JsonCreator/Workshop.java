@@ -128,7 +128,7 @@ public class Workshop extends PApplet {
             if (currentType == Environment.PLATFORM) {
                 platforms.add(new Platform(temp));
             } else if (currentType == Environment.PORTAL) {
-                portals.add(new Portal(temp, 1, false));
+                portals.add(new Portal(temp, "welcome", false));
             } else { //STAIRS
                 stairs.add(new Stairs(temp));
             }

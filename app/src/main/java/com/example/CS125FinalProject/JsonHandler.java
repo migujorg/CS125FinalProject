@@ -26,6 +26,7 @@ public class JsonHandler {
         ArrayList<Room> roomArray = new ArrayList<>();
         JsonArray rooms = root.getAsJsonArray("rooms");
         for(int i = 0; i < rooms.size(); i++) {
+            String setName = ((JsonObject) rooms.get(i)).get("name").getAsString();
             ArrayList<Environment> environmentArray = new ArrayList<>();
             addDefaultWalls(environmentArray);
             JsonArray environments = ((JsonObject) rooms.get(i)).get("environments").getAsJsonArray();
@@ -47,7 +48,7 @@ public class JsonHandler {
                             jAsObject.get("y").getAsDouble(),
                             jAsObject.get("width").getAsDouble(),
                             jAsObject.get("height").getAsDouble(),
-                            jAsObject.get("destination").getAsInt(),
+                            jAsObject.get("destination").getAsString(),
                             jAsObject.get("requiresInteract").getAsBoolean()));
                 }
             }
@@ -121,9 +122,7 @@ public class JsonHandler {
                     //System.out.println("USED CONSTRUCTOR THREE");
                 }
             }
-
-
-            roomArray.add(new Room(environmentArray, characterArray, spriteArray, textBoxArray));
+            roomArray.add(new Room(environmentArray, characterArray, spriteArray, textBoxArray, setName));
         }
         roomManager = new RoomManager(roomArray);
         return roomManager;

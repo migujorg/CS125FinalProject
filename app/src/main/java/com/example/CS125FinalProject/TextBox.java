@@ -8,7 +8,7 @@ import processing.core.PFont;
 
 /** This class manages rendering text on the canvas.*/
 public class TextBox {
-    private static final double TYPE_DELAY = 2;
+    private static final double TYPE_DELAY = 1;
     private Rectangle box = new Rectangle();
     private String message;
     private int alignment;
@@ -16,7 +16,6 @@ public class TextBox {
     private int currentChar;
     private int messageLength; //This is for optimization so it doesn't have to call message.length() a billion times.
     private String partialMessage = "";
-    private String messageSoFar = "";
     private boolean complete;
     private String color = "";
     PFont font;
@@ -174,6 +173,8 @@ public class TextBox {
             Main.sketch.fill(0,223,255);
         } else if (color.equals("purple")) {
             Main.sketch.fill(255,78,255);
+        } else if (color.equals("red")) {
+            Main.sketch.fill(255,115,116);
         }
         Main.sketch.text(message.substring(0, currentChar), (float) box.x, (float) box.y, (float) box.width, (float) box.height);
     }
@@ -197,6 +198,8 @@ public class TextBox {
             drawBlueBox();
         } else if (color.equals("purple")) {
             drawPurpleBox();
+        } else if (color.equals("red")) {
+            drawRedBox();
         } else {
             drawTerminalBox();
         }
@@ -205,6 +208,13 @@ public class TextBox {
 
     boolean isComplete() {
         return complete;
+    }
+
+    void reset() {
+        complete = false;
+        partialMessage = "";
+        currentChar = 0;
+
     }
 
     private void drawOrangeBox() {
@@ -272,6 +282,30 @@ public class TextBox {
                 20);
         Main.sketch.stroke(77, 17, 72);
         Main.sketch.fill(77, 17, 72);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
+                (float) ((box.y) + (box.height / 2)),
+                (float) (box.width * 1.025),
+                (float) (box.height * 1.05),
+                20);
+    }
+
+    private void drawRedBox() {
+        Main.sketch.stroke(147, 44, 62);
+        Main.sketch.fill(147, 44, 62);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
+                (float) ((box.y) + (box.height / 2)),
+                (float) (box.width * 1.1),
+                (float) (box.height * 1.15),
+                20);
+        Main.sketch.stroke(118, 35, 49);
+        Main.sketch.fill(118, 35, 49);
+        Main.sketch.rect((float) (box.x + (box.width / 2)),
+                (float) ((box.y) + (box.height / 2)),
+                (float) (box.width * 1.05),
+                (float) (box.height * 1.1),
+                20);
+        Main.sketch.stroke(85, 25, 36);
+        Main.sketch.fill(85, 25, 36);
         Main.sketch.rect((float) (box.x + (box.width / 2)),
                 (float) ((box.y) + (box.height / 2)),
                 (float) (box.width * 1.025),

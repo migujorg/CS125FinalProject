@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 class Room {
+    private String name = "";
     /** list of platforms in this room. */
     private ArrayList<Environment> environments;
     /** list of Characters in this room. */
@@ -16,8 +17,8 @@ class Room {
     private ArrayList<Sprite> sprites;
     /** list of TextBoxes in this room. */
     private ArrayList<TextBox> textBoxes;
-    /** Used to call special room-specific methods. (For example, for rooms that kill you)*/
-    private String type = "normal";
+   // /** Used to call special room-specific methods. (For example, for rooms that kill you)*/
+   // private String type = "normal";
 
     private int currentTextBox;
     //TODO: private ArrayList<Sprite> sprites = new ArrayList<Sprite()> used later to draw sprites
@@ -45,14 +46,14 @@ class Room {
         textBoxes = setTextBoxes;
     }
 
-    /** Full rooms constructor. Has every element except for type. Type is set to it's default of "normal". */
+    /** Full rooms constructor. Has every element */
     Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters,
-         ArrayList<Sprite> setSprites, ArrayList<TextBox> setTextBoxes, String setType) {
+         ArrayList<Sprite> setSprites, ArrayList<TextBox> setTextBoxes, String setName) {
         environments = setEnvironments;
         characters = setCharacters;
         sprites = setSprites;
         textBoxes = setTextBoxes;
-        type = setType;
+        name = setName;
     }
 
     /** Consolidates logic for each room element into one method. */
@@ -99,8 +100,16 @@ class Room {
         }
     }
 
-    private void doDeathScreen() {
+    ArrayList<TextBox> getTextBoxes() {
+        return textBoxes;
+    }
 
+    ArrayList<Character> getCharacters() {
+        return characters;
+    }
+
+    String getName() {
+        return name;
     }
 
 }
