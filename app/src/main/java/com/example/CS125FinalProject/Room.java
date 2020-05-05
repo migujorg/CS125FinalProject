@@ -16,6 +16,8 @@ class Room {
     private ArrayList<Sprite> sprites;
     /** list of TextBoxes in this room. */
     private ArrayList<TextBox> textBoxes;
+    /** Used to call special room-specific methods. (For example, for rooms that kill you)*/
+    private String type = "normal";
 
     private int currentTextBox;
     //TODO: private ArrayList<Sprite> sprites = new ArrayList<Sprite()> used later to draw sprites
@@ -34,13 +36,23 @@ class Room {
         sprites = new ArrayList<Sprite>();
     }
 
-    /** Full rooms constructor. Has every element. */
+    /** Almost full rooms constructor. Has every element except for type. Type is set to it's default of "normal". */
     Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters,
          ArrayList<Sprite> setSprites, ArrayList<TextBox> setTextBoxes) {
         environments = setEnvironments;
         characters = setCharacters;
         sprites = setSprites;
         textBoxes = setTextBoxes;
+    }
+
+    /** Full rooms constructor. Has every element except for type. Type is set to it's default of "normal". */
+    Room(ArrayList<Environment> setEnvironments, ArrayList<Character> setCharacters,
+         ArrayList<Sprite> setSprites, ArrayList<TextBox> setTextBoxes, String setType) {
+        environments = setEnvironments;
+        characters = setCharacters;
+        sprites = setSprites;
+        textBoxes = setTextBoxes;
+        type = setType;
     }
 
     /** displays the room on the phone screen. Also runs the appropriate logic. */
@@ -81,6 +93,10 @@ class Room {
                 tempE.run(tempC);
             }
         }
+    }
+
+    private void doDeathScreen() {
+
     }
 
 }

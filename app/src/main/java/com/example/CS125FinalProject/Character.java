@@ -118,7 +118,9 @@ public class Character {
     /**Call this in "draw()" to draw this character and run it's logic*/
     void run() {
         physicsUpdate();
-        //displayHitbox();
+        if (((Sketch) Main.sketch).isDebugMode()) {
+            displayHitbox();
+        }
         showCharacter();
         if (isPlayer) {
             runPlayerControl();

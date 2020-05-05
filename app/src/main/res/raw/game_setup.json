@@ -3,19 +3,19 @@
     {
       "environments": [
         {
-          "x": 568,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 1,
           "requiresInteract": true
         },
         {
-          "x": 2008,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 2,
           "requiresInteract": true
@@ -36,13 +36,13 @@
           "scaleFactor": 9
         },
         {
-          "x": 615,
+          "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
           "scaleFactor": 1
         },
         {
-          "x": 2055,
+          "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
           "scaleFactor": 1
@@ -81,9 +81,9 @@
     {
       "environments": [
         {
-          "x": 1335,
+          "x": 2090,
           "y": 1024,
-          "width": 210,
+          "width": 200,
           "height": 396,
           "type": 3,
           "destination": 4,
@@ -105,7 +105,7 @@
           "scaleFactor": 9
         },
         {
-          "x": 1335,
+          "x": 2030,
           "y": 1024,
           "fileName": "pAnimation",
           "scaleFactor": 1
@@ -135,19 +135,19 @@
     {
       "environments": [
         {
-          "x": 568,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 1,
           "requiresInteract": true
         },
         {
-          "x": 2008,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 3,
           "requiresInteract": true
@@ -168,13 +168,13 @@
           "scaleFactor": 9
         },
         {
-          "x": 615,
+          "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
           "scaleFactor": 1
         },
         {
-          "x": 2055,
+          "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
           "scaleFactor": 1
@@ -242,19 +242,19 @@
     {
       "environments": [
         {
-          "x": 568,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 5,
           "requiresInteract": true
         },
         {
-          "x": 2008,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 3,
           "requiresInteract": true
@@ -275,13 +275,13 @@
           "scaleFactor": 9
         },
         {
-          "x": 615,
+          "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
           "scaleFactor": 1
         },
         {
-          "x": 2055,
+          "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
           "scaleFactor": 1
@@ -320,19 +320,19 @@
     {
       "environments": [
         {
-          "x": 568,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 6,
           "requiresInteract": true
         },
         {
-          "x": 2008,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 7,
           "requiresInteract": true
@@ -353,13 +353,13 @@
           "scaleFactor": 9
         },
         {
-          "x": 615,
+          "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
           "scaleFactor": 1
         },
         {
-          "x": 2055,
+          "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
           "scaleFactor": 1
@@ -427,19 +427,19 @@
     {
       "environments": [
         {
-          "x": 568,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 8,
           "requiresInteract": true
         },
         {
-          "x": 2008,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 0,
           "requiresInteract": true
@@ -460,13 +460,13 @@
           "scaleFactor": 9
         },
         {
-          "x": 615,
+          "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
           "scaleFactor": 1
         },
         {
-          "x": 2055,
+          "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
           "scaleFactor": 0
@@ -505,19 +505,19 @@
     {
       "environments": [
         {
-          "x": 568,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 6,
           "requiresInteract": true
         },
         {
-          "x": 2008,
-          "y": 956,
-          "width": 304,
-          "height": 464,
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
           "type": 3,
           "destination": 0,
           "requiresInteract": true
@@ -538,13 +538,13 @@
           "scaleFactor": 9
         },
         {
-          "x": 615,
+          "x": 590,
           "y": 1024,
           "fileName": "bAnimation",
           "scaleFactor": 0
         },
         {
-          "x": 2055,
+          "x": 2030,
           "y": 1024,
           "fileName": "oAnimation",
           "scaleFactor": 0
@@ -585,8 +585,8 @@
         {
           "x": 0,
           "y": 0,
-          "width": 1440,
-          "height": 2880,
+          "width": 2880,
+          "height": 1440,
           "type": 3,
           "destination": 0,
           "requiresInteract": true

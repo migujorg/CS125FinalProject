@@ -58,7 +58,7 @@ public class Portal extends Environment {
             }
         }
         if (((Sketch) Main.sketch).isDebugMode()) {
-            //showPortal();
+            showPortal();
         }
     }
 

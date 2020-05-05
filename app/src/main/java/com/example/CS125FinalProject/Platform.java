@@ -21,7 +21,7 @@ public class Platform extends Environment {
     void run(Character c) {
         characterCollisionCheck(c);
         if (Sketch.debugMode) {
-            //showPlatform();
+            showPlatform();
         }
     }
 
