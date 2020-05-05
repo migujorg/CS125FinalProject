@@ -9,7 +9,7 @@ import processing.core.PFont;
 /** This class manages rendering text on the canvas.*/
 public class TextBox {
     /** How slow all TextBoxes will type.*/
-    private static final double TYPE_DELAY = 2;
+    static double TYPE_DELAY = 2;
     /** Rectangle that is used for x, y, width, and height of the TextBox.*/
     private Rectangle box = new Rectangle();
     /** The message that the TextBox will display.*/

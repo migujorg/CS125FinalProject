@@ -1376,6 +1376,899 @@
           "color": "orange"
         }
       ]
+    },
+    {
+      "name": "15Minutes",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "Tyler: ok linh and kc are already there\n\nThe three of you spend the rest of the bus ride theorizing the alerts and the person behind them.\n\n“It’s most likely a student,” John says.\n\n“I agree,” you say.\n\nA sudden thought came to mind.\n\n“What if,” you start, “the email was actually fake and the alerts were real? And the murderer hacked into the Massmail system to cover up the crime?”\n\n“What kinda Uno reverse card shit?” Helen says.\n\nJohn laughs, but you start thinking about how brilliant the plan would be. If a student could hack Illini Alerts, who’s to say a person can’t hack Massmail?\n\nThe bus drops you off at PAR, and John swipes all of you into Saunders. You arrive at room 231, spotting Ricky’s and Tyler’s cute coffee mug name tags, and Helen unlocks the door. A soft clang immediately follows and you spot KC—a guilty look on her face.\n\n“Uh,” Helen utters.\n\n“Hello,” KC innocently greets.\n\n“Is everything okay?” Helen asks.\n\n“Yes.”\n\nFor an actress, her lies were ridiculously obvious.\n\n“Where’s Linh?”\n\n“In the bathroom.”\n\nYou enter the room, drop off your bag, and slip off your sneakers. You’re about to settle on the floor when you notice small stains—bright red and fresh. Was that blood? Just beyond the stains was a knife coated in the same substance, lying in what Ricky deemed the Love Shaq, a fort Linh and Ricky built underneath his bed. Maybe someone was trying to cut through strawberry cake.\n\nYes, you had made that before—for Ricky’s birthday. Which was five months ago. And strawberry purée was viscous compared to the substance covering the knife.\n\n“Miguel,” KC calls from behind you, scaring you out of your thoughts. Was the knife what caused the clang when you had first entered the room? “I need to talk to you. Alone.”\n\nYou don’t turn to her. Fear paralyzes you as you think back to your theory. If a student could hack Illini Alerts, who’s to say a person can’t hack Massmail? Who’s to say one of your friends isn’t that person?\n\n“Miguel, I really need to talk to you. Like, now.”\n\nSuddenly, the door opens and before you have a chance to see who entered, something pricks your neck and you’re fast asleep.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "30Minutes",
+      "environments": [
+        {
+          "x": 650,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "talkToKC",
+          "requiresInteract": true
+        },
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "standYourGround",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 590,
+          "y": 1024,
+          "fileName": "bAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "oAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "Tyler: ok linh and kc are already there\n\nThe three of you spend the rest of the bus ride theorizing the alerts and the person behind them.\n\n“It’s most likely a student,” John says.\n\n“I agree,” you say.\n\nA sudden thought came to mind.\n\n“What if,” you start, “the email was actually fake and the alerts were real? And the murderer hacked into the Massmail system to cover up the crime?”\n\n“What kinda Uno reverse card shit?” Helen says.\n\nJohn laughs, but you start thinking about how brilliant the plan would be. If a student could hack Illini Alerts, who’s to say a person can’t hack Massmail?\n\nThe bus drops you off at PAR, and John swipes all of you into Saunders. You arrive at room 231, spotting Ricky’s and Tyler’s cute coffee mug name tags, and Helen unlocks the door. A soft clang immediately follows and you spot KC—a guilty look on her face.\n\n“Uh,” Helen utters.\n\n“Hello,” KC innocently greets.\n\n“Is everything okay?” Helen asks.\n\n“Yes.”\n\nFor an actress, her lies were ridiculously obvious.\n\n“Where’s Linh?”\n\n“In the bathroom.”\n\nYou enter the room, drop off your bag, and slip off your sneakers. You’re about to settle on the floor when you notice small stains—bright red and fresh. Was that blood? Just beyond the stains was a knife coated in the same substance, lying in what Ricky deemed the Love Shaq, a fort Linh and Ricky built underneath his bed. Maybe someone was trying to cut through strawberry cake.\n\nYes, you had made that before—for Ricky’s birthday. Which was five months ago. And strawberry purée was viscous compared to the substance covering the knife.\n\n“Miguel,” KC calls from behind you, scaring you out of your thoughts. Was the knife what caused the clang when you had first entered the room? “I need to talk to you. Alone.”\n\nYou don’t turn to her. Fear paralyzes you as you think back to your theory. If a student could hack Illini Alerts, who’s to say a person can’t hack Massmail? Who’s to say one of your friends isn’t that person?\n\n“Miguel, I really need to talk to you. Like, now.”",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -720,
+          "y": 850,
+          "width": 600,
+          "height": 125,
+          "message": "Talk to KC",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": 720,
+          "y": 850,
+          "width": 600,
+          "height": 125,
+          "message": "Stand Your Ground",
+          "alignment": 3,
+          "color": "orange"
+        }
+      ]
+    },
+    {
+      "name": "standYourGround",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“Uh, I’m gonna go to the bathroom,” you stammer.\n\n“Miguel, this is really important,” she urges, but you’re already heading to the bathroom.\n\nYou speed walk to the nearest vacant bathroom and lock yourself in.\n\nYou would wait. Yes, you would wait until everyone’s back from late night, when there would be more witnesses. You check your Fitbit—about 10 more minutes until everyone should be back.\n\n“Miguel.” KC was knocking on his door. Maybe you should have thought further than fleeing to the bathroom.\n\nShe suddenly stopped knocking when the toilet next door flush. Was that Linh? Whoever it was, the person drove KC away, and you were thankful to be left alone.\n\nSeveral minutes pass when the lights turn off. You yelp in surprise, but realize that the motion detectors weren’t detecting any movement, so you begin pacing back and forth.\n\nWhen you’re almost sure it’s time the rest of the group returned, you press your ear against the door, making sure you wouldn’t walk right into an ambush. You open the door and peek out; the hallway was empty.\n\nYou walk back to Ricky’s and Tyler’s room and decide you can tell them you weren’t feeling well  and leave.\n\nYou enter the room and pick up your belongings, muttering, “I’m gonna leave.”\n\n“But you just got here,” Tyler says.\n\nYou mumble your excuse and bend down to tie your shoes when something pokes—no, injects—your side. You turn and lock eyes with your hitman before you collapse.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "talkToKC",
+      "environments": [
+        {
+          "x": 60,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseKC",
+          "requiresInteract": true
+        },
+        {
+          "x": 360,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseLinh",
+          "requiresInteract": true
+        },
+        {
+          "x": 660,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseRicky",
+          "requiresInteract": true
+        },
+        {
+          "x": 960,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseTyler",
+          "requiresInteract": true
+        },
+        {
+          "x": 1720,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseSue",
+          "requiresInteract": true
+        },
+        {
+          "x": 2020,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseNorb",
+          "requiresInteract": true
+        },
+        {
+          "x": 2320,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseJohn",
+          "requiresInteract": true
+        },
+        {
+          "x": 2620,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "accuseHelen",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": 1024,
+          "fileName": "bAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 300,
+          "y": 1024,
+          "fileName": "oAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 600,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 900,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 2560,
+          "y": 1024,
+          "fileName": "bAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 2260,
+          "y": 1024,
+          "fileName": "oAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 1960,
+          "y": 1024,
+          "fileName": "pAnimation",
+          "scaleFactor": 1
+        },
+        {
+          "x": 1660,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“Uh, okay,” you say.\n\nKC leads you to the lounge, making sure it was vacant. “Someone’s trying to kill you.”\n\nYour heart dropped. “What?”\n\n“I found this note, but I don’t know whose it is.” KC hands you a scrunched up piece of paper.\n\nThe note reads, “Kill Miguel F. by all means necessary. You know what happens when you don’t. I’ll handle administration.”\n\nJust when you thought your heart couldn’t sink any more than it already has, you felt it drop to your stomach, which was churning in apprehension and fear.\n\n“I found it tucked underneath the refrigerator, and there was also a knife covered in...”\n\nWas this real?\n\n“Was anyone else in the room before you?” you ask.\n\n“No, just Ricky and Tyler.”\n\nA door handle audibly turned, and the two of you instinctively faced in its direction. Linh had just finished using the bathroom.\n\n“We should go back,” KC says in a low voice.\n\n“Yeah,” you agree.\n\nYou didn’t realize what a horrible decision it was until everyone came back. If someone in the group really was trying to kill you, that means if everyone is present, there’s a hundred percent chance the murderer is there.\n\nWhile everyone jokes and banters, you sit in silence, observing everyone. The only one who is off is KC, who throws nervous glances at you, every now and then, but that’s because she knows.\n\n“Miguel, are you okay?” Ricky asks.\n\n“Someone here is trying to kill me,” you blurt.\n\nHalf the room goes silent, the other half goes, “What?”",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": -1290,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse KC",
+          "alignment": 3,
+          "color": "blue"
+        },
+        {
+          "x": -990,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse Linh",
+          "alignment": 3,
+          "color": "orange"
+        },
+        {
+          "x": -690,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse Ricky",
+          "alignment": 3,
+          "color": "purple"
+        },
+        {
+          "x": -390,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse Tyler",
+          "alignment": 3,
+          "color": "red"
+        },
+        {
+          "x": 390,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse Sue",
+          "alignment": 3,
+          "color": "red"
+        },
+        {
+          "x": 690,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse Norb",
+          "alignment": 3,
+          "color": "purple"
+        },
+        {
+          "x": 990,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse John",
+          "alignment": 3,
+          "color": "orange"
+        },
+        {
+          "x": 1290,
+          "y": 850,
+          "width": 260,
+          "height": 175,
+          "message": "Accuse Helen",
+          "alignment": 3,
+          "color": "blue"
+        }
+      ]
+    },
+    {
+      "name": "accuseKC",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s KC!”\n\n“Um, what?” she says.\n\nEveryone in the room stares at KC, but you made the wrong decision in diverting everyone’s attention—including your own—to her. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseLinh",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s Linh!”\n\n“Um, what?” she says.\n\nEveryone in the room stares at Linh, but you made the wrong decision in diverting everyone’s attention—including your own—to her. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseTyler",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s Tyler!”\n\n“Um, what?” he says.\n\nEveryone in the room stares at Tyler, but you made the wrong decision in diverting everyone’s attention—including your own—to him. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to..",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseSue",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s Sue!”\n\n“What?” she says.\n\nEveryone in the room stares at Sue, but you made the wrong decision in diverting everyone’s attention—including your own—to her. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseNorb",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s Norb!”\n\n“Uh, what?” he says.\n\nEveryone in the room stares at Norb, but you made the wrong decision in diverting everyone’s attention—including your own—to him. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseJohn",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s John!”\n\n“Um, what?” he says.\n\nEveryone in the room stares at John, but you made the wrong decision in diverting everyone’s attention—including your own—to him. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseHelen",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "restart",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s Helen!”\n\n“Uh, what?” she says.\n\nEveryone in the room stares at Helen, but you made the wrong decision in diverting everyone’s attention—including your own—to her. Something injects into your arm, and you’ve never knocked out so fast in your life.\n\nNor would you have any more chances to.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 100,
+          "message": "Start Over",
+          "alignment": 3,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "name": "accuseRicky",
+      "environments": [
+        {
+          "x": 2090,
+          "y": 1024,
+          "width": 200,
+          "height": 396,
+          "type": 3,
+          "destination": "finish",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 2030,
+          "y": 1024,
+          "fileName": "rAnimation",
+          "scaleFactor": 1
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 200,
+          "width": 2000,
+          "height": 550,
+          "message": "“It’s Ricky!”\n\nRicky instantly jumps up and pulls out a syringe needle about to pounce, when the rest of the group reacts and holds him down.\n\n“LET ME GO. I NEED HIM DEAD.”\n\nSeven against one, Ricky is unable to land an attack on you. You stare at him, shocked and speechless, while everyone else was fiercely yelling.\n\nThe door to the dorm bursts open, and in the doorway was a young man you don’t recognize. Was he the RA?\n\n“What’s going—holy shit.”\n\nRicky grows more rabid, and even seven people struggle with keeping him in place. The stranger notices the syringe, walks in the room, and seizes it. He did it so effortlessly he almost stunned the room into silence.\n\n“What is this? A tranquilizer?”\n\nSuddenly, Ricky leaps onto the stranger, knocking him over to the floor. It quickly dawns on the stranger that Ricky’s intent was murderous. Panicking, the stranger injects the needle into Ricky’s neck, immediately slowing his movements until he completely stops.\n\nYou thought you have never been more afraid when he was ready to stab you with that exact needle, but witnessing Ricky’s death was something that haunted your mind and permanently scarred your soul.",
+          "alignment": 0,
+          "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 200,
+          "message": "You found the murderer",
+          "alignment": 3,
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "name": "finish",
+      "environments": [
+        {
+          "x": -200,
+          "y": -200,
+          "width": 0,
+          "height": 0,
+          "type": 3,
+          "destination": "none",
+          "requiresInteract": true
+        }
+      ],
+      "characters": [],
+      "sprites": [
+        {
+          "x": 0,
+          "y": -200,
+          "fileName": "scene1aLowRes.png",
+          "scaleFactor": 9
+        },
+        {
+          "x": 0,
+          "y": -180,
+          "fileName": "telephonePole.png",
+          "scaleFactor": 9
+        }
+      ],
+      "textBoxes": [
+        {
+          "x": 0,
+          "y": 400,
+          "width": 1500,
+          "height": 400,
+          "message": "Game and Story by Miguel Fernandez and Linh Pham\n\nMiguel played by Miguel Fernandez\nLinh played by Linh Pham\nRicky played by Ricardo Ramirez\nHelen played by Helen Huynh \nJohn played by John Tang\nKC played by KC Rivera\nNorb played by Norberto Nieves\nTyler played by Tyler Tang\nSue played by Sue Wee",
+          "alignment": 0,
+          "color": "not"
+        }
+      ]
     }
+
   ]
 }

@@ -10,6 +10,8 @@ import processing.opengl.PGraphicsOpenGL;
 import android.media.MediaPlayer;
 import android.content.res.AssetFileDescriptor;
 
+import org.w3c.dom.Text;
+
 /**This can be seen as the "Main Method" of processing.
  *  settings() is ran once before everything.
  *  setup() runs immediately after. Once.
@@ -28,7 +30,7 @@ public class Sketch extends PApplet {
     /** Frame rate of the sketch. Will attempt to reach this frame rate, but may be lower if it cannot be achieved. */
     private static final int FRAME_RATE = 60;
     /** Boolean used by developer to help debug things. When set to true turns on various display that are normally hidden. */
-    static boolean debugMode = true; //affects display of hitboxes
+    static boolean debugMode = false; //affects display of hitboxes
     /** Is the right side of the screen pressed? Used for player control. */
     private boolean rightPressed = false;
     /** Is the left side of the screen pressed? Used for player control. */
@@ -53,6 +55,8 @@ public class Sketch extends PApplet {
     private float screenScaleFactor;
     /** boolean used to stop the music when the app is paused. */
     private boolean stopMusic = false;
+    private PImage fastForward;
+    private PImage fastForward1;
 
     public Sketch(Context context){
         activityContext = context;
@@ -74,21 +78,19 @@ public class Sketch extends PApplet {
         background(255,0,0); //red for debugging purposes (if you can see it, it's no good)
         setUpSounds();
         scaleToScreenSize();
+        setUpFFButton();
     }
 
     /**Runs FRAME_RATE times per second */
     public void draw() {
         scale(screenScaleFactor);
         refreshBackground();
-        //System.out.println("displayWidth: " + displayWidth + "\ndisplayHeight: " +  displayHeight);
         roomManager.run();
         musicManager();
         if (debugMode) {
             showTouch();
+            text("" + frameRate, 50, 80);
         }
-        fill(255,30,30);
-        textAlign(CORNER);
-        text("" + frameRate, 50, 80);
     }
 
     /**Shows which part of the screen is being detected as pressed. Used for debugging*/
@@ -130,6 +132,7 @@ public class Sketch extends PApplet {
         if (mouseY < (displayHeight - 300) / 2) {
             upPressed = true;
         }
+        ffListener();
     }
 
     /**Runs when a touch moves. Sets leftPressed and rightPressed accordingly. */
@@ -189,7 +192,7 @@ public class Sketch extends PApplet {
     private void setUpSounds() {
         try {
             assetFileDescriptor = activityContext.getAssets().openFd("ui_hacking_charsingle_06.wav");
-            setUpSound(terminalSounds, 16, (float) 0.1);
+            setUpSound(terminalSounds, 32, (float) 0.1);
             assetFileDescriptor = activityContext.getAssets().openFd("On-Thngs-to-Come_Looping.mp3");
             setUpSound(music,1, 1);
             assetFileDescriptor = activityContext.getAssets().openFd("02-Puzzle.mp3");
@@ -397,7 +400,11 @@ public class Sketch extends PApplet {
     }
 
     public void stopMusic() {
-        music.get(currentSong).stop();
+        try {
+            music.get(currentSong).stop();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         stopMusic = true;
     }
 
@@ -413,6 +420,43 @@ public class Sketch extends PApplet {
         }
         currentSong = -1;
         stopMusic = false;
+    }
+
+    public void setBackgroundHue(int counter) {
+        if (counter < 0 ) {
+            return;
+        }
+        int red = counter / 5;
+        if (red >= 254) {
+            red = 254;
+        }
+        int alpha = (counter / 20) + 10;
+        if (alpha >= 199) {
+            alpha = 199;
+        }
+        fill(red % 255,0,0,(alpha % 200));
+        rect(0,0, PIXEL2XL_DISPLAY_W, PIXEL2XL_DISPLAY_H);
+    }
+
+    private void ffListener() {
+        if (mouseY < 200 && mouseX > 2700 && TextBox.TYPE_DELAY == 2) {
+            TextBox.TYPE_DELAY = 1;
+        } else if (mouseY < 200 && mouseX > 2700 && TextBox.TYPE_DELAY == 1) {
+            TextBox.TYPE_DELAY = 2;
+        }
+    }
+
+    private void setUpFFButton() {
+        fastForward = loadImage("fastForward.png");
+        fastForward1 = loadImage("fastForward1.png");
+    }
+
+    public void drawFF() {
+        if (TextBox.TYPE_DELAY == 2) {
+            image(fastForward, PIXEL2XL_DISPLAY_W - 100, 50, fastForward.width * 4, fastForward.height * 4);
+        } else {
+            image(fastForward1, PIXEL2XL_DISPLAY_W - 100, 50, fastForward.width * 4, fastForward.height * 4);
+        }
     }
 }
 

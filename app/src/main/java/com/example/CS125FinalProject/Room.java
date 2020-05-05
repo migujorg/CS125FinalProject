@@ -15,6 +15,8 @@ class Room {
     /** the TextBox that is currently being drawn. */
     private int currentTextBox;
 
+    private int counter;
+
     /** Default constructor. Every list is empty. Pretty much never used */
     Room() {
         environments = new ArrayList<>();
@@ -51,6 +53,10 @@ class Room {
     /** Consolidates logic for each room element into one method. */
     void runRoom() {
         doSprites();
+        if (((Portal) environments.get(3)).getDestination().equals("restart")) {
+            counter++;
+            ((Sketch) Main.sketch).setBackgroundHue(counter);
+        }
         doTextBoxes();
         doCharacters();
         doEnvironments();
@@ -65,6 +71,9 @@ class Room {
 
     /** Runs the logic for all of the TextBoxes int the room. */
     private void doTextBoxes() {
+        if (textBoxes.size() > 0) {
+            ((Sketch) Main.sketch).drawFF();
+        }
         for (int i = 0; i < textBoxes.size(); i++) {
             if (currentTextBox >= i) {
                 textBoxes.get(i).drawBackground();

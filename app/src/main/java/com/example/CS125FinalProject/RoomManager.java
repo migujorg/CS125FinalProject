@@ -12,7 +12,7 @@ public class RoomManager {
      * @param setRooms sets the rooms ArrayList<Room>*/
     RoomManager(ArrayList<Room> setRooms) {
         rooms = setRooms;
-        currentRoom = 9; //not really necessary b/c default int initialization is 0;
+        currentRoom = 25; //not really necessary b/c default int initialization is 0;
     }
 
     /** Calls the run() method on the current room. */
