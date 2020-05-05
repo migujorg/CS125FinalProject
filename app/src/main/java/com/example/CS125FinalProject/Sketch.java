@@ -55,7 +55,9 @@ public class Sketch extends PApplet {
     private float screenScaleFactor;
     /** boolean used to stop the music when the app is paused. */
     private boolean stopMusic = false;
+    /** PImage used for one state of the fastForward button. */
     private PImage fastForward;
+    /** Pimage used for other state of the fastForward button. */
     private PImage fastForward1;
 
     public Sketch(Context context){
@@ -315,6 +317,7 @@ public class Sketch extends PApplet {
         animations.get(2).add(frame9);
     }
 
+    /** Loads the files specific to the red portal. */
     private void setUpRedPortal() {
         animations.add(new ArrayList<PImage>());
         PImage frame1 = loadImage("red1.png");
@@ -385,20 +388,14 @@ public class Sketch extends PApplet {
         return animations;
     }
 
+    /** sets the screenScaleFactor correctly based on the size of the display the game is running on. */
     private void scaleToScreenSize() {
         float horizontalScale = (float) displayWidth / (float) PIXEL2XL_DISPLAY_W;
         float verticalScale = (float) displayHeight / (float) PIXEL2XL_DISPLAY_H;
         screenScaleFactor = Math.max(horizontalScale, verticalScale);
     }
 
-    public ArrayList<MediaPlayer> getMusic() {
-        return music;
-    }
-
-    public int getCurrentSong() {
-        return currentSong;
-    }
-
+    /** stops the music. */
     public void stopMusic() {
         try {
             music.get(currentSong).stop();
@@ -408,6 +405,7 @@ public class Sketch extends PApplet {
         stopMusic = true;
     }
 
+    /** starts the music. */
     public void startMusic() {
         music = new ArrayList<MediaPlayer>();
         try {
@@ -422,6 +420,8 @@ public class Sketch extends PApplet {
         stopMusic = false;
     }
 
+    /** Used only for death levels to tint the screen red.
+     * @param counter used to determine how red the screen should be. */
     public void setBackgroundHue(int counter) {
         if (counter < 0 ) {
             return;
@@ -438,6 +438,7 @@ public class Sketch extends PApplet {
         rect(0,0, PIXEL2XL_DISPLAY_W, PIXEL2XL_DISPLAY_H);
     }
 
+    /**Toggles fastForward text mode. */
     private void ffListener() {
         if (mouseY < 200 && mouseX > 2700 && TextBox.TYPE_DELAY == 2) {
             TextBox.TYPE_DELAY = 1;
@@ -446,6 +447,7 @@ public class Sketch extends PApplet {
         }
     }
 
+    /** Loads the fastForward button images. */
     private void setUpFFButton() {
         fastForward = loadImage("fastForward.png");
         fastForward1 = loadImage("fastForward1.png");

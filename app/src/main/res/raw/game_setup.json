@@ -2263,9 +2263,18 @@
           "y": 400,
           "width": 1500,
           "height": 400,
-          "message": "Game and Story by Miguel Fernandez and Linh Pham\n\nMiguel played by Miguel Fernandez\nLinh played by Linh Pham\nRicky played by Ricardo Ramirez\nHelen played by Helen Huynh \nJohn played by John Tang\nKC played by KC Rivera\nNorb played by Norberto Nieves\nTyler played by Tyler Tang\nSue played by Sue Wee",
+          "message": "Game and Story by Miguel Fernandez and Linh Pham\n\nMiguel played by Miguel Fernandez\n\nLinh played by Linh Pham\n\nRicky played by Ricardo Ramirez\n\nHelen played by Helen Huynh\n\nJohn played by John Tang\n\nKC played by KC Rivera\n\nNorb played by Norberto Nieves\n\nTyler played by Tyler Tang\n\nSue played by Sue Wee",
           "alignment": 0,
           "color": "not"
+        },
+        {
+          "x": 0,
+          "y": 800,
+          "width": 650,
+          "height": 150,
+          "message": "THANKS FOR PLAYING!",
+          "alignment": 3,
+          "color": "purple"
         }
       ]
     }
