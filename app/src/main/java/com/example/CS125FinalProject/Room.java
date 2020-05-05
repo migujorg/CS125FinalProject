@@ -1,11 +1,6 @@
 package com.example.CS125FinalProject;
 
-//import androidx.constraintlayout.solver.widgets.Rectangle;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import processing.core.PApplet;
 
 class Room {
     private String name = "";
@@ -17,11 +12,8 @@ class Room {
     private ArrayList<Sprite> sprites;
     /** list of TextBoxes in this room. */
     private ArrayList<TextBox> textBoxes;
-   // /** Used to call special room-specific methods. (For example, for rooms that kill you)*/
-   // private String type = "normal";
-
+    /** the TextBox that is currently being drawn. */
     private int currentTextBox;
-    //TODO: private ArrayList<Sprite> sprites = new ArrayList<Sprite()> used later to draw sprites
 
     /** Default constructor. Every list is empty. Pretty much never used */
     Room() {
@@ -100,14 +92,17 @@ class Room {
         }
     }
 
+    /**@return textBoxes ArrayList. */
     ArrayList<TextBox> getTextBoxes() {
         return textBoxes;
     }
 
+    /**@return characters ArrayList. */
     ArrayList<Character> getCharacters() {
         return characters;
     }
 
+    /**@return name. */
     String getName() {
         return name;
     }

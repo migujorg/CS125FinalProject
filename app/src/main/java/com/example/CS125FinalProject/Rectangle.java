@@ -62,16 +62,12 @@ public class Rectangle {
                 && rectangle.y < y + height;      //top edge above bottom edge
     }
 
+    /** Given a point, determines if it falls inside this Rectangle
+     * @param checkX the x coordinate of the point
+     * @param checkY the y coordinate of the point
+     * @return whether or not the Rectangle contains that point. */
     public boolean contains(double checkX, double checkY) {
         return checkX >= x && checkX < x + width && checkY >= y && checkY < y + height;
-    }
-
-    boolean containsX(double checkX) {
-        return checkX >= x && checkX < x + width;
-    }
-
-    boolean containsY(double checkY) {
-        return checkY >= y && checkY < y + height;
     }
 
     /** @return X coordinate of center of Rectangle.*/

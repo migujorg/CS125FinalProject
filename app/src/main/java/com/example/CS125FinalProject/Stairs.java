@@ -50,23 +50,29 @@ public class Stairs extends Environment {
      *  "on top" of this stair in the next frame. This prevents clipping through stairs.
      * @param c character that the Stairs is checking for collision and logic.
      * @return whether or not the character, c, is on top of this Stairs*/
+    @Deprecated
     private boolean isCharOnTopWIP(Character c) {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersectsX(super.getHitbox())
-                    && (new Rectangle(c.getSimpleHitbox().x, c.getSimpleHitbox().y, //Will it intersect or pass through in the next frame based on yVelocity?
+                    && (new Rectangle(c.getSimpleHitbox().x, c.getSimpleHitbox().y,
                     c.getSimpleHitbox().width,
                     c.getSimpleHitbox().height + c.getYVelocity())).intersectsY(super.getHitbox())
                     && c.getYVelocity() > 0;
         } else {
-            return false; //TODO: Advanced hitbox collision
+            return false;
         }
     }
 
+    /**This method is used to determine if a character is "on top" of this stair.
+     *  Meaning on the top surface. Uses player's current Y Velocity to determine if they will be
+     *  "on top" of this stair in the next frame. This prevents clipping through stairs.
+     * @param c character that the Stairs is checking for collision and logic.
+     * @return whether or not the character, c, is on top of this Stairs*/
     private boolean isCharOnTop(Character c) {
         if (!c.isAdvancedHitbox()) {
             return c.getSimpleHitbox().intersects(super.getHitbox());
         } else {
-            return false; //TODO: Advanced hitbox collision
+            return false;
         }
     }
 }

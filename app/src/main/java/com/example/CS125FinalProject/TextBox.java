@@ -8,19 +8,34 @@ import processing.core.PFont;
 
 /** This class manages rendering text on the canvas.*/
 public class TextBox {
-    private static final double TYPE_DELAY = 1;
+    /** How slow all TextBoxes will type.*/
+    private static final double TYPE_DELAY = 2;
+    /** Rectangle that is used for x, y, width, and height of the TextBox.*/
     private Rectangle box = new Rectangle();
+    /** The message that the TextBox will display.*/
     private String message;
+    /** How the TextBox will align it's text. Options are CENTER, CORNER, MIDDLE, LEFT, RIGHT.*/
     private int alignment;
-    //private PFont font = Main.sketch.createFont("Arial", 100, true);
+    /** The index of the current character to be displayed.*/
     private int currentChar;
-    private int messageLength; //This is for optimization so it doesn't have to call message.length() a billion times.
+    /** The length of the message. Simply for optimization so that message.length() does not need to be called so many times.*/
+    private int messageLength;
+    /** The message that is currently displayed. A changing substring of the full message. */
     private String partialMessage = "";
+    /** Whether or not the TextBox has finished typing its text. Used by the Room class to render TextBoxes in order. */
     private boolean complete;
+    /** The color theme of the TextBox. Options are blue, orange, purple, red, and "not" */
     private String color = "";
+    /** The font of the text. */
     PFont font;
+
+    /** Empty constructor*/
     public TextBox() {};
 
+    /** Constructor that only specifies location and message.
+     * @param setX x coordinate
+     * @param setY y coordinate
+     * @param setMessage the message to be displayed. */
     public TextBox(double setX, double setY, String setMessage) {
         box.x = setX;
         box.y = setY;
@@ -31,6 +46,8 @@ public class TextBox {
         font = Main.sketch.createFont("thinPixel.ttf", 150, false);
     }
 
+    /** Constructor that only takes in message. Mostly not used outside of debugging.
+     * @param setMessage the message to be displayed. */
     public TextBox(String setMessage) { //By default it puts the message in the center of the screen!
         box.width = Sketch.PIXEL2XL_DISPLAY_W * 0.8;
         box.height = setMessage.length() * 3.1;
@@ -41,14 +58,13 @@ public class TextBox {
         font = Main.sketch.createFont("thinPixel.ttf", 200, false);
     }
 
-    /**
+    /** Near-full constructor. Not really used because we never want it to be smoothed.
      * @param setX x coordinate
      * @param setY y coordinate
      * @param setMessage the message
      * @param setFont the desired font (.ttf)
      * @param scale the scale of the text
-     * @param isSmooth will it be smoothed in rendering?
-     */
+     * @param isSmooth will it be smoothed in rendering? */
     public TextBox(double setX, double setY, String setMessage, String setFont, double scale, boolean isSmooth) {
         box.width = Sketch.PIXEL2XL_DISPLAY_W * 0.8;
         box.height = Sketch.PIXEL2XL_DISPLAY_H * 0.8;
@@ -59,7 +75,13 @@ public class TextBox {
         font = Main.sketch.createFont(setFont, (float) scale, isSmooth);
     }
 
-     TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage) {
+    /** Constructor that specifies coordinates, dimensions, and message
+     * @param setX x coordinate
+     * @param setY y coordinate
+     * @param setWidth width
+     * @param setHeight height
+     * @param setMessage the message to be displayed. */
+    TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage) {
         box.width = setWidth;
         box.height = setHeight;
         box.x = (Sketch.PIXEL2XL_DISPLAY_W / (float) 2) - (box.width / 2) + setX;
@@ -69,6 +91,14 @@ public class TextBox {
         font = Main.sketch.createFont("thinPixel.ttf", (float) 125, false);
     }
 
+    /** Constructor used in the actual .json
+     * @param setX x coordinate
+     * @param setY y coordinate
+     * @param setWidth width
+     * @param setHeight height
+     * @param setMessage the message to be displayed
+     * @param setAlignment the alignment of the text in the box
+     * @param setColor the color-theme of the TextBox. */
     TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage, int setAlignment, String setColor) {
         box.width = setWidth;
         box.height = setHeight;
@@ -85,6 +115,15 @@ public class TextBox {
         font = Main.sketch.createFont("thinPixel.ttf", (float) 125, false);
     }
 
+    /** Useless constructor that specifies almost everything.
+     * @param setX x coordinate
+     * @param setY y coordinate
+     * @param setWidth width
+     * @param setHeight height
+     * @param setMessage the message to be displayed
+     * @param setFont the font of the text
+     * @param scale the scale of the text
+     * @param isSmooth smoothed when rendered or not? */
     public TextBox(double setX, double setY, double setWidth, double setHeight, String setMessage, String setFont, int scale, boolean isSmooth) {
         box.x = setX;
         box.y = setY;
@@ -95,11 +134,14 @@ public class TextBox {
         font = Main.sketch.createFont(setFont, scale, isSmooth);
     }
 
+    /** Not used in this project, but consolidates background and text draw methods. */
     void run() {
         drawBackground();
         drawText();
     }
 
+    /** Draws the text. Chooses method to draw text based on message's color-theme.
+     *  (The terminal uses the "scrolly text" feature. */
     void drawText() {
         if (!color.equals("not")) {
             slowText();
@@ -133,6 +175,7 @@ public class TextBox {
 
     }
 
+    /** Private helper method that contains most of the logic for the "scrolly text". */
     private void scrollyTextHelper() {
         int lastNewLine = 0;
         if (partialMessage.lastIndexOf('\n') != -1) {
@@ -150,6 +193,7 @@ public class TextBox {
         }
     }
 
+    /** Prints the text at a speed depending on the TYPE_DELAY. */
     private void slowText() {
         if (currentChar < messageLength) { //Process stops once message in finished (to prevent lag)
             char thisChar = message.charAt(currentChar);
@@ -179,17 +223,7 @@ public class TextBox {
         Main.sketch.text(message.substring(0, currentChar), (float) box.x, (float) box.y, (float) box.width, (float) box.height);
     }
 
-    private void printText() {
-        Main.sketch.stroke(0,0,0);
-        Main.sketch.fill(0,0,0);
-        Main.sketch.textFont(font);
-        Main.sketch.textAlign(alignment, Main.sketch.CENTER);
-        if (color.equals("not")) {
-            Main.sketch.fill(0,255,0);
-        }
-        Main.sketch.text(message.substring(0, currentChar), (float) box.x, (float) box.y, (float) box.width, (float) box.height);
-    }
-
+    /** Calls the appropriate background drawing method depending on the color-theme. */
     void drawBackground() {
         Main.sketch.rectMode(Main.sketch.CENTER);
         if (color.equals("orange")) {
@@ -206,10 +240,12 @@ public class TextBox {
         Main.sketch.rectMode(Main.sketch.CORNER);
     }
 
+    /** @return isComplete. */
     boolean isComplete() {
         return complete;
     }
 
+    /** Used for Game Over portals. Next time this TextBox is encountered it will type everything again. */
     void reset() {
         complete = false;
         partialMessage = "";
@@ -217,6 +253,7 @@ public class TextBox {
 
     }
 
+    /** Renders the background for the text for the orange color theme. */
     private void drawOrangeBox() {
         Main.sketch.stroke(122, 57, 7);
         Main.sketch.fill(122, 57, 7);
@@ -241,6 +278,7 @@ public class TextBox {
                 20);
     }
 
+    /** Renders the background for the text for the blue color theme. */
     private void drawBlueBox() {
         Main.sketch.stroke(0, 84, 107);
         Main.sketch.fill(0, 84, 107);
@@ -265,6 +303,7 @@ public class TextBox {
                 20);
     }
 
+    /** Renders the background for the text for the purple color theme. */
     private void drawPurpleBox() {
         Main.sketch.stroke(134, 31, 126);
         Main.sketch.fill(134, 31, 126);
@@ -289,6 +328,7 @@ public class TextBox {
                 20);
     }
 
+    /** Renders the background for the text for the red color theme. */
     private void drawRedBox() {
         Main.sketch.stroke(147, 44, 62);
         Main.sketch.fill(147, 44, 62);
@@ -313,6 +353,7 @@ public class TextBox {
                 20);
     }
 
+    /** Renders the background for the text for the "not" color theme (The terminal). */
     private void drawTerminalBox() {
         Main.sketch.stroke(23, 87, 1);
         Main.sketch.fill(23, 87, 1);
@@ -337,11 +378,13 @@ public class TextBox {
                 20);
     }
 
+    /** Plays a typing sound each time that a new key is added.
+     * @param thisChar the current char being typed. Used to determine if it is a silently typed character
+     * '/b' character is used as a silent character to add a pause to the sound. */
     private void playSounds(char thisChar) {
-        if (color.equals("not") && thisChar != '\b' && Main.sketch.frameCount % 4 == 0) { //Use "\b" in text to add pauses in typing without changing look.
+        if (color.equals("not") && thisChar != '\b' && Main.sketch.frameCount % 4 == 0) {
             ArrayList<MediaPlayer> terminalSounds = ((Sketch) Main.sketch).getTerminalSounds();
             terminalSounds.get(Main.sketch.frameCount % ((Sketch) Main.sketch).getTerminalSounds().size()).start();
-
         }
     }
 

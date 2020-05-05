@@ -16,7 +16,7 @@ public abstract class Environment {
 
     /** The hitbox of the Environment object */
     private Rectangle hitbox;
-    /** The type of environment object */ //I don't think I will actually end up needing this
+    /** The type of environment object */
     private int type;
 
     /**Constructor for Environment

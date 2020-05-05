@@ -1,7 +1,4 @@
 package com.example.CS125FinalProject;
-
-//import androidx.constraintlayout.solver.widgets.Rectangle;
-
 import processing.core.PApplet;
 
 /**This class manages travelling between rooms. Portals will be invisible in the final implementation. */
@@ -17,8 +14,7 @@ public class Portal extends Environment {
      * @param width sets width
      * @param height sets height
      * @param setDestination sets destination
-     * @param setRequiresInteract sets requiresInteract
-     */
+     * @param setRequiresInteract sets requiresInteract*/
     public Portal(double x, double y, double width, double height, String setDestination, boolean setRequiresInteract) {
         super(new Rectangle (x,y,width,height), Environment.PORTAL);
         destination = setDestination;
@@ -28,8 +24,7 @@ public class Portal extends Environment {
     /** Constructor that uses a Rectangle instance to instantiate the portal
      * @param setHitbox sets hitbox
      * @param setDestination sets destination
-     * @param setRequiresInteract sets requiresInteract
-     */
+     * @param setRequiresInteract sets requiresInteract. */
     public Portal(Rectangle setHitbox, String setDestination, boolean setRequiresInteract) {
         super(setHitbox, Environment.PORTAL);
         destination = setDestination;
@@ -109,6 +104,7 @@ public class Portal extends Environment {
         return super.getHitbox();
     }
 
+    /** Private helper method used to call the reset() function for every TextBox. */
     private void resetAllTextBoxes() {
         for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
             for (int j = 0; j < ((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getTextBoxes().size(); j++) {
@@ -117,6 +113,7 @@ public class Portal extends Environment {
         }
     }
 
+    /** Private helper method used to call the reset() function for every Character. */
     private void resetAllCharacters() {
         for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
             for (int j = 0; j < ((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getCharacters().size(); j++) {
@@ -125,6 +122,7 @@ public class Portal extends Environment {
         }
     }
 
+    /** Private helper method used to load the correct level when the player goes through a portal. */
     private void goToDestination() {
         for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
             if (((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getName().equals(destination)) {

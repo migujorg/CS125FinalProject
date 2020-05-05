@@ -20,6 +20,10 @@ public class JsonHandler {
     /**JsonHandler creates a RoomManager object from the json input file. */
     private static RoomManager roomManager;
 
+    /** This method will look at the .json file named "game_setup" in the raw directory and produce
+     *  a RoomManager object that describes it.
+     * @param context passed down from Main activity. Needed to access the .json file
+     * @return a new RoomManager object that contains the entire game. */
     public static RoomManager getRoomManager(Context context){
         Reader jsonReader = new InputStreamReader(context.getResources().openRawResource(R.raw.game_setup));
         JsonObject root = (JsonObject) JsonParser.parseReader(jsonReader);
@@ -101,7 +105,6 @@ public class JsonHandler {
                             jAsObject.get("message").getAsString(),
                             jAsObject.get("alignment").getAsInt(),
                             jAsObject.get("color").getAsString()));
-                    //System.out.println("USED CONSTRUCTOR ONE");
                 }
             } catch (Exception e) {
                 try {
@@ -113,13 +116,11 @@ public class JsonHandler {
                                 jAsObject.get("height").getAsDouble(),
                                 jAsObject.get("message").getAsString()));
                     }
-                    //System.out.println("USED CONSTRUCTOR TWO");
                 } catch (Exception f) {
                     for (int j = 0; j < textBoxes.size(); j++) {
                         JsonObject jAsObject = ((JsonObject) textBoxes.get(j));
                         textBoxArray.add(new TextBox(jAsObject.get("message").getAsString()));
                     }
-                    //System.out.println("USED CONSTRUCTOR THREE");
                 }
             }
             roomArray.add(new Room(environmentArray, characterArray, spriteArray, textBoxArray, setName));
@@ -128,17 +129,18 @@ public class JsonHandler {
         return roomManager;
     }
 
+    /** Private helper method for getRoomManager. Used to add common Environments to each level
+     * @param environments the Environment array to add these Platforms to. */
     private static void addDefaultWalls(ArrayList<Environment> environments) {
         environments.add(new Platform(0,0,20,1440)); //left wall
         environments.add(new Platform(0,1420,2880,20)); //floor
         environments.add(new Platform(2860,0,20,1440));
     }
 
+    /** Private helper method for getRoomManager. Used to add common Characters to each level
+     * @param characters the Character array to add this Character to. */
     private static void addDefaultCharacter(ArrayList<Character> characters) {
         characters.add(new Character(1390, 1140, 100, 280, 100, 1, true));
     }
 
-    //public RoomManager getRoomManager() {
-    //    return roomManager;
-    //}
 }

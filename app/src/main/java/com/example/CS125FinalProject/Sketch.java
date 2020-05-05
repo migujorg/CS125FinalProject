@@ -1,15 +1,10 @@
 package com.example.CS125FinalProject;
 
-import android.app.Activity;
+
 import android.content.Context;
-
 import java.io.IOException;
-import java.io.PipedInputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import processing.core.PApplet;
-import processing.core.PGraphics;
 import processing.core.PImage;
 import processing.opengl.PGraphicsOpenGL;
 import android.media.MediaPlayer;

@@ -1,8 +1,5 @@
 package com.example.CS125FinalProject;
 
-//import androidx.constraintlayout.solver.widgets.Rectangle;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import processing.core.PImage;
@@ -245,6 +242,7 @@ public class Character {
         animationLeft = ((Sketch) Main.sketch).getAnimations().get(4);
     }
 
+    /** Used for Game Over portals. Sets the character's position to the center and velocity to 0. */
     void reset() {
         xVelocity = 0;
         yVelocity = 0;
