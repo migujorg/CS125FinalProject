@@ -35,4 +35,8 @@ public class RoomManager {
         currentRoom = setCurrentRoom;
     }
 
+    public Room getCurrentRoomInstance() {
+        return rooms.get(currentRoom);
+    }
+
 }

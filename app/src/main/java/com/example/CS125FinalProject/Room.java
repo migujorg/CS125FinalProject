@@ -52,9 +52,9 @@ class Room {
 
     /** Consolidates logic for each room element into one method. */
     void runRoom() {
+        counter++;
         doSprites();
         if (((Portal) environments.get(3)).getDestination().equals("restart")) {
-            counter++;
             ((Sketch) Main.sketch).setBackgroundHue(counter);
         }
         doTextBoxes();
@@ -116,4 +116,11 @@ class Room {
         return name;
     }
 
+    public int getCounter() {
+        return counter;
+    }
+
+    public void resetCounter() {
+        counter = 0;
+    }
 }

@@ -128,9 +128,12 @@ public class Portal extends Environment {
         for (int i = 0; i < ((Sketch) Main.sketch).getRoomManager().getRooms().size(); i++) {
             if (((Sketch) Main.sketch).getRoomManager().getRooms().get(i).getName().equals(destination)) {
                 ((Sketch) Main.sketch).getRoomManager().setCurrentRoom(i);
+                ((Sketch) Main.sketch).getRoomManager().getCurrentRoomInstance().resetCounter();
                 return;
             }
         }
     }
+
+
 
 }

@@ -122,6 +122,7 @@ public class Character {
             runPlayerControl();
         }
         isGrounded = false;
+        pauseForfirstSecond();
     }
 
     /** Consolidates player control logic into one method. */
@@ -248,5 +249,17 @@ public class Character {
         yVelocity = 0;
         simpleHitbox.x = 1350;
         simpleHitbox.y = 1140;
+    }
+
+    /** HOTFIX when you enter a portal, all velocities are cancelled out and you can't enter portals */
+    private void pauseForfirstSecond() {
+        int framesFromRoomStart = ((Sketch) Main.sketch).getRoomManager().getCurrentRoomInstance().getCounter();
+        if (framesFromRoomStart < 10) {
+            yVelocity = 10;
+            isGrounded = true;
+            if (framesFromRoomStart < 5) {
+                xVelocity = 0;
+            }
+        }
     }
 }
