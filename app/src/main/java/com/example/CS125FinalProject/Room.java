@@ -116,10 +116,12 @@ class Room {
         return name;
     }
 
+    /** Returns the counter! very useful for determining how long the player has been in the room. */
     public int getCounter() {
         return counter;
     }
 
+    /** Resets the counter! */
     public void resetCounter() {
         counter = 0;
     }
