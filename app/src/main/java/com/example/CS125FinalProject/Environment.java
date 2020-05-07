@@ -1,6 +1,5 @@
 package com.example.CS125FinalProject;
 
-import com.example.CS125FinalProject.Rectangle;
 /** This is an abstract class used for game "Environments". This is non-character things
  *  that the player and other characters can interact with in some way. */
 //TODO: Make Portal class a child of Environment and change Room class accordingly

@@ -1,9 +1,6 @@
 package com.example.CS125FinalProject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import processing.core.PApplet;
 import processing.core.PImage;
 
 /**This class manages the location, scale and drawing of an image.*/

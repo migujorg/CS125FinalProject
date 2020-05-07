@@ -583,8 +583,8 @@
         {
           "x": -720,
           "y": 530,
-          "width": 700,
-          "height": 170,
+          "width": 500,
+          "height": 125 ,
           "message": "Continue",
           "alignment": 3,
           "color": "blue"

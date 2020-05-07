@@ -14,7 +14,7 @@ class Room {
     private ArrayList<TextBox> textBoxes;
     /** the TextBox that is currently being drawn. */
     private int currentTextBox;
-
+    /**Used in tinting the room red on death screens. */
     private int counter;
 
     /** Default constructor. Every list is empty. Pretty much never used */

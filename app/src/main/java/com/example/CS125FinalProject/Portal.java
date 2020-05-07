@@ -1,5 +1,4 @@
 package com.example.CS125FinalProject;
-import processing.core.PApplet;
 
 /**This class manages travelling between rooms. Portals will be invisible in the final implementation. */
 public class Portal extends Environment {

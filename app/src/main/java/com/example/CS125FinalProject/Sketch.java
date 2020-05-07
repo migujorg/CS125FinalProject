@@ -1,6 +1,4 @@
 package com.example.CS125FinalProject;
-
-
 import android.content.Context;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,8 +7,6 @@ import processing.core.PImage;
 import processing.opengl.PGraphicsOpenGL;
 import android.media.MediaPlayer;
 import android.content.res.AssetFileDescriptor;
-
-import org.w3c.dom.Text;
 
 /**This can be seen as the "Main Method" of processing.
  *  settings() is ran once before everything.
@@ -67,7 +63,6 @@ public class Sketch extends PApplet {
     /**Settings for the screen. Runs once before everything*/
     public void settings() {
         size(PIXEL2XL_DISPLAY_W, PIXEL2XL_DISPLAY_H, P2D);
-        //smooth(0);
     }
 
     /**Runs once after settings(). */
@@ -453,6 +448,7 @@ public class Sketch extends PApplet {
         fastForward1 = loadImage("fastForward1.png");
     }
 
+    /**Draws the correct (pressed or not pressed) fastForward button on the screen depending on TexBox's TYPE_DELAY. */
     public void drawFF() {
         if (TextBox.TYPE_DELAY == 2) {
             image(fastForward, PIXEL2XL_DISPLAY_W - 100, 50, fastForward.width * 4, fastForward.height * 4);
